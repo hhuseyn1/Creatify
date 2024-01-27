@@ -11,7 +11,7 @@ using Services.Coupon.API.Data;
 namespace Services.Coupon.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240127095715_AddCoupontoDb")]
+    [Migration("20240127174503_AddCoupontoDb")]
     partial class AddCoupontoDb
     {
         /// <inheritdoc />

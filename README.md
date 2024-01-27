@@ -1,4 +1,4 @@
-# Project Title
+# Creatify
 
 ## Overview
 This project is a comprehensive guide to building .NET Core microservices using the latest technologies and best practices. It covers various aspects such as authentication, authorization, communication between microservices, integration with Azure services, deployment to Azure, and more.

@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{16
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{C1CF7068-405A-477E-8C97-EDEE19D1BB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Coupon.API", "Services\Services.Coupon.API\Services.Coupon.API.csproj", "{313E8246-4F10-4BA2-8661-C8BF1E832149}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Coupon.API", "Services\Services.Coupon.API\Services.Coupon.API.csproj", "{313E8246-4F10-4BA2-8661-C8BF1E832149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creatify.Web", "Creatify.Web\Creatify.Web.csproj", "{651573D1-2AF7-4322-AFBE-453CAF760AAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{313E8246-4F10-4BA2-8661-C8BF1E832149}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{313E8246-4F10-4BA2-8661-C8BF1E832149}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{313E8246-4F10-4BA2-8661-C8BF1E832149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651573D1-2AF7-4322-AFBE-453CAF760AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651573D1-2AF7-4322-AFBE-453CAF760AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651573D1-2AF7-4322-AFBE-453CAF760AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651573D1-2AF7-4322-AFBE-453CAF760AAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{313E8246-4F10-4BA2-8661-C8BF1E832149} = {16E419DA-0660-4BEC-B5D6-9DFEA9EF291F}
+		{651573D1-2AF7-4322-AFBE-453CAF760AAB} = {1B381A32-E667-4447-8C9E-DDBF4D186AF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1E4B566-0498-4432-AD4F-37D85E5F9293}

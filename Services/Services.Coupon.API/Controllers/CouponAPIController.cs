@@ -94,7 +94,7 @@ public class CouponAPIController : ControllerBase
     }
 
     [HttpPut]
-    [Route("EditCouponbyId/{id}")]
+    [Route("EditCoupon")]
     public ResponseDto EditCouponbyId([FromBody] CouponDto couponDto)
     {
         try

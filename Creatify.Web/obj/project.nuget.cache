@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RRPNg27aahnOntRtrA1Q7Nv0Yph0jEbEoFbU3xUHgbUOw1HjIwzzXSMFaKhLlJNzQrAEkiJpKkeLwv/sq5pLEQ==",
+  "dgSpecHash": "CESqgRVYr9NLIKJby0j9HDSXXWqXmblf5+YtI9sfdHg+NE5MS+RLw+9zeCTokJBvHh120mm0KYgz6ndp/uyE6A==",
   "success": true,
   "projectFilePath": "C:\\Users\\husey\\Desktop\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\husey\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,4 @@
-﻿namespace Services.Coupon.API.Models.Dto;
+﻿namespace Creatify.Web.Models;
 
 public class ResponseDto
 {

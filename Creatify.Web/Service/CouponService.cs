@@ -1,5 +1,6 @@
 ﻿using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
+using Creatify.Web.Utility;
 
 namespace Creatify.Web.Service;
 
@@ -12,33 +13,59 @@ public class CouponService : ICouponService
         _baseService = baseService;
     }
 
-    public Task<ResponseDto> CreateCouponAsync(CouponDto coupon)
+    public async Task<ResponseDto> CreateCouponAsync(CouponDto couponDto)
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Data = couponDto,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/AddCoupon/"
+        });
     }
 
-    public Task<ResponseDto> DeleteCouponAsync(int id)
+    public async Task<ResponseDto> DeleteCouponAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/DeleteCouponbyId/" + id
+        });
     }
 
-    public Task<ResponseDto> GetAllCouponsAsync()
+    public async Task<ResponseDto> GetAllCouponsAsync()
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon"
+        });
     }
 
-    public Task<ResponseDto> GetCouponAsync(string CouponCode)
+    public async Task<ResponseDto> GetCouponAsync(string CouponCode)
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/GetCouponbyCode/" + CouponCode
+        });
     }
 
-    public Task<ResponseDto> GetCouponByIdAsync(int id)
+    public async Task<ResponseDto> GetCouponByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/" + id
+        });
     }
 
-    public Task<ResponseDto> UpdateCouponAsync(CouponDto coupon)
+    public async Task<ResponseDto> UpdateCouponAsync(CouponDto couponDto)
     {
-        throw new NotImplementedException();
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Data = couponDto,
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/EditCoupon"
+        });
     }
 }

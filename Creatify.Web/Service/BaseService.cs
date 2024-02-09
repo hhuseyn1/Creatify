@@ -43,18 +43,23 @@ public class BaseService : IBaseService
 
             httpResponse = await httpClient.SendAsync(message);
 
-            var response = httpResponse.StatusCode switch
+            switch (httpResponse.StatusCode)
             {
-                HttpStatusCode.Forbidden => new ResponseDto { isSuccess = false, Message = "Forbidden" },
-                HttpStatusCode.InternalServerError => new ResponseDto { isSuccess = false, Message = "Internal Server Error" },
-                HttpStatusCode.NotFound => new ResponseDto { isSuccess = false, Message = "Not Found" },
-                HttpStatusCode.Unauthorized => new ResponseDto { isSuccess = false, Message = "Unauthorized" },
-            };
 
-            var apiContent = await httpResponse.Content.ReadAsStringAsync();
-            var apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
+                case HttpStatusCode.NotFound:
+                    return new() { isSuccess = false, Message = "Not Found" };
+                case HttpStatusCode.Forbidden:
+                    return new() { isSuccess = false, Message = "Access Denied" };
+                case HttpStatusCode.Unauthorized:
+                    return new() { isSuccess = false, Message = "Unauthorized" };
+                case HttpStatusCode.InternalServerError:
+                    return new() { isSuccess = false, Message = "Internal Server Error" };
+                default:
+                    var apiContent = await httpResponse.Content.ReadAsStringAsync();
+                    var apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
+                    return apiResponseDto;
+            }
 
-            return apiResponseDto ?? response;
 
         }
         catch (Exception ex)

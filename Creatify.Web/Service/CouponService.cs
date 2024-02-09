@@ -37,7 +37,7 @@ public class CouponService : ICouponService
         return await _baseService.SendAsync(new()
         {
             APIType = StaticDetails.APIType.GET,
-            Url = StaticDetails.CouponAPIBase + "/api/coupon"
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/GetAllCoupons"
         });
     }
 

@@ -1,0 +1,14 @@
+﻿@model List<CouponDto>
+
+<div>
+    <p>Coupons:</p>
+    @foreach (var item in Model)
+    {
+        <div>
+            <p>Id: @item.Id</p>
+            <p>Code: @item.CouponCode</p>
+            <p>Min amount: @item.MinAmount</p>
+            <p>Discount: @item.DiscountAmount</p>
+        </div>
+    }
+</div>

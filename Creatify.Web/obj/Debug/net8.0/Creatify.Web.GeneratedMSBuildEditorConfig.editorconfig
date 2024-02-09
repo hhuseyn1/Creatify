@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\husey\Desktop\Creatify\Creatify.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/husey/Desktop/Creatify/Creatify.Web/Views/Coupon/CouponCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uXENvdXBvbkNyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/husey/Desktop/Creatify/Creatify.Web/Views/Coupon/CouponIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cG9uXENvdXBvbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

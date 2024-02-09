@@ -17,9 +17,9 @@ public class CouponService : ICouponService
     {
         return await _baseService.SendAsync(new()
         {
-            APIType = StaticDetails.APIType.GET,
+            APIType = StaticDetails.APIType.POST,
             Data = couponDto,
-            Url = StaticDetails.CouponAPIBase + "/api/coupon/AddCoupon/"
+            Url = StaticDetails.CouponAPIBase + "/api/coupon/AddCoupon"
         });
     }
 
@@ -27,7 +27,7 @@ public class CouponService : ICouponService
     {
         return await _baseService.SendAsync(new()
         {
-            APIType = StaticDetails.APIType.GET,
+            APIType = StaticDetails.APIType.DELETE,
             Url = StaticDetails.CouponAPIBase + "/api/coupon/DeleteCouponbyId/" + id
         });
     }
@@ -63,7 +63,7 @@ public class CouponService : ICouponService
     {
         return await _baseService.SendAsync(new()
         {
-            APIType = StaticDetails.APIType.GET,
+            APIType = StaticDetails.APIType.PUT,
             Data = couponDto,
             Url = StaticDetails.CouponAPIBase + "/api/coupon/EditCoupon"
         });

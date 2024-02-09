@@ -1,14 +1,54 @@
-﻿@model List<CouponDto>
+﻿@model IEnumerable<CouponDto>
 
-<div>
-    <p>Coupons:</p>
-    @foreach (var item in Model)
-    {
-        <div>
-            <p>Id: @item.Id</p>
-            <p>Code: @item.CouponCode</p>
-            <p>Min amount: @item.MinAmount</p>
-            <p>Discount: @item.DiscountAmount</p>
-        </div>
-    }
+<br />
+<br />
+<div class="container p-4 border">
+	<div class="row pb-2">
+		<div class="col">
+			<h1 class="text-primary">Products List</h1>
+		</div>
+		<div class="col text-end pt-1">
+			<a asp-action="CouponCreate" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Create New Product</a>
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>
+					CouponCode
+				</th>
+				<th>
+					DiscountAmount
+				</th>
+				<th>
+					MinAmount
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@item.CouponCode
+					</td>
+					<td>
+						@item.DiscountAmount
+					</td>
+					<td>
+						@item.MinAmount
+					</td>
+					<td>
+						<a asp-action="CouponEdit" class="btn btn-success">
+							<i class="fas fa-edit"></i>
+						</a>
+						<a asp-action="CouponDelete" asp-route-id="@item.Id" class="btn btn-danger">
+							<i class="fas fa-trash"></i>
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 </div>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7Y1oQ3VaNJRNgNm9++kV/YjotdJE/XmdP3RYUIJdHTg=",
+  "Source": "Services.Auth.API",
+  "BasePath": "_content/Services.Auth.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -37,8 +37,10 @@ public class CouponController : Controller
         if(ModelState.IsValid)
         {
             ResponseDto? responseDto = await service.CreateCouponAsync(couponDto);
-            if (responseDto.isSuccess && responseDto != null)
+            if (responseDto.isSuccess && responseDto != null) { 
+                TempData["success"] = "Coupon created successfully!";
                 return RedirectToAction(nameof(CouponIndex));
+            }
             else
                 TempData["error"] = responseDto?.Message;
         }
@@ -49,7 +51,10 @@ public class CouponController : Controller
     {
 		ResponseDto? responseDto = await service.DeleteCouponAsync(id);
 		if (responseDto.isSuccess && responseDto != null)
-			return RedirectToAction(nameof(CouponIndex));
+        {
+            TempData["success"] = "Coupon deleted successfully!";
+            return RedirectToAction(nameof(CouponIndex));
+        }
         else
             TempData["error"] = responseDto?.Message;
         return NotFound();

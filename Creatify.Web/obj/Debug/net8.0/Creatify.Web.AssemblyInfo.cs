@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Creatify.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4da9d5807ca18408ae246f5f85e465b49ca57969")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c8a89df71397b0c7fadbdddfcde03fd1889496f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Creatify.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Creatify.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

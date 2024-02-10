@@ -20,6 +20,8 @@ public class CouponController : Controller
         ResponseDto responseDto = await service.GetAllCouponsAsync();
         if (responseDto.isSuccess && responseDto != null)
             list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(responseDto.Result));
+        else
+            TempData["error"] = responseDto?.Message;
         return View(list);
     }
 
@@ -37,6 +39,8 @@ public class CouponController : Controller
             ResponseDto? responseDto = await service.CreateCouponAsync(couponDto);
             if (responseDto.isSuccess && responseDto != null)
                 return RedirectToAction(nameof(CouponIndex));
+            else
+                TempData["error"] = responseDto?.Message;
         }
         return View(couponDto);
     }
@@ -46,7 +50,9 @@ public class CouponController : Controller
 		ResponseDto? responseDto = await service.DeleteCouponAsync(id);
 		if (responseDto.isSuccess && responseDto != null)
 			return RedirectToAction(nameof(CouponIndex));
-		return NotFound();
+        else
+            TempData["error"] = responseDto?.Message;
+        return NotFound();
 	}
 
 

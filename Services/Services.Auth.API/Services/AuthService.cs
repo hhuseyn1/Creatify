@@ -4,6 +4,7 @@ using Services.Auth.API.Data;
 using Services.Auth.API.Models;
 using Services.Auth.API.Models.Dto;
 using Services.Auth.API.Services.IAuth;
+using Services.Auth.API.Services.IService;
 
 namespace Services.Auth.API.Services;
 
@@ -12,12 +13,14 @@ public class AuthService : IAuthService
     private readonly AppDbContext appDbContext;
     private readonly UserManager<AppUser> userManager;
     private readonly RoleManager<IdentityRole> roleManager;
+    private readonly IJwtTokenGenerator jwtGenerator;
 
-    public AuthService(AppDbContext appDbContext, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
+    public AuthService(AppDbContext appDbContext, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IJwtTokenGenerator jwtGenerator)
     {
         this.appDbContext = appDbContext;
         this.userManager = userManager;
         this.roleManager = roleManager;
+        this.jwtGenerator = jwtGenerator;
     }
 
     public async Task<string> Login(LoginDto loginDto)
@@ -29,7 +32,7 @@ public class AuthService : IAuthService
         if(user is null || isValid is false)
             return string.Empty;
 
-        var token = "";
+        var token = jwtGenerator.GenerateToken(user);
 
         return token;
     }

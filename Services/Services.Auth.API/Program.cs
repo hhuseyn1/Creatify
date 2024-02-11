@@ -4,6 +4,7 @@ using Services.Auth.API.Data;
 using Services.Auth.API.Models;
 using Services.Auth.API.Services;
 using Services.Auth.API.Services.IAuth;
+using Services.Auth.API.Services.IService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<A
     .AddDefaultTokenProviders();
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IJwtTokenGenerator,JwtTokenGenerator>();
 builder.Services.AddScoped<IAuthService,AuthService>();
 
 var app = builder.Build();

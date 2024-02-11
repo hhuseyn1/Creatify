@@ -20,9 +20,18 @@ public class AuthService : IAuthService
         this.roleManager = roleManager;
     }
 
-    public Task<string> Login(LoginDto loginDto)
+    public async Task<string> Login(LoginDto loginDto)
     {
-        throw new NotImplementedException();
+        var user = appDbContext.Users.FirstOrDefault(u=>u.UserName.ToLower() == loginDto.UserName.ToLower());
+
+        bool isValid = await userManager.CheckPasswordAsync(user, loginDto.Password);
+
+        if(user is null || isValid is false)
+            return string.Empty;
+
+        var token = "";
+
+        return token;
     }
 
     public async Task<string> Register(RegisterDto registerDto)

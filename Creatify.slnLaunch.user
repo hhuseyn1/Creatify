@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Project Start",
+    "Projects": [
+      {
+        "Name": "Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
+        "Action": "Start",
+        "DebugTarget": ""
+      },
+      {
+        "Name": "Creatify.Web\\Creatify.Web.csproj",
+        "Action": "Start",
+        "DebugTarget": ""
+      },
+      {
+        "Name": "Services\\Services.Auth.API\\Services.Auth.API.csproj",
+        "Action": "Start",
+        "DebugTarget": ""
+      }
+    ]
+  },
+  {
+    "Name": "Auth",
+    "Projects": [
+      {
+        "Name": "Services\\Services.Auth.API\\Services.Auth.API.csproj",
+        "Action": "Start",
+        "DebugTarget": ""
+      }
+    ]
+  }
+]

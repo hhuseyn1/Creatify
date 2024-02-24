@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Services.Auth.API.Controllers.AuthAPIController",
+    "Method": "AssignRole",
+    "RelativePath": "api/auth/AssignRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "Services.Auth.API.Models.Dto.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.Auth.API.Controllers.AuthAPIController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
     "HttpMethod": "POST",

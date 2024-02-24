@@ -27,7 +27,7 @@ public class AuthService : IAuthService
     {
         var user = appDbContext.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
         if(user is not null) {
-            if(roleManager.RoleExistsAsync(roleName).GetAwaiter().GetResult()) {
+            if(!roleManager.RoleExistsAsync(roleName).GetAwaiter().GetResult()) {
                 roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
             }
             await userManager.AddToRoleAsync(user, roleName);

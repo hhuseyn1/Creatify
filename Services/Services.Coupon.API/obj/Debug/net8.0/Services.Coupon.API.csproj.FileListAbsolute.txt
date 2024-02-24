@@ -133,9 +133,9 @@ C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\st
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Services.Coupon.API.props
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\scopedcss\bundle\Services.Coupon.API.styles.css
-C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.csproj.CopyComplete
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.dll
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\refint\Services.Coupon.API.dll
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.pdb
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\ref\Services.Coupon.API.dll
+C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.570B1B67.Up2Date

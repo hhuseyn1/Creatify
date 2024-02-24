@@ -26,9 +26,9 @@ C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\staticwebassets.pa
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\scopedcss\bundle\Creatify.Web.styles.css
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\scopedcss\projectbundle\Creatify.Web.bundle.scp.css
-C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.csproj.CopyComplete
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.dll
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\refint\Creatify.Web.dll
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.pdb
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.genruntimeconfig.cache
 C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\ref\Creatify.Web.dll
+C:\Users\husey\Desktop\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.D43D2906.Up2Date

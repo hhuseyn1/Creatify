@@ -139,9 +139,9 @@ C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\stat
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Services.Auth.API.props
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\scopedcss\bundle\Services.Auth.API.styles.css
-C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.csproj.CopyComplete
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.dll
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\refint\Services.Auth.API.dll
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.pdb
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\ref\Services.Auth.API.dll
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.BEC7EB21.Up2Date

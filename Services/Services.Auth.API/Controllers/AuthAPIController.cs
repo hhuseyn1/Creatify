@@ -8,7 +8,6 @@ namespace Services.Auth.API.Controllers
     [ApiController]
     public class AuthAPIController : ControllerBase
     {
-
         private readonly IAuthService _authService;
         protected ResponseDto _responseDto;
 
@@ -40,6 +39,19 @@ namespace Services.Auth.API.Controllers
             {
                 _responseDto.isSuccess = true;
                 _responseDto.Message = message;
+                return BadRequest(_responseDto);
+            }
+            return Ok(_responseDto);
+        }
+
+        [HttpPost("AssignRole")]
+        public async Task<IActionResult> AssignRole([FromBody] RegisterDto registerDto)
+        {
+            var assignRole = await _authService.AssignRole(registerDto.Email,registerDto.Role.ToUpper());
+            if (!assignRole)
+            {
+                _responseDto.isSuccess = true;
+                _responseDto.Message = "Error occured";
                 return BadRequest(_responseDto);
             }
             return Ok(_responseDto);

@@ -23,6 +23,19 @@ public class AuthService : IAuthService
         this.jwtGenerator = jwtGenerator;
     }
 
+    public async Task<bool> AssignRole(string email, string roleName)
+    {
+        var user = appDbContext.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
+        if(user is not null) {
+            if(roleManager.RoleExistsAsync(roleName).GetAwaiter().GetResult()) {
+                roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
+            }
+            await userManager.AddToRoleAsync(user, roleName);
+            return true;
+        }
+        return false;
+    }
+
     public async Task<string> Login(LoginDto loginDto)
     {
         var user = appDbContext.Users.FirstOrDefault(u=>u.UserName.ToLower() == loginDto.UserName.ToLower());

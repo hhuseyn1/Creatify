@@ -46,7 +46,7 @@ public class AuthController : Controller
         }
         else
         {
-            ModelState.AddModelError("CustomError", responseDto.Message);
+            TempData["Error"] = responseDto.Message;
             return View(loginDto);
         }
     }
@@ -83,6 +83,11 @@ public class AuthController : Controller
 
             }
         }
+        else
+        {
+                TempData["Error"] = responseDto.Message;
+        }
+
         var roleList = new List<SelectListItem>()
         {
             new SelectListItem{Text = StaticDetails.RoleAdmin, Value = StaticDetails.RoleAdmin },
@@ -118,6 +123,9 @@ public class AuthController : Controller
 
         identity.AddClaim(new Claim(ClaimTypes.Name,
             jwt.Claims.FirstOrDefault(U => U.Type == JwtRegisteredClaimNames.Email).Value));
+
+        identity.AddClaim(new Claim(ClaimTypes.Role,
+            jwt.Claims.FirstOrDefault(U => U.Type == "role").Value));
 
         var principal = new ClaimsPrincipal(identity);
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);

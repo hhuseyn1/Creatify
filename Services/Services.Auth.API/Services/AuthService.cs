@@ -1,6 +1,4 @@
-﻿using Creatify.Web.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Query.Internal;
+﻿using Microsoft.AspNetCore.Identity;
 using Services.Auth.API.Data;
 using Services.Auth.API.Models;
 using Services.Auth.API.Models.Dto;
@@ -48,7 +46,8 @@ public class AuthService : IAuthService
             return new Creatify.Web.Models.LoginResponseDto() {Token = "" , User = null };
         }
 
-        var token = jwtGenerator.GenerateToken(user);
+        var roles = await userManager.GetRolesAsync(user);
+        var token = jwtGenerator.GenerateToken(user,roles);
 
         Creatify.Web.Models.UserDto userDto = new()
         {

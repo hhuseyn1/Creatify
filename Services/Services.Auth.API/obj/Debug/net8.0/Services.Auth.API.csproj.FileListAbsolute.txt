@@ -145,3 +145,11 @@ C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Serv
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\ref\Services.Auth.API.dll
 C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.BEC7EB21.Up2Date
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.deps.json
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.runtimeconfig.json
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.staticwebassets.runtime.json
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.exe
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Services.Auth.API.staticwebassets.runtime.json
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.dll
+C:\Users\husey\Desktop\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.Web.pdb

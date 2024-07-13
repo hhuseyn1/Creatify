@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Creatify.Web.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Services.Auth.API.Data;
 using Services.Auth.API.Models;
@@ -36,18 +37,34 @@ public class AuthService : IAuthService
         return false;
     }
 
-    public async Task<string> Login(LoginDto loginDto)
+    public async Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto)
     {
         var user = appDbContext.Users.FirstOrDefault(u=>u.UserName.ToLower() == loginDto.UserName.ToLower());
 
         bool isValid = await userManager.CheckPasswordAsync(user, loginDto.Password);
 
         if(user is null || isValid is false)
-            return string.Empty;
+        {
+            return new Creatify.Web.Models.LoginResponseDto() {Token = "" , User = null };
+        }
 
         var token = jwtGenerator.GenerateToken(user);
 
-        return token;
+        Creatify.Web.Models.UserDto userDto = new()
+        {
+            Email = user.Email,
+            Name = user.Name,
+            PhoneNumber = user.PhoneNumber,
+            Id = user.Id
+        };
+
+        Creatify.Web.Models.LoginResponseDto loginResponseDto = new()
+        {
+            Token = token,
+            User = userDto
+        };
+
+        return loginResponseDto;
     }
 
     public async Task<string> Register(RegisterDto registerDto)
@@ -67,7 +84,7 @@ public class AuthService : IAuthService
             if(result.Succeeded) 
             {
                 var user = appDbContext.AppUsers.First(u=> u.UserName == registerDto.Email);
-                UserDto userDto = new()
+                Creatify.Web.Models.UserDto userDto = new()
                 {
                     Id = user.Id,
                     Email = user.Email,

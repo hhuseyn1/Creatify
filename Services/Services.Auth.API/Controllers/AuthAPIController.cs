@@ -21,7 +21,7 @@ namespace Services.Auth.API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
             var login = await _authService.Login(loginDto);
-            if (string.IsNullOrEmpty(login))
+            if (string.IsNullOrEmpty(login.ToString()))
             {
                 _responseDto.isSuccess = false;
                 _responseDto.Message = "Username or password is incorrect!";

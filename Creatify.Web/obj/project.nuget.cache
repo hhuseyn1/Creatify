@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YvlKEcX/w7k=",
+  "dgSpecHash": "YJpCTxESaeg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\husey\\Desktop\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
+  "projectFilePath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",

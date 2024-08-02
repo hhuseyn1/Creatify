@@ -8,9 +8,9 @@ namespace Creatify.Web.Controllers;
 
 public class CouponController : Controller
 {
-    private readonly ICouponService service;
+    private readonly IProductService service;
 
-    public CouponController(ICouponService service)
+    public CouponController(IProductService service)
     {
         this.service = service;
     }

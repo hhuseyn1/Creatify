@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj": {}
+    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj": {
+    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
+        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
         "projectName": "Services.Coupon.API",
-        "projectPath": "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
+        "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
         "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Coupon.API\\obj\\",
+        "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Coupon.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

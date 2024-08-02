@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ky9QE9NUUFk=",
+  "dgSpecHash": "AYvTWTFoMAk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\husey\\Desktop\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
+  "projectFilePath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\husey\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

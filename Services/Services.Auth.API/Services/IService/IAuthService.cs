@@ -4,7 +4,7 @@ namespace Services.Auth.API.Services.IAuth;
 
 public interface IAuthService
 {
-    Task<string> Register(RegisterDto registerDto);
-    Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto);
-    Task<bool> AssignRole(string email, string roleName);
+	Task<string> Register(RegisterDto registerDto);
+	Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto);
+	Task<bool> AssignRole(string email, string roleName);
 }

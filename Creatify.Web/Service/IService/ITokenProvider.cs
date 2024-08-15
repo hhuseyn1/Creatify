@@ -2,7 +2,7 @@
 
 public interface ITokenProvider
 {
-    void SetToken(string token);
-    string? GetToken();
-    void ClearToken();
+	void SetToken(string token);
+	string? GetToken();
+	void ClearToken();
 }

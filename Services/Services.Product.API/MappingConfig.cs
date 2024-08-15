@@ -5,12 +5,12 @@ namespace Services.Product.API;
 
 public class MappingConfig
 {
-    public static MapperConfiguration RegisterMappings()
-    {
-        var mapCongif = new MapperConfiguration(config =>
-        {
-            config.CreateMap<ProductDto,Models.Product>().ReverseMap();
-        });
-        return mapCongif;
-    }
+	public static MapperConfiguration RegisterMappings()
+	{
+		var mapCongif = new MapperConfiguration(config =>
+		{
+			config.CreateMap<ProductDto, Models.Product>().ReverseMap();
+		});
+		return mapCongif;
+	}
 }

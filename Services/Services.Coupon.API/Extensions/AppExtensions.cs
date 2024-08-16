@@ -11,7 +11,7 @@ public static class AppExtensions
 		var apiSettings = builder.Configuration.GetSection("ApiSettings");
 
 		var secret = apiSettings.GetValue<string>("Secret");
-		var issuer = apiSettings.GetValue<string>("Isuuer");
+		var issuer = apiSettings.GetValue<string>("Issuer");
 		var audience = apiSettings.GetValue<string>("Audience");
 
 		var key = Encoding.ASCII.GetBytes(secret);

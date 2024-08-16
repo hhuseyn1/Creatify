@@ -10,9 +10,9 @@ public static class AppExtensions
 	{
 		var apiSettings = builder.Configuration.GetSection("ApiSettings");
 
-		var secret = apiSettings.GetValue<string>("Secret");
-		var issuer = apiSettings.GetValue<string>("Isuuer");
+		var issuer = apiSettings.GetValue<string>("Issuer");
 		var audience = apiSettings.GetValue<string>("Audience");
+		var secret = apiSettings.GetValue<string>("Secret");
 
 		var key = Encoding.ASCII.GetBytes(secret);
 
@@ -24,11 +24,12 @@ public static class AppExtensions
 		{
 			x.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
 			{
-				ValidateIssuerSigningKey = true,
+				ValidIssuer = issuer,
+				ValidAudience = audience,
 				IssuerSigningKey = new SymmetricSecurityKey(key),
 				ValidateIssuer = true,
-				ValidAudience = audience,
-				ValidateAudience = true
+				ValidateAudience = true,
+				ValidateIssuerSigningKey = true
 			};
 		});
 

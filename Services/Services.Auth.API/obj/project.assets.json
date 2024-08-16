@@ -1806,6 +1806,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.1",
           "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
         },

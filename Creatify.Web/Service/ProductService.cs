@@ -12,26 +12,6 @@ public class ProductService : IProductService
 	{
 		_baseService = baseService;
 	}
-
-	public async Task<ResponseDto> CreateProductAsync(ProductDto ProductDto)
-	{
-		return await _baseService.SendAsync(new()
-		{
-			APIType = StaticDetails.APIType.POST,
-			Data = ProductDto,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/AddProduct"
-		});
-	}
-
-	public async Task<ResponseDto> DeleteProductAsync(Guid id)
-	{
-		return await _baseService.SendAsync(new()
-		{
-			APIType = StaticDetails.APIType.DELETE,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/DeleteProductbyId/" + id
-		});
-	}
-
 	public async Task<ResponseDto> GetAllProductsAsync()
 	{
 		return await _baseService.SendAsync(new()
@@ -46,7 +26,7 @@ public class ProductService : IProductService
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/GetProductbyCode/" + ProductCode
+			Url = StaticDetails.ProductAPIBase + "/api/Product/GetProductByCode/" + ProductCode
 		});
 	}
 
@@ -55,7 +35,26 @@ public class ProductService : IProductService
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/" + id
+			Url = StaticDetails.ProductAPIBase + "/api/Product/GetProductById/" + id
+		});
+	}
+
+	public async Task<ResponseDto> CreateProductAsync(ProductDto ProductDto)
+	{
+		return await _baseService.SendAsync(new()
+		{
+			APIType = StaticDetails.APIType.POST,
+			Data = ProductDto,
+			Url = StaticDetails.ProductAPIBase + "/api/Product/CreateProduct"
+		});
+	}
+
+	public async Task<ResponseDto> DeleteProductAsync(Guid id)
+	{
+		return await _baseService.SendAsync(new()
+		{
+			APIType = StaticDetails.APIType.DELETE,
+			Url = StaticDetails.ProductAPIBase + "/api/Product/DeleteProductbyId/" + id
 		});
 	}
 
@@ -65,7 +64,7 @@ public class ProductService : IProductService
 		{
 			APIType = StaticDetails.APIType.PUT,
 			Data = ProductDto,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/EditProduct"
+			Url = StaticDetails.ProductAPIBase + "/api/Product/EditProduct" 
 		});
 	}
 }

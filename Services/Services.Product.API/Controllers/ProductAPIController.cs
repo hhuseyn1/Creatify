@@ -8,6 +8,7 @@ using Services.Product.API.Models.DTOs;
 namespace Services.Product.API.Controllers;
 
 [Route("api/product")]
+[Authorize(Roles = "ADMIN")]
 [ApiController]
 public class ProductAPIController : ControllerBase
 {
@@ -40,8 +41,8 @@ public class ProductAPIController : ControllerBase
 	}
 
 	[HttpGet]
-	[Route("{id:guid}")]
-	public ResponseDto GetProductbyId(Guid id)
+	[Route("GetProductById/{id}")]
+	public ResponseDto GetProductById(Guid id)
 	{
 		try
 		{
@@ -58,7 +59,7 @@ public class ProductAPIController : ControllerBase
 
 
 	[HttpPost]
-	[Route("AddProduct")]
+	[Route("CreateProduct")]
 	[Authorize(Roles = "ADMIN")]
 	public ResponseDto AddProduct([FromBody] ProductDto ProductDto)
 	{

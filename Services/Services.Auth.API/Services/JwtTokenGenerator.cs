@@ -35,7 +35,7 @@ namespace Services.Auth.API.Services
 			{
 				Audience = _jwtOptions.Audience,
 				IssuedAt = DateTime.UtcNow,
-				Issuer = _jwtOptions.Isuuer,
+				Issuer = _jwtOptions.Issuer,
 				Subject = new ClaimsIdentity(claims),
 				Expires = DateTime.UtcNow.AddMinutes(15),
 				SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

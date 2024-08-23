@@ -1045,7 +1045,10 @@
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
         },
         "runtime": {
-          "Creatify.Web.dll": {}
+          "Creatify.Web.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

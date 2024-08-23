@@ -7,17 +7,17 @@ namespace Creatify.Web.Controllers;
 
 public class ProductController : Controller
 {
-	private readonly IProductService _service;
+	private readonly IProductService _productService;
 
-	public ProductController(IProductService service)
+	public ProductController(IProductService productService)
 	{
-		this._service = service;
+		this._productService = productService;
 	}
 
 	public async Task<IActionResult> ProductIndex()
 	{
 		List<ProductDto> list = new();
-		ResponseDto responseDto = await _service.GetAllProductsAsync();
+		ResponseDto responseDto = await _productService.GetAllProductsAsync();
 		if (responseDto.isSuccess && responseDto != null)
 			list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(responseDto.Result));
 		else
@@ -36,7 +36,7 @@ public class ProductController : Controller
 	{
 		if (ModelState.IsValid)
 		{
-			ResponseDto? responseDto = await _service.CreateProductAsync(ProductDto);
+			ResponseDto? responseDto = await _productService.CreateProductAsync(ProductDto);
 			if (responseDto.isSuccess && responseDto != null)
 			{
 				TempData["success"] = "Product created successfully!";
@@ -50,7 +50,7 @@ public class ProductController : Controller
 
     public async Task<IActionResult> ProductDelete(Guid id)
     {
-        ResponseDto? responseDto = await _service.GetProductByIdAsync(id);
+        ResponseDto? responseDto = await _productService.GetProductByIdAsync(id);
         if (responseDto.isSuccess && responseDto != null)
         {
 			ProductDto? model = JsonConvert.DeserializeObject<ProductDto>(responseDto.Result.ToString());
@@ -64,7 +64,7 @@ public class ProductController : Controller
     [HttpPost]
 	public async Task<IActionResult> ProductDelete(ProductDto product)
 	{
-		ResponseDto? responseDto = await _service.DeleteProductAsync(product.Id);
+		ResponseDto? responseDto = await _productService.DeleteProductAsync(product.Id);
 		if (responseDto.isSuccess && responseDto != null)
 		{
 			TempData["success"] = "Product deleted successfully!";
@@ -77,7 +77,7 @@ public class ProductController : Controller
 
     public async Task<IActionResult> ProductEdit(Guid id)
     {
-        ResponseDto? responseDto = await _service.GetProductByIdAsync(id);
+        ResponseDto? responseDto = await _productService.GetProductByIdAsync(id);
         if (responseDto.isSuccess && responseDto != null)
         {
             ProductDto? model = JsonConvert.DeserializeObject<ProductDto>(responseDto.Result.ToString());
@@ -91,7 +91,7 @@ public class ProductController : Controller
     [HttpPost]
     public async Task<IActionResult> ProductEdit(ProductDto product)
     {
-        ResponseDto? responseDto = await _service.UpdateProductAsync(product);
+        ResponseDto? responseDto = await _productService.UpdateProductAsync(product);
         if (responseDto.isSuccess && responseDto != null)
         {
             TempData["success"] = "Product updated successfully!";

@@ -8,7 +8,6 @@ using Services.Product.API.Models.DTOs;
 namespace Services.Product.API.Controllers;
 
 [Route("api/product")]
-[Authorize(Roles = "ADMIN")]
 [ApiController]
 public class ProductAPIController : ControllerBase
 {

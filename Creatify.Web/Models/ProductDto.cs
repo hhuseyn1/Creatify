@@ -1,4 +1,6 @@
-﻿namespace Creatify.Web.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Creatify.Web.Models;
 
 public class ProductDto
 {
@@ -8,4 +10,6 @@ public class ProductDto
 	public string Description { get; set; }
 	public string CategoryName { get; set; }
 	public string ImageUrl { get; set; }
+	[Range(1,100)]
+    public int Count { get; set; }
 }

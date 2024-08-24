@@ -41,11 +41,11 @@ public class CouponAPIController : ControllerBase
 
 	[HttpGet]
 	[Route("{id:int}")]
-	public ResponseDto GetCouponbyId(int id)
+	public ResponseDto GetCouponbyId(string id)
 	{
 		try
 		{
-			Models.Coupon obj = _context.Coupons.First(u => u.Id == id);
+			Models.Coupon obj = _context.Coupons.First(u => u.Id.ToString() == id);
 			_response.Result = _mapper.Map<CouponDto>(obj);
 		}
 		catch (Exception ex)
@@ -118,11 +118,11 @@ public class CouponAPIController : ControllerBase
 	[HttpDelete]
 	[Authorize(Roles = "ADMIN")]
 	[Route("DeleteCouponbyId/{id}")]
-	public ResponseDto DeleteCouponbyId(int id)
+	public ResponseDto DeleteCouponbyId(string id)
 	{
 		try
 		{
-			Models.Coupon obj = _context.Coupons.First(u => u.Id == id);
+			Models.Coupon obj = _context.Coupons.First(u => u.Id.ToString() == id);
 			_context.Remove(obj);
 			_context.SaveChanges();
 

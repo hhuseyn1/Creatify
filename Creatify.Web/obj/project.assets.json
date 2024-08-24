@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "IdentityModel/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".xml;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".xml;.pdb"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.1": {
         "type": "package",
         "dependencies": {
@@ -149,6 +162,31 @@
     }
   },
   "libraries": {
+    "IdentityModel/7.0.0": {
+      "sha512": "to99aLL5Gev1GOb2gUao/UZXT/uXMyjEmHPNrf/vJI2HBD1LMCTeC4SBCe/cqMIB12V9v+eSieq7ff0lju9pOQ==",
+      "type": "package",
+      "path": "identitymodel/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.jpg",
+        "identitymodel.7.0.0.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net462/IdentityModel.dll",
+        "lib/net462/IdentityModel.pdb",
+        "lib/net462/IdentityModel.xml",
+        "lib/net472/IdentityModel.dll",
+        "lib/net472/IdentityModel.pdb",
+        "lib/net472/IdentityModel.xml",
+        "lib/net6.0/IdentityModel.dll",
+        "lib/net6.0/IdentityModel.pdb",
+        "lib/net6.0/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.1": {
       "sha512": "6xI3L6n8ucpUSkVn0Ax0MOtSJKIT6lrIkYGxIRda9LgmAjOFS3wPj2J2Y75dGUFkgTgpxPNq9K0oDCMPS2zBMg==",
       "type": "package",
@@ -358,6 +396,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "IdentityModel >= 7.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.1",
       "Newtonsoft.Json >= 13.0.3",
       "System.IdentityModel.Tokens.Jwt >= 7.1.2"
@@ -413,6 +452,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "IdentityModel": {
+            "target": "Package",
+            "version": "[7.0.0, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.0.1, )"

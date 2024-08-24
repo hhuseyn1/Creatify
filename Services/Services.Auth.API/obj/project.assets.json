@@ -88,6 +88,19 @@
           }
         }
       },
+      "IdentityModel/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".xml;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/IdentityModel.dll": {
+            "related": ".xml;.pdb"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.1": {
         "type": "package",
         "dependencies": {
@@ -1806,6 +1819,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "IdentityModel": "7.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.1",
           "Newtonsoft.Json": "13.0.3",
           "System.IdentityModel.Tokens.Jwt": "7.1.2"
@@ -1906,6 +1920,31 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "IdentityModel/7.0.0": {
+      "sha512": "to99aLL5Gev1GOb2gUao/UZXT/uXMyjEmHPNrf/vJI2HBD1LMCTeC4SBCe/cqMIB12V9v+eSieq7ff0lju9pOQ==",
+      "type": "package",
+      "path": "identitymodel/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.jpg",
+        "identitymodel.7.0.0.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net462/IdentityModel.dll",
+        "lib/net462/IdentityModel.pdb",
+        "lib/net462/IdentityModel.xml",
+        "lib/net472/IdentityModel.dll",
+        "lib/net472/IdentityModel.pdb",
+        "lib/net472/IdentityModel.xml",
+        "lib/net6.0/IdentityModel.dll",
+        "lib/net6.0/IdentityModel.pdb",
+        "lib/net6.0/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/8.0.1": {

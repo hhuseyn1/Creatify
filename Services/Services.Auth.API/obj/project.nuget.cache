@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "12bma3A4Oh4=",
+  "dgSpecHash": "giH/s/3IfqI=",
   "success": true,
   "projectFilePath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\husey\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\husey\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.1\\microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.1\\microsoft.aspnetcore.cryptography.internal.8.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.1\\microsoft.aspnetcore.cryptography.keyderivation.8.0.1.nupkg.sha512",

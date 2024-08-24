@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cIcCQCAI8WI=",
+  "dgSpecHash": "uVma1gFdSUA=",
   "success": true,
   "projectFilePath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\husey\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.1\\microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",

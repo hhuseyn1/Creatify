@@ -5,7 +5,7 @@ namespace Services.Coupon.API.Models;
 public class Coupon
 {
 	[Key]
-	public int Id { get; set; }
+	public Guid Id { get; set; }
 	[Required]
 	public string CouponCode { get; set; }
 	[Required]

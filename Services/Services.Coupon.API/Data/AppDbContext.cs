@@ -16,7 +16,7 @@ public class AppDbContext : DbContext
 
 		modelBuilder.Entity<Models.Coupon>().HasData(new Models.Coupon
 		{
-			Id = 1,
+			Id = Guid.NewGuid(),
 			CouponCode = "10OFF",
 			DiscountAmount = 10,
 			MinAmount = 20
@@ -24,8 +24,8 @@ public class AppDbContext : DbContext
 
 		modelBuilder.Entity<Models.Coupon>().HasData(new Models.Coupon
 		{
-			Id = 2,
-			CouponCode = "10OFF",
+			Id = Guid.NewGuid(),
+			CouponCode = "10OFD",
 			DiscountAmount = 30,
 			MinAmount = 60
 		});

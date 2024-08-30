@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Services.Product.API.Models.DTOs;
+using Services.Product.API.Models.Dto;
 
 namespace Services.Product.API;
 

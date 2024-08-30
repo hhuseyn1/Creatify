@@ -1,0 +1,13 @@
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\bin\Debug\net8.0\Creatify.MessageBus.deps.json
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\bin\Debug\net8.0\Creatify.MessageBus.dll
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\bin\Debug\net8.0\Creatify.MessageBus.pdb
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.csproj.AssemblyReference.cache
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.AssemblyInfoInputs.cache
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.AssemblyInfo.cs
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.csproj.CoreCompileInputs.cache
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.sourcelink.json
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.dll
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\refint\Creatify.MessageBus.dll
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\Creatify.MessageBus.pdb
+C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\obj\Debug\net8.0\ref\Creatify.MessageBus.dll

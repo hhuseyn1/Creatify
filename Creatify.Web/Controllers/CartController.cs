@@ -1,5 +1,7 @@
 ﻿using Creatify.Web.Models;
+using Creatify.Web.Models.Dto;
 using Creatify.Web.Service.IService;
+using Creatify.Web.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -10,16 +12,69 @@ namespace Creatify.Web.Controllers;
 public class CartController : Controller
 {
     private readonly ICartService _cartService;
+    private readonly IOrderService _orderService;
 
-    public CartController(ICartService cartService)
+    public CartController(ICartService cartService, IOrderService orderService)
     {
         this._cartService = cartService;
+        this._orderService = orderService;
     }
 
     [Authorize]
     public async Task<IActionResult> CartIndex()
     {
         return View(await LoadCartDtoBasedOnLoggedInUser());
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Checkout()
+    {
+        return View(await LoadCartDtoBasedOnLoggedInUser());
+    }
+
+    [HttpPost]
+    [ActionName("Checkout")]
+    public async Task<IActionResult> Checkout(CartDto cartDto)
+    {
+        CartDto cart = await LoadCartDtoBasedOnLoggedInUser();
+        cart.CartHeader.Fullname = cartDto.CartHeader.Fullname;
+        cart.CartHeader.Email = cartDto.CartHeader.Email;
+        cart.CartHeader.Phone = cartDto.CartHeader.Phone;
+
+        var response = await _orderService.CreateOrder(cart);
+        OrderHeaderDto orderHeaderDto = JsonConvert.DeserializeObject<OrderHeaderDto>(Convert.ToString(response.Result));
+
+        if (response != null && response.isSuccess)
+        {
+            var domain = Request.Scheme + "://" + Request.Host.Value + "/";
+            StripeRequestDto requestDto = new()
+            {
+                ApprovedUrl = domain + "cart/Confirmation?orderId=" + orderHeaderDto.OrderHeaderId,
+                CancelUrl = domain + "cart/checkout",
+                OrderHeader = orderHeaderDto
+            };
+            var stripeResponse = await _orderService.CreateStripeSession(requestDto);
+            StripeRequestDto stripeResponseResult = JsonConvert.DeserializeObject<StripeRequestDto>(Convert.ToString(stripeResponse.Result));
+            Response.Headers.Add("Location", stripeResponseResult.StripeSessionUrl);
+            return new StatusCodeResult(303);
+        }
+        return View();
+    }
+
+    public async Task<IActionResult> Confirmation(string orderId)
+    {
+        ResponseDto response = await _orderService.ValidateStripeSession(orderId);
+
+        if (response != null && response.isSuccess)
+        {
+            OrderHeaderDto orderHeaderDto = JsonConvert.DeserializeObject<OrderHeaderDto>(Convert.ToString(response.Result));
+            if (orderHeaderDto.Status == StaticDetails.Status_Approved)
+            {
+                return View(orderId);
+            }
+        }
+        //redirect to some error page
+        return View(orderId);
     }
 
     public async Task<IActionResult> Remove(string cartDetailsId)
@@ -49,6 +104,21 @@ public class CartController : Controller
     }
 
     [HttpPost]
+    public async Task<IActionResult> EmailCart(CartDto cartDto)
+    {
+        CartDto cart = await LoadCartDtoBasedOnLoggedInUser();
+        cart.CartHeader.Email = User.Claims.Where(u => u.Type == JwtRegisteredClaimNames.Email)?.FirstOrDefault()?.Value;
+        ResponseDto response = await _cartService.EmailCart(cartDto);
+
+        if (response != null && response.isSuccess)
+        {
+            TempData["success"] = "Email will be processed and send shortly.";
+            return RedirectToAction(nameof(CartIndex));
+        }
+        return View();
+    }
+
+    [HttpPost]
     public async Task<IActionResult> RemoveCoupon(CartDto cartDto)
     {
         cartDto.CartHeader.CouponCode = "";
@@ -64,7 +134,7 @@ public class CartController : Controller
 
     private async Task<CartDto> LoadCartDtoBasedOnLoggedInUser()
     {
-        var userId = User.Claims.Where(u=>u.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
+        var userId = User.Claims.Where(u => u.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
         ResponseDto response = await _cartService.GetCartbyUserIdAsync(userId);
 
         if (response != null && response.isSuccess)

@@ -308,3 +308,10 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Debug\ne
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\Services.Auth.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\ref\Services.Auth.API.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\IdentityModel.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Azure.Core.Amqp.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Azure.Messaging.ServiceBus.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Microsoft.Azure.Amqp.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.MessageBus.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\Creatify.MessageBus.pdb

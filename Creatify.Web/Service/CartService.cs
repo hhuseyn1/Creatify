@@ -23,6 +23,16 @@ public class CartService : ICartService
         });
     }
 
+    public async Task<ResponseDto?> EmailCart(CartDto cartDto)
+    {
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.POST,
+            Data = cartDto,
+            Url = StaticDetails.CouponAPIBase + "/api/cart/EmailCartRequest"
+        });
+    }
+
     public async Task<ResponseDto?> GetCartbyUserIdAsync(string userId)
     {
         return await _baseService.SendAsync(new()

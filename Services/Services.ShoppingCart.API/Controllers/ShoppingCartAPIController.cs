@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Creatify.MessageBus;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services.ShoppingCart.API.Data;
@@ -17,13 +18,17 @@ public class ShoppingCartAPIController : ControllerBase
     private readonly AppDbContext _appDbContext;
     private readonly IProductService _productService;
     private readonly ICouponService _couponService;
-    public ShoppingCartAPIController(AppDbContext appDbContext, IMapper mapper, IProductService productService, ICouponService couponService)
+    private readonly IMessageBus _messageBus;
+    private readonly IConfiguration _configuration;
+    public ShoppingCartAPIController(AppDbContext appDbContext, IMapper mapper, IProductService productService, ICouponService couponService, IMessageBus messageBus, IConfiguration configuration)
     {
         this._appDbContext = appDbContext;
         this._responseDto = new ResponseDto();
         this._mapper = mapper;
         this._productService = productService;
         this._couponService = couponService;
+        this._messageBus = messageBus;
+        this._configuration = configuration;
     }
 
     [HttpPost("GetCardbyUserId/{userId}")]
@@ -80,6 +85,23 @@ public class ShoppingCartAPIController : ControllerBase
 
         }
         catch (Exception ex) 
+        {
+            _responseDto.isSuccess = false;
+            _responseDto.Message = ex.ToString();
+        }
+        return _responseDto;
+    }
+
+    [HttpPost("EmailCartRequest")]
+    public async Task<object> EmailCartRequest([FromForm] CartDto cartDto)
+    {
+        try
+        {
+            await _messageBus.PublishMessage(cartDto,_configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
+            _responseDto.Result = true;
+
+        }
+        catch (Exception ex)
         {
             _responseDto.isSuccess = false;
             _responseDto.Message = ex.ToString();

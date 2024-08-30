@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Creatify.MessageBus;
+using Microsoft.AspNetCore.Mvc;
 using Services.Auth.API.Models.Dto;
 using Services.Auth.API.Services.IAuth;
 
@@ -9,14 +10,18 @@ namespace Services.Auth.API.Controllers;
 public class AuthAPIController : ControllerBase
 {
 	private readonly IAuthService _authService;
+	private readonly IMessageBus _messageBus;
+	private readonly IConfiguration _configuration;
 	protected ResponseDto _responseDto;
-	public AuthAPIController(IAuthService authService)
-	{
-		_authService = authService;
-		_responseDto = new();
-	}
+    public AuthAPIController(IAuthService authService, IMessageBus messageBus, IConfiguration configuration)
+    {
+        _authService = authService;
+        _responseDto = new();
+        _messageBus = messageBus;
+        _configuration = configuration;
+    }
 
-	[HttpPost("login")]
+    [HttpPost("login")]
 	public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
 	{
 		var login = await _authService.Login(loginDto);
@@ -40,6 +45,7 @@ public class AuthAPIController : ControllerBase
 			_responseDto.Message = message;
 			return BadRequest(_responseDto);
 		}
+		await _messageBus.PublishMessage(registerDto.Email,_configuration.GetValue<string>("TopicAndQueueNames:RegisterUserQueue"));
 		return Ok(_responseDto);
 	}
 

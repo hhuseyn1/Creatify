@@ -280,3 +280,5 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\ref\Services.Coupon.API.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Stripe.net.dll

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zC8tC/cTILU25JkaDv/pMMEQDzyfPnstk8PTNMpcAEE=",
+  "Hash": "Ccwb4XALpbjEDAaYjsWqtDzquMIRdSfHc9qoWbOY1Ns=",
   "Source": "Services.Auth.API",
   "BasePath": "_content/Services.Auth.API",
   "Mode": "Default",
@@ -84,6 +84,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\images\\logo.png",
+      "SourceId": "Creatify.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\",
+      "BasePath": "_content/Creatify.Web",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\js\\site.js",

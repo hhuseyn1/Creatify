@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Product.API.Data;
-using Services.Product.API.Models.DTOs;
+using Services.Product.API.Models.Dto;
 
 
 namespace Services.Product.API.Controllers;

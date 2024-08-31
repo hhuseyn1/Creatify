@@ -33,6 +33,34 @@ public class OrderService : IOrderService
         });
     }
 
+    public async Task<ResponseDto?>? GetAllOrdersbyUserId(string userId)
+    {
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/order/GetAllOrdersbyUserId/" + userId
+        });
+    }
+
+    public async Task<ResponseDto?>? GetOrdersbyId(string id)
+    {
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.GET,
+            Url = StaticDetails.CouponAPIBase + "/api/order/GetOrdersbyId/" + id
+        });
+    }
+
+    public async Task<ResponseDto?> UpdateOrderStatus(string orderId, string newStatus)
+    {
+        return await _baseService.SendAsync(new()
+        {
+            APIType = StaticDetails.APIType.PUT,
+            Data= newStatus,
+            Url = StaticDetails.CouponAPIBase + "/api/order/UpdateOrderStatus/" + orderId
+        });
+    }
+
     public async Task<ResponseDto?> ValidateStripeSession(string orderHeaderId)
     {
         return await _baseService.SendAsync(new()

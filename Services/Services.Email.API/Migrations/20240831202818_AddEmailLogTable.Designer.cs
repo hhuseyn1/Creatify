@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Services.Reward.API.Data;
+using Services.Email.API.Data;
 
 #nullable disable
 
-namespace Services.Reward.API.Migrations
+namespace Services.Email.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240830074114_AddRewardTable")]
-    partial class AddRewardTable
+    [Migration("20240831202818_AddEmailLogTable")]
+    partial class AddEmailLogTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,28 +25,26 @@ namespace Services.Reward.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Services.Reward.API.Models.Rewards", b =>
+            modelBuilder.Entity("Services.Email.API.Models.EmailLogger", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("RewardsActivity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("RewardsDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("orderId")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("userId")
+                    b.Property<DateTime?>("EmailSent")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Message")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rewards");
+                    b.ToTable("EmailLoggers");
                 });
 #pragma warning restore 612, 618
         }

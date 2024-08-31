@@ -24,22 +24,21 @@ namespace Services.Order.API.Migrations
 
             modelBuilder.Entity("Services.Order.API.Models.OrderDetails", b =>
                 {
-                    b.Property<string>("OrderDetailsId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("OrderDetailsId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<string>("OrderHeaderId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("OrderHeaderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("ProductId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -54,8 +53,9 @@ namespace Services.Order.API.Migrations
 
             modelBuilder.Entity("Services.Order.API.Models.OrderHeader", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CouponCode")
                         .HasColumnType("nvarchar(max)");
@@ -75,8 +75,8 @@ namespace Services.Order.API.Migrations
                     b.Property<double>("OrderTotal")
                         .HasColumnType("float");
 
-                    b.Property<string>("PaymentIntentId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("PaymentIntentId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
@@ -84,11 +84,11 @@ namespace Services.Order.API.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("StripeSessionId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("StripeSessionId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

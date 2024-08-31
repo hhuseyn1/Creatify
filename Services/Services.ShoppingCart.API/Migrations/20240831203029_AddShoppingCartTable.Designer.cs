@@ -12,8 +12,8 @@ using Services.ShoppingCart.API.Data;
 namespace Services.ShoppingCart.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240823155629_AddShoppingCartTables")]
-    partial class AddShoppingCartTables
+    [Migration("20240831203029_AddShoppingCartTable")]
+    partial class AddShoppingCartTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,8 +56,8 @@ namespace Services.ShoppingCart.API.Migrations
                     b.Property<string>("CouponCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

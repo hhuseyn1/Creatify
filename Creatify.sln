@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Email.API", "Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Order.API", "Services\Services.Order.API\Services.Order.API.csproj", "{E911D85A-21C9-48CD-A71D-3A29676A3EDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Reward.API", "Services\Services.Reward.API\Services.Reward.API.csproj", "{0A4C538A-84E7-4067-9FC8-10C995B999C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Reward.API", "Services\Services.Reward.API\Services.Reward.API.csproj", "{0A4C538A-84E7-4067-9FC8-10C995B999C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

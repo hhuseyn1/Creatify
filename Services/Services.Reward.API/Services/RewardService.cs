@@ -20,9 +20,9 @@ public class RewardService : IRewardService
         {
             Rewards rewards = new()
             {
-                orderId = rewardsMessage.OrderId,
+                OrderId = rewardsMessage.OrderId,
                 RewardsActivity = rewardsMessage.RewardActivity,
-                userId = rewardsMessage.UserId,
+                UserId = rewardsMessage.UserId,
                 RewardsDate = DateTime.Now
             };
             await using var _db = new AppDbContext(_dbOptions);

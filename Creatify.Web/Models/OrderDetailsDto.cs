@@ -2,9 +2,9 @@
 
 public class OrderDetailsDto
 {
-    public string OrderDetailsId { get; set; }
-    public string OrderHeaderId { get; set; }
-    public string ProductId { get; set; }
+    public Guid OrderDetailsId { get; set; }
+    public Guid OrderHeaderId { get; set; }
+    public Guid ProductId { get; set; }
     public ProductDto? Product { get; set; }
     public int Count { get; set; }
     public string ProductName { get; set; }

@@ -9,13 +9,13 @@
     "Parameters": [
       {
         "Name": "ProductDto",
-        "Type": "Services.Product.API.Models.DTOs.ProductDto",
+        "Type": "Services.Product.API.Models.Dto.ProductDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.Product.API.Models.DTOs.ResponseDto",
+        "Type": "Services.Product.API.Models.Dto.ResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -41,7 +41,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.Product.API.Models.DTOs.ResponseDto",
+        "Type": "Services.Product.API.Models.Dto.ResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,13 +61,13 @@
     "Parameters": [
       {
         "Name": "ProductDto",
-        "Type": "Services.Product.API.Models.DTOs.ProductDto",
+        "Type": "Services.Product.API.Models.Dto.ProductDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.Product.API.Models.DTOs.ResponseDto",
+        "Type": "Services.Product.API.Models.Dto.ResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -87,7 +87,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "Services.Product.API.Models.DTOs.ResponseDto",
+        "Type": "Services.Product.API.Models.Dto.ResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -113,7 +113,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Services.Product.API.Models.DTOs.ResponseDto",
+        "Type": "Services.Product.API.Models.Dto.ResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

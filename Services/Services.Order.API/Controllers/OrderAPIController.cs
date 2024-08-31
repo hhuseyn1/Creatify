@@ -2,6 +2,7 @@
 using Creatify.MessageBus;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Services.Order.API.Data;
 using Services.Order.API.Models;
 using Services.Order.API.Models.Dto;
@@ -9,6 +10,7 @@ using Services.Order.API.Service.IService;
 using Services.Order.API.Utility;
 using Stripe;
 using Stripe.Checkout;
+using System.Collections.Concurrent;
 
 namespace Services.Order.API.Controllers;
 
@@ -31,6 +33,50 @@ public class OrderAPIController : ControllerBase
         _responseDto = new ResponseDto();
         this._configuration = configuration;
     }
+
+
+    [Authorize]
+    [HttpGet("GetAllOrdersbyUserId/{userId}")]
+    public ResponseDto? GetAllOrdersbyUserId(Guid userId)
+    {
+        try
+        {
+            IEnumerable<OrderHeader> objList;
+            if (User.IsInRole(StaticDetails.RoleAdmin))
+            {
+                objList = _context.OrderHeaders.Include(x => x.OrderDetails).OrderByDescending(u => u.Id).ToList();
+            }
+            else
+            {
+                objList = _context.OrderHeaders.Include(x => x.OrderDetails).Where(u => u.UserId == userId).OrderByDescending(u => u.Id).ToList();
+            }
+            _responseDto.Result = _mapper.Map<IEnumerable<OrderHeaderDto>>(objList);
+        }
+        catch (Exception ex)
+        {
+            _responseDto.isSuccess = false;
+            _responseDto.Message = ex.Message.ToString();
+        }
+        return _responseDto;
+    }
+
+    [Authorize]
+    [HttpGet("GetOrdersbyId/{id}")]
+    public ResponseDto? GetOrdersbyId(Guid id)
+    {
+        try
+        {
+            OrderHeader orderHeader = _context.OrderHeaders.Include(u => u.OrderDetails).First(u => u.Id == id);
+            _responseDto.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
+        }
+        catch (Exception ex)
+        {
+            _responseDto.isSuccess = false;
+            _responseDto.Message = ex.Message.ToString();
+        }
+        return _responseDto;
+    }
+
 
     [Authorize]
     [HttpPost("CreateOrder")]
@@ -108,7 +154,7 @@ public class OrderAPIController : ControllerBase
             Session session = service.Create(options);
             requestDto.StripeSessionUrl = session.Url;
             OrderHeader orderHeader = _context.OrderHeaders.First(u => u.Id == requestDto.OrderHeader.OrderHeaderId);
-            orderHeader.StripeSessionId = session.Id;
+            orderHeader.StripeSessionId = Guid.Parse(session.Id);
             _context.SaveChanges();
             _responseDto.Result = requestDto;
         }
@@ -122,20 +168,20 @@ public class OrderAPIController : ControllerBase
 
     [Authorize]
     [HttpPost("ValidateStripeSession")]
-    public async Task<ResponseDto> ValidateStripeSession([FromBody] string orderHeaderId)
+    public async Task<ResponseDto> ValidateStripeSession([FromBody] Guid orderHeaderId)
     {
         try
         {
             OrderHeader orderHeader = _context.OrderHeaders.First(u => orderHeaderId == u.Id);
             var service = new Stripe.Checkout.SessionService();
-            Session session = service.Get(orderHeader.StripeSessionId);
+            Session session = service.Get(orderHeader.StripeSessionId.ToString());
 
             var paymentIntentService = new PaymentIntentService();
             PaymentIntent paymentIntent = paymentIntentService.Get(session.PaymentIntentId);
 
             if (paymentIntent.Status == "succeeded")
             {
-                orderHeader.PaymentIntentId = paymentIntent.Id;
+                orderHeader.PaymentIntentId = Guid.Parse(paymentIntent.Id);
                 orderHeader.Status = StaticDetails.Status_Approved;
                 _context.SaveChanges();
 
@@ -150,6 +196,39 @@ public class OrderAPIController : ControllerBase
                 _responseDto.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
             }
 
+        }
+        catch (Exception ex)
+        {
+            _responseDto.isSuccess = false;
+            _responseDto.Message = ex.Message.ToString();
+        }
+        return _responseDto;
+    }
+
+
+    [Authorize]
+    [HttpPut("UpdateOrderStatusbyId/{orderId}")]
+    public async Task<ResponseDto> UpdateOrderStatusbyId(Guid orderId, [FromBody] string newStatus)
+    {
+        try
+        {
+            OrderHeader orderHeader = _context.OrderHeaders.First(u => u.Id == orderId);
+            if (orderHeader != null)
+            {
+                if (newStatus == StaticDetails.Status_Cancelled)
+                {
+                    var options = new RefundCreateOptions
+                    {
+                        Reason = RefundReasons.RequestedByCustomer,
+                        PaymentIntent = orderHeader.PaymentIntentId.ToString()
+                    };
+
+                    var service = new RefundService();
+                    Refund refund = service.Create(options);
+                }
+                orderHeader.Status = newStatus;
+                _context.SaveChanges();
+            }
         }
         catch (Exception ex)
         {

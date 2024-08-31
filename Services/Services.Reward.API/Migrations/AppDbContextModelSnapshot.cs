@@ -24,8 +24,12 @@ namespace Services.Reward.API.Migrations
 
             modelBuilder.Entity("Services.Reward.API.Models.Rewards", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("RewardsActivity")
                         .HasColumnType("int");
@@ -33,13 +37,8 @@ namespace Services.Reward.API.Migrations
                     b.Property<DateTime>("RewardsDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("orderId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("userId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 

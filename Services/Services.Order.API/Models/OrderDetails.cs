@@ -5,11 +5,11 @@ namespace Services.Order.API.Models;
 
 public class OrderDetails
 {
-    public string OrderDetailsId { get; set; }
-    public string OrderHeaderId { get; set; }
+    public Guid OrderDetailsId { get; set; }
+    public Guid OrderHeaderId { get; set; }
     [ForeignKey("OrderHeaderId")]
     public OrderHeader? OrderHeader { get; set; }
-    public string ProductId { get; set; }
+    public Guid ProductId { get; set; }
     [NotMapped]
     public ProductDto? Product { get; set; }
     public int Count { get; set; }

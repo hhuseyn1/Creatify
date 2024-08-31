@@ -64,7 +64,7 @@ public class ProductController : Controller
     [HttpPost]
 	public async Task<IActionResult> ProductDelete(ProductDto product)
 	{
-		ResponseDto? responseDto = await _productService.DeleteProductAsync(product.Id);
+		ResponseDto? responseDto = await _productService.DeleteProductAsync(product.ProductId);
 		if (responseDto.isSuccess && responseDto != null)
 		{
 			TempData["success"] = "Product deleted successfully!";

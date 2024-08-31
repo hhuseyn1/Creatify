@@ -32,7 +32,7 @@ public class ShoppingCartAPIController : ControllerBase
     }
 
     [HttpPost("GetCardbyUserId/{userId}")]
-    public async Task<ResponseDto> GetCardbyUserId(string userId)
+    public async Task<ResponseDto> GetCardbyUserId(Guid userId)
     {
         try
         {
@@ -123,7 +123,7 @@ public class ShoppingCartAPIController : ControllerBase
                 _appDbContext.CartHeaders.Add(cartHeader);
                 await _appDbContext.SaveChangesAsync();
 
-                cartDto.CartDetails.First().CartHeaderId = cartHeader.Id.ToString();
+                cartDto.CartDetails.First().CartHeaderId = cartHeader.Id;
                 _appDbContext.CartDetails.Add(_mapper.Map<CartDetails>(cartDto.CartDetails.First()));
                 await _appDbContext.SaveChangesAsync();
             }
@@ -131,11 +131,11 @@ public class ShoppingCartAPIController : ControllerBase
             {
                 var cartDetailsFromDb = await _appDbContext.CartDetails.AsNoTracking()
                     .FirstOrDefaultAsync(u => u.ProductId == cartDto.CartDetails
-                    .First().ProductId && u.CartHeaderId == cartHeaderFromDb.Id.ToString());
+                    .First().ProductId && u.CartHeaderId == cartHeaderFromDb.Id);
 
                 if (cartDetailsFromDb == null)
                 {
-                    cartDto.CartDetails.First().CartHeaderId = cartHeaderFromDb.Id.ToString();
+                    cartDto.CartDetails.First().CartHeaderId = cartHeaderFromDb.Id;
                     _appDbContext.CartDetails.Add(_mapper.Map<CartDetails>(cartDto.CartDetails.First()));
                     await _appDbContext.SaveChangesAsync();
                 }
@@ -143,7 +143,7 @@ public class ShoppingCartAPIController : ControllerBase
                 {
                     cartDto.CartDetails.First().Count += cartDetailsFromDb.Count;
                     cartDto.CartDetails.First().CartHeaderId = cartDetailsFromDb.CartHeaderId;
-                    cartDto.CartDetails.First().CartDetailsId = cartDetailsFromDb.Id.ToString();
+                    cartDto.CartDetails.First().CartDetailsId = cartDetailsFromDb.Id;
                     _appDbContext.CartDetails.Update(_mapper.Map<CartDetails>(cartDto.CartDetails.First()));
                     await _appDbContext.SaveChangesAsync();
                 }
@@ -160,18 +160,18 @@ public class ShoppingCartAPIController : ControllerBase
 
 
     [HttpPost("RemoveCartbyId/{cartDetailsId}")]
-    public async Task<ResponseDto> RemoveCartbyId(string cartDetailsId)
+    public async Task<ResponseDto> RemoveCartbyId(Guid cartDetailsId)
     {
         try
         {
-            CartDetails cartDetails = _appDbContext.CartDetails.First(u => u.Id.ToString() == cartDetailsId);
+            CartDetails cartDetails = _appDbContext.CartDetails.First(u => u.Id == cartDetailsId);
 
             int totalCountCartItems = _appDbContext.CartDetails.Where(u => u.CartHeaderId == cartDetails.CartHeaderId).Count();
 
             _appDbContext.CartDetails.Remove(cartDetails);
             if (totalCountCartItems == 1)
             {
-                var cartHeadertoRemove = await _appDbContext.CartHeaders.FirstOrDefaultAsync(u => u.Id.ToString() == cartDetails.CartHeaderId);
+                var cartHeadertoRemove = await _appDbContext.CartHeaders.FirstOrDefaultAsync(u => u.Id == cartDetails.CartHeaderId);
                 _appDbContext.CartHeaders.Remove(cartHeadertoRemove);
             }
             await _appDbContext.SaveChangesAsync();

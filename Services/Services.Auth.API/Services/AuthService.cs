@@ -56,7 +56,7 @@ public class AuthService : IAuthService
 			Email = user.Email,
 			Name = user.Name,
 			PhoneNumber = user.PhoneNumber,
-			Id = user.Id
+			UserId = Guid.Parse(user.Id)
 		};
 
 		Creatify.Web.Models.LoginResponseDto loginResponseDto = new()
@@ -87,7 +87,7 @@ public class AuthService : IAuthService
 				var user = appDbContext.AppUsers.First(u => u.UserName == registerDto.Email);
 				Creatify.Web.Models.UserDto userDto = new()
 				{
-					Id = user.Id,
+					UserId = Guid.Parse(user.Id),
 					Email = user.Email,
 					Name = user.Name,
 					PhoneNumber = user.PhoneNumber

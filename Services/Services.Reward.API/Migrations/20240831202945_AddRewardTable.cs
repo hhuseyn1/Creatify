@@ -15,11 +15,11 @@ namespace Services.Reward.API.Migrations
                 name: "Rewards",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    userId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     RewardsDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RewardsActivity = table.Column<int>(type: "int", nullable: false),
-                    orderId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {

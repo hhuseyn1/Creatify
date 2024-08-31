@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Services.Email.API.Data;
+using Services.Reward.API.Data;
 
 #nullable disable
 
-namespace Services.Email.API.Migrations
+namespace Services.Reward.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240825080326_AddEmailLogTable")]
-    partial class AddEmailLogTable
+    [Migration("20240831202945_AddRewardTable")]
+    partial class AddRewardTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,26 +25,27 @@ namespace Services.Email.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Services.Email.API.Models.EmailLogger", b =>
+            modelBuilder.Entity("Services.Reward.API.Models.Rewards", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("EmailSent")
+                    b.Property<int>("RewardsActivity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("RewardsDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmailLoggers");
+                    b.ToTable("Rewards");
                 });
 #pragma warning restore 612, 618
         }

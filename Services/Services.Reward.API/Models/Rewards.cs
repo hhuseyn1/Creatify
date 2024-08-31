@@ -2,9 +2,9 @@
 
 public class Rewards
 {
-    public string Id { get; set; }
-    public string userId { get; set; }
+    public Guid Id { get; set; }
+    public Guid UserId { get; set; }
     public DateTime RewardsDate { get; set; }
     public int RewardsActivity { get; set; }
-    public string orderId { get; set; }
+    public Guid OrderId { get; set; }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ccwb4XALpbjEDAaYjsWqtDzquMIRdSfHc9qoWbOY1Ns=",
+  "Hash": "bm5KKgccrIIrlqXMT3RS0ccfQnjQhkCQ0Ay7quGFMsQ=",
   "Source": "Services.Auth.API",
   "BasePath": "_content/Services.Auth.API",
   "Mode": "Default",
@@ -103,6 +103,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\js\\order.js",
+      "SourceId": "Creatify.Web",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\",
+      "BasePath": "_content/Creatify.Web",
+      "RelativePath": "js/order.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\order.js"
     },
     {
       "Identity": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\js\\site.js",

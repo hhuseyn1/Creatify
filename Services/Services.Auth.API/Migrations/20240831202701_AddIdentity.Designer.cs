@@ -12,8 +12,8 @@ using Services.Auth.API.Data;
 namespace Services.Auth.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240210094112_addNameAspNetUsers")]
-    partial class addNameAspNetUsers
+    [Migration("20240831202701_AddIdentity")]
+    partial class AddIdentity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

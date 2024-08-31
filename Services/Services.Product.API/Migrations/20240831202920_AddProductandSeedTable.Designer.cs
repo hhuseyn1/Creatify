@@ -12,8 +12,8 @@ using Services.Product.API.Data;
 namespace Services.Product.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240713204023_addProductandSeedTable")]
-    partial class addProductandSeedTable
+    [Migration("20240831202920_AddProductandSeedTable")]
+    partial class AddProductandSeedTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,7 +57,7 @@ namespace Services.Product.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8582c3bc-f092-4e1e-a2d5-69b5d794bd63"),
+                            Id = new Guid("6c191b4a-9242-43ba-8724-0fff01c97185"),
                             CategoryName = "Appetizer",
                             Description = "Quisque vel lacus ac magna, vehicula sagittis ut non lacus.<br/> Vehicula sagittis ut non lacus.",
                             ImageUrl = "https://placeholder.co/603x403",
@@ -66,7 +66,7 @@ namespace Services.Product.API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("593d79b0-84b8-43c6-bca0-57a39ec3426e"),
+                            Id = new Guid("f16fb1c5-8426-43df-9188-db11ba24042f"),
                             CategoryName = "Appetizer",
                             Description = "Vivamus hendrerit arcu sed erat molestie vehicula.<br/> Sed vehicula erat at augue interdum posuere.",
                             ImageUrl = "https://placeholder.co/603x404",
@@ -75,7 +75,7 @@ namespace Services.Product.API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("33d259cd-f7a8-4eba-aa89-5caf28b7581f"),
+                            Id = new Guid("23104283-c610-4493-98f9-82bbe95de8f2"),
                             CategoryName = "Main Course",
                             Description = "Maecenas vel nisi tincidunt, ullamcorper nibh a, faucibus mauris.<br/> Aenean sit amet lorem nec lorem.",
                             ImageUrl = "https://placeholder.co/603x405",
@@ -84,7 +84,7 @@ namespace Services.Product.API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c29aa8e-f9a3-4aba-95b7-bb63e52eff84"),
+                            Id = new Guid("58e4a7e1-cccd-452f-8fe8-8c2708a8658f"),
                             CategoryName = "Main Course",
                             Description = "Nulla facilisi. Morbi posuere, felis quis accumsan.<br/> In volutpat augue vitae vehicula.",
                             ImageUrl = "https://placeholder.co/603x406",
@@ -93,7 +93,7 @@ namespace Services.Product.API.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d5b4e258-cb0d-4aad-9c56-6b1b7d42c728"),
+                            Id = new Guid("13fdd1ce-4769-44c4-aef5-20be86fceffe"),
                             CategoryName = "Dessert",
                             Description = "Proin auctor dolor eget libero laoreet bibendum.<br/> Phasellus ac lacus hendrerit, volutpat arcu a, vehicula nunc.",
                             ImageUrl = "https://placeholder.co/603x407",

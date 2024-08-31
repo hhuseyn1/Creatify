@@ -2,7 +2,7 @@
 
 public class RewardsMessage
 {
-    public string UserId { get; set; }
+    public Guid UserId { get; set; }
     public int RewardActivity { get; set; }
-    public string OrderId { get; set; }
+    public Guid OrderId { get; set; }
 }

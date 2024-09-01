@@ -280,3 +280,4 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Debug
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\Services.Product.API.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\Services.Product.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\ref\Services.Product.API.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\Services.Product.API.staticwebassets.runtime.json

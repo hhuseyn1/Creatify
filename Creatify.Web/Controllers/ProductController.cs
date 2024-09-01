@@ -7,53 +7,53 @@ namespace Creatify.Web.Controllers;
 
 public class ProductController : Controller
 {
-	private readonly IProductService _productService;
+    private readonly IProductService _productService;
 
-	public ProductController(IProductService productService)
-	{
-		this._productService = productService;
-	}
+    public ProductController(IProductService productService)
+    {
+        this._productService = productService;
+    }
 
-	public async Task<IActionResult> ProductIndex()
-	{
-		List<ProductDto> list = new();
-		ResponseDto responseDto = await _productService.GetAllProductsAsync();
-		if (responseDto.isSuccess && responseDto != null)
-			list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(responseDto.Result));
-		else
-			TempData["error"] = responseDto?.Message;
-		return View(list);
-	}
+    public async Task<IActionResult> ProductIndex()
+    {
+        List<ProductDto> list = new();
+        ResponseDto responseDto = await _productService.GetAllProductsAsync();
+        if (responseDto.isSuccess && responseDto != null)
+            list = JsonConvert.DeserializeObject<List<ProductDto>>(Convert.ToString(responseDto.Result));
+        else
+            TempData["error"] = responseDto?.Message;
+        return View(list);
+    }
 
-	public async Task<IActionResult> ProductCreate()
-	{
-		return View();
-	}
+    public async Task<IActionResult> ProductCreate()
+    {
+        return View();
+    }
 
 
-	[HttpPost]
-	public async Task<IActionResult> ProductCreate(ProductDto ProductDto)
-	{
-		if (ModelState.IsValid)
-		{
-			ResponseDto? responseDto = await _productService.CreateProductAsync(ProductDto);
-			if (responseDto.isSuccess && responseDto != null)
-			{
-				TempData["success"] = "Product created successfully!";
-				return RedirectToAction(nameof(ProductIndex));
-			}
-			else
-				TempData["error"] = responseDto?.Message;
-		}
-		return View(ProductDto);
-	}
+    [HttpPost]
+    public async Task<IActionResult> ProductCreate(ProductDto ProductDto)
+    {
+        if (ModelState.IsValid)
+        {
+            ResponseDto? responseDto = await _productService.CreateProductAsync(ProductDto);
+            if (responseDto.isSuccess && responseDto != null)
+            {
+                TempData["success"] = "Product created successfully!";
+                return RedirectToAction(nameof(ProductIndex));
+            }
+            else
+                TempData["error"] = responseDto?.Message;
+        }
+        return View(ProductDto);
+    }
 
     public async Task<IActionResult> ProductDelete(Guid id)
     {
         ResponseDto? responseDto = await _productService.GetProductByIdAsync(id);
         if (responseDto.isSuccess && responseDto != null)
         {
-			ProductDto? model = JsonConvert.DeserializeObject<ProductDto>(responseDto.Result.ToString());
+            ProductDto? model = JsonConvert.DeserializeObject<ProductDto>(responseDto.Result.ToString());
             return View(model);
         }
         else
@@ -62,18 +62,18 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-	public async Task<IActionResult> ProductDelete(ProductDto product)
-	{
-		ResponseDto? responseDto = await _productService.DeleteProductAsync(product.ProductId);
-		if (responseDto.isSuccess && responseDto != null)
-		{
-			TempData["success"] = "Product deleted successfully!";
-			return RedirectToAction(nameof(ProductIndex));
-		}
-		else
-			TempData["error"] = responseDto?.Message;
-		return NotFound();
-	}
+    public async Task<IActionResult> ProductDelete(ProductDto product)
+    {
+        ResponseDto? responseDto = await _productService.DeleteProductAsync(product.ProductId);
+        if (responseDto.isSuccess && responseDto != null)
+        {
+            TempData["success"] = "Product deleted successfully!";
+            return RedirectToAction(nameof(ProductIndex));
+        }
+        else
+            TempData["error"] = responseDto?.Message;
+        return NotFound();
+    }
 
     public async Task<IActionResult> ProductEdit(Guid id)
     {
@@ -89,17 +89,21 @@ public class ProductController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> ProductEdit(ProductDto product)
+    public async Task<IActionResult> ProductEdit(ProductDto productDto)
     {
-        ResponseDto? responseDto = await _productService.UpdateProductAsync(product);
-        if (responseDto.isSuccess && responseDto != null)
+        if (ModelState.IsValid)
         {
-            TempData["success"] = "Product updated successfully!";
-            return RedirectToAction(nameof(ProductIndex));
+
+            ResponseDto? responseDto = await _productService.UpdateProductAsync(productDto);
+            if (responseDto.isSuccess && responseDto != null)
+            {
+                TempData["success"] = "Product updated successfully!";
+                return RedirectToAction(nameof(ProductIndex));
+            }
+            else
+                TempData["error"] = responseDto?.Message;
         }
-        else
-            TempData["error"] = responseDto?.Message;
-        return NotFound();
+        return View(productDto);
     }
 
 

@@ -46,5 +46,53 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Creatify.Web.Controllers.OrderController",
+    "Method": "CancelOrder",
+    "RelativePath": "CancelOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Creatify.Web.Controllers.OrderController",
+    "Method": "CompleteOrder",
+    "RelativePath": "CompleteOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Creatify.Web.Controllers.OrderController",
+    "Method": "OrderReadyForPickup",
+    "RelativePath": "OrderReadyForPickup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

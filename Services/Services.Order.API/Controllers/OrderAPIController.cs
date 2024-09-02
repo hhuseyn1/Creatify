@@ -37,7 +37,7 @@ public class OrderAPIController : ControllerBase
 
     [Authorize]
     [HttpGet("GetAllOrdersbyUserId/{userId}")]
-    public ResponseDto? GetAllOrdersbyUserId(Guid userId)
+    public ResponseDto? GetAllOrdersbyUserId(Guid? userId)
     {
         try
         {

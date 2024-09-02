@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Creatify.MessageBus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60a846e6b47b5a503a0300bdea12de76ced2b0e2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+395ac6d6db2b4435bd2411a8265688cf1c832ef2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Creatify.MessageBus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Creatify.MessageBus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

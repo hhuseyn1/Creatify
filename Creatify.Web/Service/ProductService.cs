@@ -21,15 +21,6 @@ public class ProductService : IProductService
 		});
 	}
 
-	public async Task<ResponseDto> GetProductAsync(string ProductCode)
-	{
-		return await _baseService.SendAsync(new()
-		{
-			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/GetProductByCode/" + ProductCode
-		});
-	}
-
 	public async Task<ResponseDto> GetProductByIdAsync(Guid id)
 	{
 		return await _baseService.SendAsync(new()

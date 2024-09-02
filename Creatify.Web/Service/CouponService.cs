@@ -41,12 +41,12 @@ public class CouponService : ICouponService
 		});
 	}
 
-	public async Task<ResponseDto> GetCouponAsync(string CouponCode)
+	public async Task<ResponseDto> GetCouponAsync(string couponCode)
 	{
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.CouponAPIBase + "/api/coupon/GetCouponbyCode/" + CouponCode
+			Url = StaticDetails.CouponAPIBase + "/api/coupon/GetCouponbyCode/" + couponCode
 		});
 	}
 

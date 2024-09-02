@@ -4,7 +4,6 @@ namespace Creatify.Web.Service.IService;
 
 public interface IProductService
 {
-	Task<ResponseDto> GetProductAsync(string ProductCode);
 	Task<ResponseDto> GetAllProductsAsync();
 	Task<ResponseDto> GetProductByIdAsync(Guid id);
 	Task<ResponseDto> CreateProductAsync(ProductDto productDto);

@@ -2,6 +2,7 @@
 using Creatify.Web.Models.Dto;
 using Creatify.Web.Service.IService;
 using Creatify.Web.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Newtonsoft.Json;
@@ -17,12 +18,13 @@ public class OrderController : Controller
         this._orderService = orderService;
     }
 
+    [Authorize]
     public IActionResult OrderIndex()
     {
         return View();
     }
 
-    [HttpGet]
+    [Authorize]
     public async Task<IActionResult> GetOrderDetailbyId(Guid orderId)
     {
         OrderHeaderDto orderHeader = new OrderHeaderDto();

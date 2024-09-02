@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Order.API", "Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Reward.API", "Services\Services.Reward.API\Services.Reward.API.csproj", "{0A4C538A-84E7-4067-9FC8-10C995B999C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creatify.GatewaySolution", "Gateway\Creatify.GatewaySolution\Creatify.GatewaySolution.csproj", "{5D3958B8-EAA2-4172-8E47-108205D80492}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{0A4C538A-84E7-4067-9FC8-10C995B999C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A4C538A-84E7-4067-9FC8-10C995B999C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A4C538A-84E7-4067-9FC8-10C995B999C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3958B8-EAA2-4172-8E47-108205D80492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3958B8-EAA2-4172-8E47-108205D80492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3958B8-EAA2-4172-8E47-108205D80492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3958B8-EAA2-4172-8E47-108205D80492}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{E46DA001-AEAB-4729-9593-F502FA34C4A5} = {16E419DA-0660-4BEC-B5D6-9DFEA9EF291F}
 		{E911D85A-21C9-48CD-A71D-3A29676A3EDE} = {16E419DA-0660-4BEC-B5D6-9DFEA9EF291F}
 		{0A4C538A-84E7-4067-9FC8-10C995B999C3} = {16E419DA-0660-4BEC-B5D6-9DFEA9EF291F}
+		{5D3958B8-EAA2-4172-8E47-108205D80492} = {C1CF7068-405A-477E-8C97-EDEE19D1BB24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C1E4B566-0498-4432-AD4F-37D85E5F9293}

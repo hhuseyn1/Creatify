@@ -45,9 +45,13 @@ C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Creatify.
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Creatify.Web.runtimeconfig.json
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Creatify.Web.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Creatify.Web.pdb
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\IdentityModel.dll
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
@@ -76,7 +80,3 @@ C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Debug\net8.0\refint\Cr
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Debug\net8.0\Creatify.Web.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Debug\net8.0\ref\Creatify.Web.dll
-C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Debug\net8.0\IdentityModel.dll

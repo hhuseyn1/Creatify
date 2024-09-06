@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3pG8PkPz1jmmXls5u53xxToqCSMiSFlDbDl63A+imh0=",
+  "Source": "Services.ShoppingCart.API",
+  "BasePath": "_content/Services.ShoppingCart.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

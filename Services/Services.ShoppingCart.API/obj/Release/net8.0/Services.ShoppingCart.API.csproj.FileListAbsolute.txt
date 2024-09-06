@@ -1,0 +1,8 @@
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.csproj.AssemblyReference.cache
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.AssemblyInfoInputs.cache
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.AssemblyInfo.cs
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.csproj.CoreCompileInputs.cache
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Release\net8.0\Services.ShoppingCart.API.sourcelink.json

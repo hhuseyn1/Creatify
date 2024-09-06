@@ -1,0 +1,59 @@
+{
+  "dependencies": {
+    "apis1": {
+      "restored": true,
+      "restoreTime": "2024-09-03T21:15:20.8592527Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2024-09-04T11:01:29.635342Z"
+    }
+  },
+  "parameters": {
+    "mssql1.subscriptionId": {
+      "Name": "mssql1.subscriptionId",
+      "Type": "subscription",
+      "Value": "6fde6b90-dcff-47e9-a99b-a0580913525b"
+    },
+    "apis1.resourceGroupName": {
+      "Name": "apis1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Creatify"
+    },
+    "apis1.resourceGroupLocation": {
+      "Name": "apis1.resourceGroupLocation",
+      "Type": "location",
+      "Value": "eastus"
+    },
+    "ServicesAuthAPI.subscriptionId": {
+      "Name": "ServicesAuthAPI.subscriptionId",
+      "Type": "subscription",
+      "Value": "6fde6b90-dcff-47e9-a99b-a0580913525b"
+    },
+    "ServicesAuthAPI.resourceGroupName": {
+      "Name": "ServicesAuthAPI.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Creatify"
+    },
+    "ServicesAuthAPI.resourceGroupLocation": {
+      "Name": "ServicesAuthAPI.resourceGroupLocation",
+      "Type": null,
+      "Value": "eastus"
+    },
+    "ServicesAuthAPI.resourceName": {
+      "Name": "ServicesAuthAPI.resourceName",
+      "Type": null,
+      "Value": "ServicesAuthAPI"
+    },
+    "mssql1.resourceGroupName": {
+      "Name": "mssql1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Creatify"
+    },
+    "apis1.subscriptionId": {
+      "Name": "apis1.subscriptionId",
+      "Type": "subscription",
+      "Value": "6fde6b90-dcff-47e9-a99b-a0580913525b"
+    }
+  }
+}

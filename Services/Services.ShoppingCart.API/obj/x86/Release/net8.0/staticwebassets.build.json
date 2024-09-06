@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ukgV/rqqz2+zi0knqAXxX2NIh7MYie6h5FwT2bjto54=",
+  "Source": "Services.ShoppingCart.API",
+  "BasePath": "_content/Services.ShoppingCart.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VerGezblteidGGR0GE0Qlgr59JYU2vT6xgaXwI+MGSI=",
+  "Source": "Services.Order.API",
+  "BasePath": "_content/Services.Order.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

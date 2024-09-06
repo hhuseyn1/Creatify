@@ -141,6 +141,7 @@ C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\re
 C:\Users\husey\Desktop\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.570B1B67.Up2Date
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\appsettings.json
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\appsettings.Production.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Services.Coupon.API.exe
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Services.Coupon.API.deps.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Services.Coupon.API.runtimeconfig.json
@@ -177,6 +178,8 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Stripe.net.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -280,5 +283,3 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\Services.Coupon.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\obj\Debug\net8.0\ref\Services.Coupon.API.dll
-C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Coupon.API\bin\Debug\net8.0\Stripe.net.dll

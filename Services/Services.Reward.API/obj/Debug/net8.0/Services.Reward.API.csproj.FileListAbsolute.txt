@@ -1,5 +1,6 @@
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\appsettings.json
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\appsettings.Production.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\Services.Reward.API.exe
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\Services.Reward.API.deps.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Reward.API\bin\Debug\net8.0\Services.Reward.API.runtimeconfig.json

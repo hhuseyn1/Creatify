@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ASLDla4U5ndsN1MZ9s1GdH8srkrZsJP8m9xZNctetoc=",
+  "Source": "Services.Reward.API",
+  "BasePath": "_content/Services.Reward.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

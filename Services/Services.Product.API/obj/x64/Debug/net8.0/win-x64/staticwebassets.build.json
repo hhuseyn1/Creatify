@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "RuArabU71t3NcfK8BhGDQLWcBNJAmbG9hNZ9L5DAbWY=",
+  "Source": "Services.Product.API",
+  "BasePath": "_content/Services.Product.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Services.Product.API\\wwwroot",
+      "Source": "Services.Product.API",
+      "ContentRoot": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Product.API\\wwwroot\\",
+      "BasePath": "_content/Services.Product.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

@@ -476,3 +476,5 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\x64\Debu
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\x64\Debug\net8.0\win-x64\appsettings.AuthAPI.Development.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\x64\Debug\net8.0\win-x64\appsettings.AuthAPI.json
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\x64\Debug\net8.0\win-x64\appsettings.AuthAPI.Production.json
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\x64\Debug\net8.0\win-x64\appsettings.Production.json
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\bin\x64\Debug\net8.0\win-x64\RabbitMQ.Client.dll

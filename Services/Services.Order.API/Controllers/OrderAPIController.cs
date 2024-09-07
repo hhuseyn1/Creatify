@@ -1,16 +1,15 @@
 ﻿using AutoMapper;
-using Creatify.MessageBus;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services.Order.API.Data;
 using Services.Order.API.Models;
 using Services.Order.API.Models.Dto;
+using Services.Order.API.RabbitMQSender;
 using Services.Order.API.Service.IService;
 using Services.Order.API.Utility;
 using Stripe;
 using Stripe.Checkout;
-using System.Collections.Concurrent;
 
 namespace Services.Order.API.Controllers;
 
@@ -22,9 +21,9 @@ public class OrderAPIController : ControllerBase
     private IMapper _mapper;
     private readonly AppDbContext _context;
     private IProductService _productService;
-    private readonly IMessageBus _messageBus;
+    private readonly IRabbitMQOrderMessageSender _messageBus;
     private readonly IConfiguration _configuration;
-    public OrderAPIController(IMapper mapper, AppDbContext context, IProductService productService, IMessageBus messageBus, IConfiguration configuration)
+    public OrderAPIController(IMapper mapper, AppDbContext context, IProductService productService, IRabbitMQOrderMessageSender messageBus, IConfiguration configuration)
     {
         this._mapper = mapper;
         this._context = context;
@@ -192,7 +191,7 @@ public class OrderAPIController : ControllerBase
                     UserId = orderHeader.UserId
                 };
                 string topicName = _configuration.GetValue<string>("TopicAndQueueNames:OrderCreatedTopic");
-                await _messageBus.PublishMessage(rewardsDto, topicName);
+                _messageBus.SendMessage(rewardsDto, topicName);
                 _responseDto.Result = _mapper.Map<OrderHeaderDto>(orderHeader);
             }
 

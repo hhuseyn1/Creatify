@@ -134,3 +134,4 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Email.API\obj\x64\Deb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Email.API\obj\x64\Debug\net8.0\win-x64\Services.Email.API.pdb
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Email.API\obj\x64\Debug\net8.0\win-x64\Services.Email.API.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Email.API\obj\x64\Debug\net8.0\win-x64\ref\Services.Email.API.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Email.API\bin\x64\Debug\net8.0\win-x64\RabbitMQ.Client.dll

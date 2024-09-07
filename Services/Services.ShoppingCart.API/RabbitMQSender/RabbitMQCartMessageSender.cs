@@ -2,15 +2,14 @@
 using RabbitMQ.Client;
 using System.Text;
 
-namespace Services.Auth.API.RabbitMQSender;
-
-public class RabbitMQAuthMessageSender : IRabbitMQAuthMessageSender
+namespace Services.ShoppingCart.API.RabbitMQSender;
+public class RabbitMQCartMessageSender : IRabbitMQCartMessageSender
 {
     private readonly string _hostName;
     private readonly string _username;
     private readonly string _password;
     private IConnection _connection;
-    public RabbitMQAuthMessageSender()
+    public RabbitMQCartMessageSender()
     {
         _hostName = "localhost";
         _username = "guest";
@@ -48,7 +47,6 @@ public class RabbitMQAuthMessageSender : IRabbitMQAuthMessageSender
 
         }
     }
-
     private bool ConnectionExists()
     {
         if (_connection != null)
@@ -59,3 +57,4 @@ public class RabbitMQAuthMessageSender : IRabbitMQAuthMessageSender
         return true;
     }
 }
+

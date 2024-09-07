@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Services.ShoppingCart.API.Data;
 using Services.ShoppingCart.API.Models;
 using Services.ShoppingCart.API.Models.Dto;
+using Services.ShoppingCart.API.RabbitMQSender;
 using Services.ShoppingCart.API.Service.IService;
 
 namespace Services.ShoppingCart.API.Controllers;
@@ -18,9 +19,9 @@ public class ShoppingCartAPIController : ControllerBase
     private readonly AppDbContext _appDbContext;
     private readonly IProductService _productService;
     private readonly ICouponService _couponService;
-    private readonly IMessageBus _messageBus;
     private readonly IConfiguration _configuration;
-    public ShoppingCartAPIController(AppDbContext appDbContext, IMapper mapper, IProductService productService, ICouponService couponService, IMessageBus messageBus, IConfiguration configuration)
+    private readonly IRabbitMQCartMessageSender _messageBus;
+    public ShoppingCartAPIController(AppDbContext appDbContext, IMapper mapper, IProductService productService, ICouponService couponService, IRabbitMQCartMessageSender messageBus, IConfiguration configuration)
     {
         this._appDbContext = appDbContext;
         this._responseDto = new ResponseDto();
@@ -97,7 +98,7 @@ public class ShoppingCartAPIController : ControllerBase
     {
         try
         {
-            await _messageBus.PublishMessage(cartDto,_configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
+            _messageBus.SendMessage(cartDto,_configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
             _responseDto.Result = true;
 
         }

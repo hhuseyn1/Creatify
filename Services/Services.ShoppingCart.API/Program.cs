@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using Services.ShoppingCart.API;
 using Services.ShoppingCart.API.Data;
 using Services.ShoppingCart.API.Extensions;
+using Services.ShoppingCart.API.RabbitMQSender;
 using Services.ShoppingCart.API.Service;
 using Services.ShoppingCart.API.Service.IService;
 using Services.ShoppingCart.API.Utility;
@@ -25,7 +26,7 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<BackendApiAuthenticationHttpClientHandler>();
 builder.Services.AddScoped<ICouponService, CouponService>();
-builder.Services.AddScoped<IMessageBus, MessageBus>();
+builder.Services.AddScoped<IRabbitMQCartMessageSender, RabbitMQCartMessageSender>();
 
 builder.Services.AddHttpClient("Product", 
     u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"])).AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();

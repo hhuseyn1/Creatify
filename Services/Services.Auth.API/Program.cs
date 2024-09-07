@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Services.Auth.API.Data;
 using Services.Auth.API.Models;
+using Services.Auth.API.RabbitMQSender;
 using Services.Auth.API.Services;
 using Services.Auth.API.Services.IAuth;
 using Services.Auth.API.Services.IService;
@@ -34,7 +35,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
 builder.Services.AddControllers();
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IMessageBus, MessageBus>();
+builder.Services.AddScoped<IRabbitMQAuthMessageSender, RabbitMQAuthMessageSender>();
 
 var app = builder.Build();
 

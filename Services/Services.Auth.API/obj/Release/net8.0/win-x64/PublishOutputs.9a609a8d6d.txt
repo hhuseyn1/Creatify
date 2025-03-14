@@ -351,7 +351,7 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\hostfxr.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\hostpolicy.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore.dll
-C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_8.0.824.36612.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_8.0.1124.51707.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordbi.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscorrc.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\msquic.dll
@@ -389,6 +389,7 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Web.Infrastructure.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\RabbitMQ.Client.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Auth.API\obj\Release\net8.0\win-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

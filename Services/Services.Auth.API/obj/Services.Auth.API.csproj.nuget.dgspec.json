@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj": {}
+    "D:\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj": {
+    "D:\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
+        "projectUniqueName": "D:\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
         "projectName": "Creatify.Web",
-        "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
+        "projectPath": "D:\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj",
         "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\obj\\",
+        "outputPath": "D:\\Projects\\Creatify\\Creatify.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -61,6 +62,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Ocelot": {
+              "target": "Package",
+              "version": "[23.4.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -89,15 +94,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -108,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -117,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj": {
+    "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
+        "projectUniqueName": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
         "projectName": "Creatify.MessageBus",
-        "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
+        "projectPath": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
         "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\obj\\",
+        "outputPath": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -157,7 +162,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -188,7 +194,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -197,14 +203,14 @@
         }
       }
     },
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj": {
+    "D:\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
+        "projectUniqueName": "D:\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
         "projectName": "Services.Auth.API",
-        "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
+        "projectPath": "D:\\Projects\\Creatify\\Services\\Services.Auth.API\\Services.Auth.API.csproj",
         "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Auth.API\\obj\\",
+        "outputPath": "D:\\Projects\\Creatify\\Services\\Services.Auth.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -226,11 +232,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj": {
-                "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj"
+              "D:\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj": {
+                "projectPath": "D:\\Projects\\Creatify\\Creatify.Web\\Creatify.Web.csproj"
               },
-              "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj": {
-                "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj"
+              "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj": {
+                "projectPath": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj"
               }
             }
           }
@@ -244,7 +250,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -323,15 +330,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[8.0.8, 8.0.8]"
+              "version": "[8.0.14, 8.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -342,7 +349,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

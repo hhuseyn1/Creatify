@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "NS+WM843dy7CD8D/SkGwhR6c7mETIrUvfjPuFKJIE9Y=",
+  "Hash": "dGlylzvTDfoayV+uNoOBnJ8avmsXhjBLn1Is63KbqvE=",
   "Source": "Services.Reward.API",
   "BasePath": "_content/Services.Reward.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -5,3 +5,5 @@
 /.vs/Creatify
 /.vs/ProjectEvaluation
 /.vs
+
+appsettings*.json

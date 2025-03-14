@@ -1196,11 +1196,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
+      "projectUniqueName": "D:\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
       "projectName": "Creatify.GatewaySolution",
-      "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
+      "projectPath": "D:\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
       "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\obj\\",
+      "outputPath": "D:\\Projects\\Creatify\\Gateway\\Creatify.GatewaySolution\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1233,7 +1233,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1271,7 +1272,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

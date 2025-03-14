@@ -3,19 +3,40 @@
     "Name": "Project Start",
     "Projects": [
       {
-        "Name": "Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
-        "Action": "Start",
-        "DebugTarget": ""
+        "Path": "Services\\Services.Coupon.API\\Services.Coupon.API.csproj",
+        "Action": "Start"
       },
       {
-        "Name": "Creatify.Web\\Creatify.Web.csproj",
-        "Action": "Start",
-        "DebugTarget": ""
+        "Path": "Creatify.Web\\Creatify.Web.csproj",
+        "Action": "Start"
       },
       {
-        "Name": "Services\\Services.Auth.API\\Services.Auth.API.csproj",
-        "Action": "Start",
-        "DebugTarget": ""
+        "Path": "Services\\Services.Auth.API\\Services.Auth.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Product.API\\Services.Product.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.ShoppingCart.API\\Services.ShoppingCart.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Order.API\\Services.Order.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Reward.API\\Services.Reward.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Email.API\\Services.Email.API.csproj",
+        "Action": "Start"
       }
     ]
   },
@@ -23,9 +44,12 @@
     "Name": "Auth",
     "Projects": [
       {
-        "Name": "Services\\Services.Auth.API\\Services.Auth.API.csproj",
-        "Action": "Start",
-        "DebugTarget": ""
+        "Path": "Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Email.API\\Services.Email.API.csproj",
+        "Action": "Start"
       }
     ]
   }

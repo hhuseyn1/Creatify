@@ -334,7 +334,6 @@ C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\hostfxr.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\hostpolicy.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\mscordaccore.dll
-C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\mscordaccore_amd64_amd64_8.0.824.36612.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\mscordbi.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\mscorrc.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\msquic.dll
@@ -370,3 +369,8 @@ C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\Creatify.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\appsettings.Production.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\Creatify.Web.staticwebassets.endpoints.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\bin\Release\net8.0\win-x64\mscordaccore_amd64_amd64_8.0.1124.51707.dll
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.endpoints.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets\msbuild.Creatify.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.upToDateCheck.txt

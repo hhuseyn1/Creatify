@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj": {}
+    "D:\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj": {
+    "D:\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj",
+        "projectUniqueName": "D:\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj",
         "projectName": "Services.Email.API",
-        "projectPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj",
+        "projectPath": "D:\\Projects\\Creatify\\Services\\Services.Email.API\\Services.Email.API.csproj",
         "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.Email.API\\obj\\",
+        "outputPath": "D:\\Projects\\Creatify\\Services\\Services.Email.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -52,15 +53,11 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[12.0.1, )"
-            },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[14.0.0, )"
             },
             "Azure.Messaging.ServiceBus": {
               "target": "Package",
-              "version": "[7.18.1, )"
+              "version": "[7.18.4, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -71,6 +68,12 @@
               "version": "[8.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
             },
@@ -94,11 +97,11 @@
             },
             "RabbitMQ.Client": {
               "target": "Package",
-              "version": "[6.8.1, )"
+              "version": "[6.3.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[7.3.1, )"
             }
           },
           "imports": [
@@ -120,7 +123,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

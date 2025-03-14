@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "7dFqc/tgAmM9z8gIpfzvG9oZPZ2Cnk+M3Iilh1Htl6Q=",
+  "Hash": "dC8I0/hFooZ5zsoiU0QLzHG8qSdWCIa6jXtKFHGX23c=",
   "Source": "Services.Coupon.API",
   "BasePath": "_content/Services.Coupon.API",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

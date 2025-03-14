@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hHJcrXU6U5p9WMyNSNDDuLyAhvP6nAPSWFT4gLsKOpM=",
+  "Hash": "Amb2VhOLX6DdfnKxUmLxyLiLIPhpp8BpM/tAcltArzg=",
   "Source": "Services.Product.API",
   "BasePath": "_content/Services.Product.API",
   "Mode": "Default",
@@ -15,5 +15,6 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -1,0 +1,8 @@
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json
+C:\Users\husey\Desktop\Projects\Creatify\Creatify.Web\obj\Release\net8.0\win-x64\staticwebassets.build.json

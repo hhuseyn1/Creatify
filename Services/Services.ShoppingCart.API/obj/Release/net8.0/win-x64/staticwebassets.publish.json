@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "3pG8PkPz1jmmXls5u53xxToqCSMiSFlDbDl63A+imh0=",
+  "Hash": "9/PAypPGihaQFIn0H8CJKtWcTFQSqy8dD44OkApZ1vw=",
   "Source": "Services.ShoppingCart.API",
   "BasePath": "_content/Services.ShoppingCart.API",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

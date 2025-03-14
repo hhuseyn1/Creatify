@@ -13,15 +13,14 @@ public class AzureServiceBusConsumer : IAzureServiceBusConsumer
     private readonly string emailCartQueue;
     private readonly string registerUserQueue;
     private readonly IConfiguration _configuration;
-    private readonly EmailService _emailService;
+    private readonly IEmailService _emailService;
     private readonly string orderCreated_Topic;
     private readonly string orderCreated_Email_Subscription;
     private ServiceBusProcessor _emailOrderPlacedProcessor;
     private ServiceBusProcessor _emailCartProcessor;
     private ServiceBusProcessor _registerUserProcessor;
 
-
-    public AzureServiceBusConsumer(IConfiguration configuration, EmailService emailService)
+    public AzureServiceBusConsumer(IConfiguration configuration, IEmailService emailService)
     {
         this._emailService = emailService;
         this._configuration = configuration;
@@ -124,6 +123,5 @@ public class AzureServiceBusConsumer : IAzureServiceBusConsumer
         Console.WriteLine(args.Exception.ToString());
         return Task.CompletedTask;
     }
-
 
 }

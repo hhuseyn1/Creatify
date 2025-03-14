@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "GUqHob0o0vQLZTseeXS9JVTG7kHVAgBLET7JWChudkQ=",
+  "Hash": "8ODdRE6hAjtTbPhwiMS+Pvllab5kg+AM9ig+mHBwmQA=",
   "Source": "Creatify.GatewaySolution",
   "BasePath": "_content/Creatify.GatewaySolution",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

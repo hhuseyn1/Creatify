@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "wXGVrPgwy01mOxqrr2KEdO6nmVKwv2dMVphjuV7pkoI=",
+  "Hash": "Wi2oAL9Lh2AjNnPHSDBzmxywCcC+UkLpBfJaP4kHOe0=",
   "Source": "Services.Order.API",
   "BasePath": "_content/Services.Order.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -323,7 +323,7 @@ C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Relea
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\hostfxr.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\hostpolicy.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore.dll
-C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_8.0.824.36612.dll
+C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordaccore_amd64_amd64_8.0.1124.51707.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscordbi.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\mscorrc.dll
 C:\Users\husey\Desktop\Projects\Creatify\Services\Services.Product.API\obj\Release\net8.0\win-x64\PubTmp\Out\msquic.dll

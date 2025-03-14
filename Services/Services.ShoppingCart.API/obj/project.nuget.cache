@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S9yhSklccoM=",
+  "dgSpecHash": "AuqT9ITU0dE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Services\\Services.ShoppingCart.API\\Services.ShoppingCart.API.csproj",
+  "projectFilePath": "D:\\Projects\\Creatify\\Services\\Services.ShoppingCart.API\\Services.ShoppingCart.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\husey\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

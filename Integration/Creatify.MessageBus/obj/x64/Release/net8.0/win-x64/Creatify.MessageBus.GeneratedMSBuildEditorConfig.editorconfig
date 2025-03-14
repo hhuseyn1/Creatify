@@ -11,3 +11,5 @@ build_property.RootNamespace = Creatify.MessageBus
 build_property.ProjectDir = C:\Users\husey\Desktop\Projects\Creatify\Integration\Creatify.MessageBus\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 

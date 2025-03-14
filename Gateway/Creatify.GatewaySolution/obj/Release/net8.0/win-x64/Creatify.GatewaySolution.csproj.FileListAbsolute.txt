@@ -47,6 +47,10 @@ C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Re
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Release\net8.0\win-x64\Creatify.GatewaySolution.genruntimeconfig.cache
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Release\net8.0\win-x64\ref\Creatify.GatewaySolution.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\ocelot.Production.json
+C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\Creatify.GatewaySolution.staticwebassets.endpoints.json
+C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Release\net8.0\win-x64\staticwebassets.build.endpoints.json
+C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Release\net8.0\win-x64\staticwebassets\msbuild.Creatify.GatewaySolution.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\obj\Release\net8.0\win-x64\staticwebassets.upToDateCheck.txt
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\Microsoft.CSharp.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\Microsoft.VisualBasic.Core.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\Microsoft.VisualBasic.dll
@@ -365,7 +369,7 @@ C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Re
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\hostfxr.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\hostpolicy.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\mscordaccore.dll
-C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\mscordaccore_amd64_amd64_8.0.824.36612.dll
+C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\mscordaccore_amd64_amd64_8.0.1124.51707.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\mscordbi.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\mscorrc.dll
 C:\Users\husey\Desktop\Projects\Creatify\Gateway\Creatify.GatewaySolution\bin\Release\net8.0\win-x64\msquic.dll

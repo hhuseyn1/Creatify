@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "VerGezblteidGGR0GE0Qlgr59JYU2vT6xgaXwI+MGSI=",
+  "Hash": "urBf0dyisa/6DgPUPlUQOCPoakMTYf9KioBK26LIj6s=",
   "Source": "Services.Order.API",
   "BasePath": "_content/Services.Order.API",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

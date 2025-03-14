@@ -19,7 +19,7 @@ StaticDetails.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 StaticDetails.OrderAPIBase = builder.Configuration["ServiceUrls:OrderAPI"];
 StaticDetails.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 StaticDetails.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
-StaticDetails.ProductAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
+StaticDetails.ShoppingCartAPIBase = builder.Configuration["ServiceUrls:ShoppingCartAPI"];
 
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IBaseService, BaseService>();

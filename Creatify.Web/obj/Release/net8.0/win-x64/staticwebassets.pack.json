@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\obj\\Release\\net8.0\\win-x64\\scopedcss\\projectbundle\\Creatify.Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Creatify.Web.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Creatify.Web.ph7woq8guh.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\css\\site.css",
@@ -251,6 +251,10 @@
     {
       "Id": "C:\\Users\\husey\\Desktop\\Projects\\Creatify\\Creatify.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.Creatify.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Release\\net8.0\\win-x64\\staticwebassets\\msbuild.Creatify.Web.Microsoft.AspNetCore.StaticWebAssets.props",

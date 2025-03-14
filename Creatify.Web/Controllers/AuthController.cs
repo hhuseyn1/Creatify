@@ -124,7 +124,7 @@ public class AuthController : Controller
 		identity.AddClaim(new Claim(ClaimTypes.Name,
 			jwt.Claims.FirstOrDefault(U => U.Type == JwtRegisteredClaimNames.Email).Value));
 
-		identity.AddClaim(new Claim(ClaimTypes.Role,
+			identity.AddClaim(new Claim(ClaimTypes.Role,
 			jwt.Claims.FirstOrDefault(U => U.Type == "role").Value));
 
 		var principal = new ClaimsPrincipal(identity);

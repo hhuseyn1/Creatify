@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ProductId",
+        "Name": "Id",
         "Type": "System.Guid",
         "IsRequired": false
       },
@@ -100,7 +100,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ProductId",
+        "Name": "Id",
         "Type": "System.Guid",
         "IsRequired": false
       },

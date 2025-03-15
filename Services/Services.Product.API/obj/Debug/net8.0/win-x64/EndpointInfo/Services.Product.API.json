@@ -82,7 +82,7 @@
         ],
         "parameters": [
           {
-            "name": "ProductId",
+            "name": "Id",
             "in": "query",
             "style": "form",
             "schema": {
@@ -200,7 +200,7 @@
         ],
         "parameters": [
           {
-            "name": "ProductId",
+            "name": "Id",
             "in": "query",
             "style": "form",
             "schema": {

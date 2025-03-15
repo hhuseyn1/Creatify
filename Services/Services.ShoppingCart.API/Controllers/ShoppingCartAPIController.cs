@@ -32,16 +32,16 @@ public class ShoppingCartAPIController : ControllerBase
         this._configuration = configuration;
     }
 
-    [HttpPost("GetCardbyUserId/{userId}")]
-    public async Task<ResponseDto> GetCardbyUserId(Guid userId)
+    [HttpGet("GetCartbyUserId/{userId}")]
+    public async Task<ResponseDto> GetCartbyUserId(Guid userId)
     {
         try
         {
-            CartDto cartDto = new()
+                CartDto cartDto = new()
             {
-               CartHeader = _mapper.Map<CartHeaderDto>(_appDbContext.CartHeaders.First(u=>u.UserId == userId))
+                CartHeader = _mapper.Map<CartHeaderDto>(_appDbContext.CartHeaders.First(u => u.UserId == userId))
             };
-            cartDto.CartDetails = _mapper.Map<IEnumerable<CartDetailsDto>>(_appDbContext.CartDetails.Where(u=>u.CartHeaderId == cartDto.CartHeader.Id));
+            cartDto.CartDetails = _mapper.Map<IEnumerable<CartDetailsDto>>(_appDbContext.CartDetails.Where(u => u.CartHeaderId == cartDto.CartHeader.Id));
 
             IEnumerable<ProductDto> productDtos = await _productService.GetProductsAsync();
 
@@ -144,7 +144,7 @@ public class ShoppingCartAPIController : ControllerBase
                 {
                     cartDto.CartDetails.First().Count += cartDetailsFromDb.Count;
                     cartDto.CartDetails.First().CartHeaderId = cartDetailsFromDb.CartHeaderId;
-                    cartDto.CartDetails.First().CartDetailsId = cartDetailsFromDb.Id;
+                    cartDto.CartDetails.First().Id = cartDetailsFromDb.Id;
                     _appDbContext.CartDetails.Update(_mapper.Map<CartDetails>(cartDto.CartDetails.First()));
                     await _appDbContext.SaveChangesAsync();
                 }

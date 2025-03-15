@@ -5,8 +5,8 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/cart/GetCardbyUserId/{userId}": {
-      "post": {
+    "/api/cart/GetCartbyUserId/{userId}": {
+      "get": {
         "tags": [
           "ShoppingCartAPI"
         ],
@@ -313,7 +313,7 @@
       "CartDetailsDto": {
         "type": "object",
         "properties": {
-          "cartDetailsId": {
+          "id": {
             "type": "string",
             "format": "uuid"
           },

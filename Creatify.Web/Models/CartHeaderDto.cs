@@ -4,7 +4,7 @@ namespace Creatify.Web.Models;
 
 public class CartHeaderDto
 {
-    public Guid CartHeaderId { get; set; }
+    public Guid Id { get; set; }
     public Guid UserId { get; set; }
     public string? CouponCode { get; set; }
     public double Discount { get; set; }

@@ -157,7 +157,7 @@
     },
     //"ShoppingCartAPI": "https://localhost:7003"
     {
-      "DownstreamPathTemplate": "/api/cart/GetCardbyUserId/{userId}",
+      "DownstreamPathTemplate": "/api/cart/GetCartbyUserId/{userId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -165,8 +165,8 @@
           "Port": 7003
         }
       ],
-      "UpstreamPathTemplate": "/api/cart/GetCardbyUserId/{userId}",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamPathTemplate": "/api/cart/GetCartbyUserId/{userId}",
+      "UpstreamHttpMethod": [ "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/cart/ApplyCoupon",
@@ -218,7 +218,7 @@
     },
     //"OrderAPI": "https://localhost:7004"
     {
-      "DownstreamPathTemplate": "/api/order/GetAllOrdersbyUserId?userId={id}",
+      "DownstreamPathTemplate": "/api/order/GetAllOrdersbyUserId/{userId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -227,21 +227,6 @@
         }
       ],
       "UpstreamPathTemplate": "/api/order/GetAllOrdersbyUserId/{id}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
-    },
-    {
-      "DownstreamPathTemplate": "/api/order/GetAllOrdersbyUserId?userId=''",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7004
-        }
-      ],
-      "UpstreamPathTemplate": "/api/order/GetAllOrdersbyUserId/",
       "UpstreamHttpMethod": [ "GET" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"

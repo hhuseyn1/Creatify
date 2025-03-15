@@ -38,7 +38,7 @@ public class CartService : ICartService
         return await _baseService.SendAsync(new()
         {
             APIType = StaticDetails.APIType.GET,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/GetCardbyUserId/" + userId
+            Url = StaticDetails.CouponAPIBase + "/api/cart/GetCartbyUserId/" + userId
         });
     }
 

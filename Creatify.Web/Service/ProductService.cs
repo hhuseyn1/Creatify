@@ -17,7 +17,7 @@ public class ProductService : IProductService
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/GetAllProducts"
+			Url = StaticDetails.ProductAPIBase + "/api/product/GetAllProducts"
 		});
 	}
 
@@ -26,7 +26,7 @@ public class ProductService : IProductService
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.GET,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/GetProductById/" + id
+			Url = StaticDetails.ProductAPIBase + "/api/product/GetProductById/" + id
 		});
 	}
 
@@ -36,7 +36,7 @@ public class ProductService : IProductService
 		{
 			APIType = StaticDetails.APIType.POST,
 			Data = ProductDto,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/CreateProduct",
+			Url = StaticDetails.ProductAPIBase + "/api/product/CreateProduct",
 			ContentType	= StaticDetails.ContentType.MultipartFormData
 		});
 	}
@@ -46,7 +46,7 @@ public class ProductService : IProductService
 		return await _baseService.SendAsync(new()
 		{
 			APIType = StaticDetails.APIType.DELETE,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/DeleteProductbyId/" + id
+			Url = StaticDetails.ProductAPIBase + "/api/product/DeleteProductbyId/" + id
 		});
 	}
 
@@ -56,7 +56,7 @@ public class ProductService : IProductService
 		{
 			APIType = StaticDetails.APIType.PUT,
 			Data = ProductDto,
-			Url = StaticDetails.ProductAPIBase + "/api/Product/EditProduct",
+			Url = StaticDetails.ProductAPIBase + "/api/product/EditProduct",
             ContentType = StaticDetails.ContentType.MultipartFormData
         });
 	}

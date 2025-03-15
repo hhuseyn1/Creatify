@@ -113,9 +113,9 @@
   },
   {
     "ContainingType": "Services.ShoppingCart.API.Controllers.ShoppingCartAPIController",
-    "Method": "GetCardbyUserId",
-    "RelativePath": "api/cart/GetCardbyUserId/{userId}",
-    "HttpMethod": "POST",
+    "Method": "GetCartbyUserId",
+    "RelativePath": "api/cart/GetCartbyUserId/{userId}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -73,10 +73,8 @@ public class CartController : Controller
                 return View(orderId);
             }
         }
-        //redirect to some error page
         return View(orderId);
     }
-
     public async Task<IActionResult> Remove(string cartDetailsId)
     {
         var userId = User.Claims.Where(u => u.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;
@@ -85,9 +83,12 @@ public class CartController : Controller
         if (response != null && response.isSuccess)
         {
             TempData["success"] = "Cart updated successfully";
-            return RedirectToAction(nameof(CartIndex));
         }
-        return View();
+        else
+        {
+            TempData["error"] = "Cart removal failed";
+        }
+        return RedirectToAction(nameof(CartIndex));
     }
 
     [HttpPost]
@@ -95,7 +96,7 @@ public class CartController : Controller
     {
         ResponseDto response = await _cartService.ApplyCouponAsync(cartDto);
 
-        if (response != null && response.isSuccess)
+        if (response.Result != null && response.isSuccess)
         {
             TempData["success"] = "Cart updated successfully";
             return RedirectToAction(nameof(CartIndex));

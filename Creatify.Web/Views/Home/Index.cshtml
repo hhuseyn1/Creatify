@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<ProductDto>
 
 <form>
-
     <div class="container row">
 
         @foreach (var product in Model)
@@ -19,12 +18,10 @@
                                     <span style="font-size:23px;">@string.Format("{0:c}", product.Price)</span>
                                 </div>
                                 <div class="col">
-                                    <a asp-action="Details" asp-route-Id="@product.ProductId"
+                                    <a asp-action="ProductDetails" asp-route-productId="@product.Id"
                                        class="btn btn-success form-control">Details</a>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>

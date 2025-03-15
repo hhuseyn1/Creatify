@@ -60,5 +60,4 @@ public class CouponController : Controller
 		return NotFound();
 	}
 
-
 }

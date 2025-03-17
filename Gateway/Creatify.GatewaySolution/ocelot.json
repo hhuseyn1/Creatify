@@ -166,7 +166,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/GetCartbyUserId/{userId}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/cart/ApplyCoupon",
@@ -178,7 +181,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/ApplyCoupon",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/cart/EmailCartRequest",
@@ -190,7 +196,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/EmailCartRequest",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/cart/UpsertCart",
@@ -202,7 +211,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/UpsertCart",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/cart/RemoveCartbyId/{cartDetailsId}",
@@ -214,7 +226,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/RemoveCartbyId/{cartDetailsId}",
-      "UpstreamHttpMethod": [ "POST" ]
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      } 
     },
     //"OrderAPI": "https://localhost:7004"
     {

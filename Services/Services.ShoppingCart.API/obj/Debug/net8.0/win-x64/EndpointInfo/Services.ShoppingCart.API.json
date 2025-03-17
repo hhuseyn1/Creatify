@@ -53,74 +53,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "CartHeader.Id": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "CartHeader.UserId": {
-                    "type": "string",
-                    "format": "uuid"
-                  },
-                  "CartHeader.CouponCode": {
-                    "type": "string"
-                  },
-                  "CartHeader.Discount": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "CartHeader.CartTotal": {
-                    "type": "number",
-                    "format": "double"
-                  },
-                  "CartHeader.Fullname": {
-                    "type": "string"
-                  },
-                  "CartHeader.Phone": {
-                    "type": "string"
-                  },
-                  "CartHeader.Email": {
-                    "type": "string"
-                  },
-                  "CartDetails": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/CartDetailsDto"
-                    }
-                  }
-                }
-              },
-              "encoding": {
-                "CartHeader.Id": {
-                  "style": "form"
-                },
-                "CartHeader.UserId": {
-                  "style": "form"
-                },
-                "CartHeader.CouponCode": {
-                  "style": "form"
-                },
-                "CartHeader.Discount": {
-                  "style": "form"
-                },
-                "CartHeader.CartTotal": {
-                  "style": "form"
-                },
-                "CartHeader.Fullname": {
-                  "style": "form"
-                },
-                "CartHeader.Phone": {
-                  "style": "form"
-                },
-                "CartHeader.Email": {
-                  "style": "form"
-                },
-                "CartDetails": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/CartDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CartDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CartDto"
               }
             }
           }

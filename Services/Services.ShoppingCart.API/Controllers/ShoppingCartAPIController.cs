@@ -37,7 +37,7 @@ public class ShoppingCartAPIController : ControllerBase
     {
         try
         {
-                CartDto cartDto = new()
+            CartDto cartDto = new()
             {
                 CartHeader = _mapper.Map<CartHeaderDto>(_appDbContext.CartHeaders.First(u => u.UserId == userId))
             };
@@ -47,17 +47,17 @@ public class ShoppingCartAPIController : ControllerBase
 
             foreach (var item in cartDto.CartDetails)
             {
-                item.Product = productDtos.FirstOrDefault(u=>u.Id == item.ProductId);
+                item.Product = productDtos.FirstOrDefault(u => u.Id == item.ProductId);
                 cartDto.CartHeader.CartTotal += (item.Count * item.Product.Price);
             }
 
             if (!string.IsNullOrEmpty(cartDto.CartHeader.CouponCode))
             {
                 CouponDto couponDto = await _couponService.GetCouponAsync(cartDto.CartHeader.CouponCode);
-                if(couponDto != null && cartDto.CartHeader.CartTotal > couponDto.MinAmount)
+                if (couponDto != null && cartDto.CartHeader.CartTotal > couponDto.MinAmount)
                 {
                     cartDto.CartHeader.CartTotal -= couponDto.DiscountAmount;
-                    cartDto.CartHeader.Discount  = couponDto.DiscountAmount;
+                    cartDto.CartHeader.Discount = couponDto.DiscountAmount;
                 }
             }
 
@@ -74,18 +74,18 @@ public class ShoppingCartAPIController : ControllerBase
     }
 
     [HttpPost("ApplyCoupon")]
-    public async Task<object> ApplyCoupon([FromForm]CartDto cartDto)
+    public async Task<object> ApplyCoupon([FromBody] CartDto cartDto)
     {
         try
         {
-            var cartFromDb = _appDbContext.CartHeaders.First(u=>u.UserId==cartDto.CartHeader.Id);
+            var cartFromDb = _appDbContext.CartHeaders.First(u => u.UserId == cartDto.CartHeader.UserId);
             cartFromDb.CouponCode = cartDto.CartHeader.CouponCode;
             _appDbContext.CartHeaders.Update(cartFromDb);
             await _appDbContext.SaveChangesAsync();
             _responseDto.Result = true;
 
         }
-        catch (Exception ex) 
+        catch (Exception ex)
         {
             _responseDto.isSuccess = false;
             _responseDto.Message = ex.ToString();
@@ -98,7 +98,7 @@ public class ShoppingCartAPIController : ControllerBase
     {
         try
         {
-            _messageBus.SendMessage(cartDto,_configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
+            _messageBus.SendMessage(cartDto, _configuration.GetValue<string>("TopicAndQueueNames:EmailShoppingCartQueue"));
             _responseDto.Result = true;
 
         }

@@ -57,7 +57,7 @@ public class BaseService : IBaseService
                     }
                     else
                     {
-                        content.Add(new StringContent(value ==null ? "" : value.ToString()),prop.Name);
+                        content.Add(new StringContent(value == null ? "" : value.ToString()),prop.Name);
                     }
                 }
                 message.Content = content;
@@ -70,7 +70,7 @@ public class BaseService : IBaseService
 
 
 
-            HttpResponseMessage httpResponse = null;
+            HttpResponseMessage? httpResponse = null;
 
             message.Method = (requestDto.APIType) switch
             {

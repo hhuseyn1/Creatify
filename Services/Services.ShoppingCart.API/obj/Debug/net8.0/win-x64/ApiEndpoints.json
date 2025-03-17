@@ -8,49 +8,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "CartHeader.Id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.UserId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.CouponCode",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.Discount",
-        "Type": "System.Double",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.CartTotal",
-        "Type": "System.Double",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.Fullname",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.Phone",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartHeader.Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CartDetails",
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Services.ShoppingCart.API.Models.Dto.CartDetailsDto, Services.ShoppingCart.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
+        "Name": "cartDto",
+        "Type": "Services.ShoppingCart.API.Models.Dto.CartDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

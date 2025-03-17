@@ -19,7 +19,7 @@ public class CartService : ICartService
         {
             APIType = StaticDetails.APIType.POST,
             Data = cartDto,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/ApplyCoupon"
+            Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/ApplyCoupon"
         });
     }
 
@@ -29,7 +29,7 @@ public class CartService : ICartService
         {
             APIType = StaticDetails.APIType.POST,
             Data = cartDto,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/EmailCartRequest"
+            Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/EmailCartRequest"
         });
     }
 
@@ -38,7 +38,7 @@ public class CartService : ICartService
         return await _baseService.SendAsync(new()
         {
             APIType = StaticDetails.APIType.GET,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/GetCartbyUserId/" + userId
+            Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/GetCartbyUserId/" + userId
         });
     }
 
@@ -48,7 +48,7 @@ public class CartService : ICartService
         {
             APIType = StaticDetails.APIType.POST,
             Data = cartDetailsId,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/RemoveCartbyId/" + cartDetailsId
+            Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/RemoveCartbyId/" + cartDetailsId
         });
     }
 
@@ -58,7 +58,7 @@ public class CartService : ICartService
         {
             APIType = StaticDetails.APIType.POST,
             Data = cartDto,
-            Url = StaticDetails.CouponAPIBase + "/api/cart/UpsertCart"
+            Url = StaticDetails.ShoppingCartAPIBase + "/api/cart/UpsertCart"
         });
     }
 }

@@ -33,10 +33,6 @@
       {
         "Path": "Gateway\\Creatify.GatewaySolution\\Creatify.GatewaySolution.csproj",
         "Action": "Start"
-      },
-      {
-        "Path": "Services\\Services.Email.API\\Services.Email.API.csproj",
-        "Action": "Start"
       }
     ]
   },

@@ -1,6 +1,5 @@
 ﻿@model Creatify.Web.Models.ProductDto
 
-
 <form asp-action="ProductEdit" enctype="multipart/form-data">
     <input asp-for="Id" hidden />
     <br />
@@ -50,7 +49,6 @@
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
                     <div class="col-5 offset-2">
-
                         <a asp-action="ProductIndex" class="btn-primary btn form-control ">Back to List</a>
                     </div>
                     <div class="col-5">

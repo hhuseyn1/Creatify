@@ -78,7 +78,7 @@ public class ProductController : Controller
     public async Task<IActionResult> ProductEdit(Guid id)
     {
         ResponseDto? responseDto = await _productService.GetProductByIdAsync(id);
-        if (responseDto.isSuccess && responseDto != null)
+        if (responseDto.isSuccess && responseDto != null )
         {
             ProductDto? model = JsonConvert.DeserializeObject<ProductDto>(responseDto.Result.ToString());
             return View(model);
@@ -93,7 +93,6 @@ public class ProductController : Controller
     {
         if (ModelState.IsValid)
         {
-
             ResponseDto? responseDto = await _productService.UpdateProductAsync(productDto);
             if (responseDto.isSuccess && responseDto != null)
             {
@@ -105,6 +104,4 @@ public class ProductController : Controller
         }
         return View(productDto);
     }
-
-
 }

@@ -308,7 +308,8 @@
           },
           "userId": {
             "type": "string",
-            "format": "uuid"
+            "format": "uuid",
+            "nullable": true
           },
           "couponCode": {
             "type": "string",

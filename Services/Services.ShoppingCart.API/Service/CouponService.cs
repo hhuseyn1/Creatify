@@ -15,7 +15,7 @@ public class CouponService : ICouponService
 
     public async Task<CouponDto> GetCouponAsync(string couponCode)
     {
-        var client = _httpClientFactory.CreateClient("Cpupon");
+        var client = _httpClientFactory.CreateClient("Coupon");
         var response = await client.GetAsync($"/api/coupon/GetCouponbyCode/{couponCode}");
         var apiContent = await response.Content.ReadAsStringAsync();
 

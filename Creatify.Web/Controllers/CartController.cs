@@ -96,11 +96,12 @@ public class CartController : Controller
     {
         ResponseDto? response = await _cartService.ApplyCouponAsync(cartDto);
 
-        if (response.Result != null & response.isSuccess)
+        if (response != null & response.isSuccess)
         {
             TempData["success"] = "Cart updated successfully";
+            return RedirectToAction(nameof(CartIndex));
         }
-        return RedirectToAction(nameof(CartIndex));
+        return View();
     }
 
     [HttpPost]

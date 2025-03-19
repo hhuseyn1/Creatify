@@ -6,17 +6,19 @@
         <div class="row text-center">
             <h1>Login</h1>
         </div>
-        <div class="row text-center">
-            <div asp-validation-summary="All" class="text-danger"></div>
-        </div>
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3 pb-2">
-                <input asp-for="UserName" class="form-control" placeholder="Username..."/>
-                <span asp-validation-for="UserName" class="text-danger"/>
+                <input asp-for="UserName" class="form-control" placeholder="Username..." />
+                <span asp-validation-for="UserName" class="text-danger" />
             </div>
             <div class="col-12 col-md-6 offset-md-3 pb-2">
-                <input asp-for="Password" class="form-control" placeholder="Password..." />
-                <span asp-validation-for="Password" class="text-danger"/>
+                <div class="input-group">
+                    <input asp-for="Password" type="password" id="loginPassword" class="form-control" placeholder="Password..." />
+                    <button type="button" class="btn btn-outline-secondary" onclick="togglePassword('loginPassword', 'loginToggleIcon')">
+                        <i id="loginToggleIcon" class="fas fa-eye"></i>
+                    </button>
+                </div>
+                <span asp-validation-for="Password" class="text-danger" />
             </div>
             <div class="col-12 col-md-6 offset-md-3 pb-2">
                 <button type="submit" class="form-control btn btn-success" value="Submit">Login</button>
@@ -27,4 +29,19 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        function togglePassword(inputId, iconId) {
+            var input = document.getElementById(inputId);
+            var icon = document.getElementById(iconId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
 }

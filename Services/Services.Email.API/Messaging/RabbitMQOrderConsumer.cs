@@ -15,7 +15,7 @@ public class RabbitMQOrderConsumer : BackgroundService
     private const string OrderCreated_EmailUpdateQueue = "EmailUpdateQueue";
     private IConnection _connection;
     private IModel _channel;
-    public RabbitMQOrderConsumer(IConfiguration configuration, EmailService emailService, IConnection connection, IModel channel)
+    public RabbitMQOrderConsumer(IConfiguration configuration, EmailService emailService)
     {
         _configuration = configuration;
         _emailService = emailService;

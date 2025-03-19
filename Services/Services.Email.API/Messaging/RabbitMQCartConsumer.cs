@@ -14,7 +14,7 @@ public class RabbitMQCartConsumer : BackgroundService
     private string queueName;
     private IConnection _connection;
     private IModel _channel;
-    public RabbitMQCartConsumer(IConfiguration configuration, EmailService emailService, IConnection connection, IModel channel)
+    public RabbitMQCartConsumer(IConfiguration configuration, EmailService emailService)
     {
         _configuration = configuration;
         _emailService = emailService;

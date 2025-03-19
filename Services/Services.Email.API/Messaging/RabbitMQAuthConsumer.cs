@@ -13,7 +13,7 @@ public class RabbitMQAuthConsumer : BackgroundService
     private string queueName;
     private IConnection _connection;
     private IModel _channel;
-    public RabbitMQAuthConsumer(IConfiguration configuration, EmailService emailService, IConnection connection, IModel channel)
+    public RabbitMQAuthConsumer(IConfiguration configuration, EmailService emailService)
     {
         _configuration = configuration;
         _emailService = emailService;

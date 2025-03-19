@@ -13,14 +13,14 @@ public class AzureServiceBusConsumer : IAzureServiceBusConsumer
     private readonly string emailCartQueue;
     private readonly string registerUserQueue;
     private readonly IConfiguration _configuration;
-    private readonly IEmailService _emailService;
+    private readonly EmailService _emailService;
     private readonly string orderCreated_Topic;
     private readonly string orderCreated_Email_Subscription;
     private ServiceBusProcessor _emailOrderPlacedProcessor;
     private ServiceBusProcessor _emailCartProcessor;
     private ServiceBusProcessor _registerUserProcessor;
 
-    public AzureServiceBusConsumer(IConfiguration configuration, IEmailService emailService)
+    public AzureServiceBusConsumer(IConfiguration configuration, EmailService emailService)
     {
         this._emailService = emailService;
         this._configuration = configuration;

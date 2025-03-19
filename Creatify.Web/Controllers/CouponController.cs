@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Creatify.Web.Controllers;
-
-[Authorize]
+[Authorize(Roles = "ADMIN")]
 public class CouponController : Controller
 {
 	private readonly ICouponService service;
@@ -18,21 +17,21 @@ public class CouponController : Controller
     public async Task<IActionResult> CouponIndex()
 	{
 		List<CouponDto> list = new();
-		ResponseDto responseDto = await service.GetAllCouponsAsync();
-		if (responseDto.isSuccess && responseDto != null)
+		ResponseDto? responseDto = await service.GetAllCouponsAsync();
+		if (responseDto.isSuccess & responseDto != null)
 			list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(responseDto.Result));
 		else
 			TempData["error"] = responseDto?.Message;
 		return View(list);
 	}
+
     public IActionResult CouponCreate()
 	{
 		return View();
 	}
 
-
 	[HttpPost]
-	public async Task<IActionResult> CouponCreate(CouponDto couponDto)
+    public async Task<IActionResult> CouponCreate(CouponDto couponDto)
 	{
 		if (ModelState.IsValid)
 		{
@@ -47,8 +46,7 @@ public class CouponController : Controller
 		}
 		return View(couponDto);
 	}
-
-	public async Task<IActionResult> CouponDelete(Guid id)
+    public async Task<IActionResult> CouponDelete(Guid id)
 	{
 		ResponseDto? responseDto = await service.DeleteCouponAsync(id);
 		if (responseDto.isSuccess && responseDto != null)
@@ -60,5 +58,4 @@ public class CouponController : Controller
 			TempData["error"] = responseDto?.Message;
 		return NotFound();
 	}
-
 }

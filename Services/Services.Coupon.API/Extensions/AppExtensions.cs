@@ -13,7 +13,6 @@ public static class AppExtensions
 		var secret = apiSettings.GetValue<string>("Secret");
 		var issuer = apiSettings.GetValue<string>("Issuer");
 		var audience = apiSettings.GetValue<string>("Audience");
-
 		var key = Encoding.ASCII.GetBytes(secret);
 
 		builder.Services.AddAuthentication(x =>
@@ -27,7 +26,8 @@ public static class AppExtensions
 				ValidateIssuerSigningKey = true,
 				IssuerSigningKey = new SymmetricSecurityKey(key),
 				ValidateIssuer = true,
-				ValidAudience = audience,
+                ValidIssuer = issuer,
+                ValidAudience = audience,
 				ValidateAudience = true
 			};
 		});

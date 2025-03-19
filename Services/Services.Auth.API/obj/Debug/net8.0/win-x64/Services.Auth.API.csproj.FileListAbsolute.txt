@@ -976,3 +976,4 @@ D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\Microso
 D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.DiagnosticAdapter.dll
 D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\Newtonsoft.Json.Bson.dll
 D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\Ocelot.dll
+D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\Azure.Security.KeyVault.Secrets.dll

@@ -51,9 +51,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.10.3, )"
+            },
             "Azure.Messaging.ServiceBus": {
               "target": "Package",
               "version": "[7.18.1, )"
+            },
+            "Azure.Security.KeyVault.Secrets": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

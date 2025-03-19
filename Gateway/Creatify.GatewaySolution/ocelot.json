@@ -23,7 +23,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/product/GetProductById/{id}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/product/CreateProduct",
@@ -72,6 +75,21 @@
     },
     //"CouponAPI": "https://localhost:7001"
     {
+      "DownstreamPathTemplate": "/api/coupon",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/coupon",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
       "DownstreamPathTemplate": "/api/coupon/GetAllCoupons",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -81,7 +99,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/coupon/GetAllCoupons",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/coupon/{id}",
@@ -93,7 +114,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/coupon/{id}",
-      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "UpstreamHttpMethod": [ "GET" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }
@@ -108,7 +129,10 @@
         }
       ],
       "UpstreamPathTemplate": "/api/coupon/GetCouponbyCode/{code}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
     },
     {
       "DownstreamPathTemplate": "/api/coupon/AddCoupon",
@@ -166,10 +190,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/GetCartbyUserId/{userId}",
-      "UpstreamHttpMethod": [ "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
+      "UpstreamHttpMethod": [ "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/cart/ApplyCoupon",
@@ -181,10 +202,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/ApplyCoupon",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/cart/EmailCartRequest",
@@ -196,10 +214,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/EmailCartRequest",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/cart/UpsertCart",
@@ -211,10 +226,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/UpsertCart",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/cart/RemoveCartbyId/{cartDetailsId}",
@@ -226,10 +238,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/cart/RemoveCartbyId/{cartDetailsId}",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      } 
+      "UpstreamHttpMethod": [ "POST" ]
     },
     //"OrderAPI": "https://localhost:7004"
     {
@@ -241,7 +250,7 @@
           "Port": 7004
         }
       ],
-      "UpstreamPathTemplate": "/api/order/GetAllOrdersbyUserId/{id}",
+      "UpstreamPathTemplate": "/api/order/GetAllOrdersbyUserId/{userId}",
       "UpstreamHttpMethod": [ "GET" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
@@ -263,7 +272,7 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/order/UpdateOrderStatus/{id}",
+      "DownstreamPathTemplate": "/api/order/CreateOrder",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -271,22 +280,7 @@
           "Port": 7004
         }
       ],
-      "UpstreamPathTemplate": "/api/order/UpdateOrderStatus/{id}",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      }
-    },
-    {
-      "DownstreamPathTemplate": "/api/order/ValidateStripeSession/{id}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7004
-        }
-      ],
-      "UpstreamPathTemplate": "/api/order/ValidateStripeSession/{id}",
+      "UpstreamPathTemplate": "/api/order/CreateOrder",
       "UpstreamHttpMethod": [ "POST" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
@@ -308,7 +302,7 @@
       }
     },
     {
-      "DownstreamPathTemplate": "/api/order/CreateOrder",
+      "DownstreamPathTemplate": "/api/order/ValidateStripeSession",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -316,8 +310,23 @@
           "Port": 7004
         }
       ],
-      "UpstreamPathTemplate": "/api/order/CreateOrder",
+      "UpstreamPathTemplate": "/api/order/ValidateStripeSession",
       "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/order/UpdateOrderStatusbyId/{orderId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7004
+        }
+      ],
+      "UpstreamPathTemplate": "/api/order/UpdateOrderStatusbyId/{orderId}",
+      "UpstreamHttpMethod": [ "PUT" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
       }

@@ -8,7 +8,7 @@ namespace Services.Coupon.API.Controllers;
 
 [Route("api/coupon")]
 [ApiController]
-public class CouponAPIController : ControllerBase
+public class CouponAPIController : ControllerBase 
 {
 	private readonly AppDbContext _context;
 	private ResponseDto _response;
@@ -22,7 +22,8 @@ public class CouponAPIController : ControllerBase
 	}
 
 	[HttpGet]
-	[Route("GetAllCoupons")]
+	[Authorize(Roles = "ADMIN")]
+    [Route("GetAllCoupons")]
 	public ResponseDto GetAllCoupons()
 	{
 		try
@@ -39,7 +40,8 @@ public class CouponAPIController : ControllerBase
 	}
 
 	[HttpGet]
-	[Route("{id:int}")]
+	[Authorize]
+	[Route("{id:guid}")]
 	public ResponseDto GetCouponbyId(string id)
 	{
 		try
@@ -56,7 +58,8 @@ public class CouponAPIController : ControllerBase
 	}
 
 	[HttpGet]
-	[Route("GetCouponbyCode/{code}")]
+	[Authorize]
+    [Route("GetCouponbyCode/{code}")]
 	public ResponseDto GetCouponbyCode(string code)
 	{
 		try
@@ -106,7 +109,7 @@ public class CouponAPIController : ControllerBase
 	[HttpPut]
 	[Authorize(Roles = "ADMIN")]
 	[Route("EditCoupon")]
-	public ResponseDto EditCouponbyId([FromBody] CouponDto couponDto)
+	public ResponseDto EditCoupon([FromBody] CouponDto couponDto)
 	{
 		try
 		{
@@ -148,5 +151,4 @@ public class CouponAPIController : ControllerBase
 		}
 		return _response;
 	}
-
 }

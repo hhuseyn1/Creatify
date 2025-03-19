@@ -75,6 +75,7 @@ public class CartController : Controller
         }
         return View(orderId);
     }
+
     public async Task<IActionResult> Remove(string cartDetailsId)
     {
         var userId = User.Claims.Where(u => u.Type == JwtRegisteredClaimNames.Sub)?.FirstOrDefault()?.Value;

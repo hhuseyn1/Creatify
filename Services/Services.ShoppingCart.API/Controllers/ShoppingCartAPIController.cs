@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Creatify.MessageBus;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services.ShoppingCart.API.Data;
@@ -158,7 +157,6 @@ public class ShoppingCartAPIController : ControllerBase
         }
         return _responseDto;
     }
-
 
     [HttpPost("RemoveCartbyId/{cartDetailsId}")]
     public async Task<ResponseDto> RemoveCartbyId(Guid cartDetailsId)

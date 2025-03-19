@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Services.Coupon.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3443095cac405c726a0c5f9af4721b616d2ce8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68922ca02bc4459957ab4fff5534e54915e7d3c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Services.Coupon.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Services.Coupon.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

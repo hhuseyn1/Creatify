@@ -5,13 +5,10 @@ using Microsoft.OpenApi.Models;
 using Services.Order.API;
 using Services.Order.API.Data;
 using Services.Order.API.Extensions;
-using Services.Order.API.Service;
-using Services.Order.API.Service.IService;
 using Services.Order.API.Utility;
 using Services.Order.API.RabbitMQSender;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(option =>
@@ -22,12 +19,9 @@ builder.Services.AddDbContext<AppDbContext>(option =>
 IMapper mapper = MappingConfig.RegisterMappings().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<BackendApiAuthenticationHttpClientHandler>();
 builder.Services.AddScoped<IRabbitMQOrderMessageSender, RabbitMQOrderMessageSender>();
-builder.Services.AddHttpClient("Product",
-    u => u.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"])).AddHttpMessageHandler<BackendApiAuthenticationHttpClientHandler>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>

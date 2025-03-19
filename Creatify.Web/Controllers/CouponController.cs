@@ -1,10 +1,12 @@
 ﻿using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace Creatify.Web.Controllers;
 
+[Authorize]
 public class CouponController : Controller
 {
 	private readonly ICouponService service;
@@ -13,7 +15,7 @@ public class CouponController : Controller
 	{
 		this.service = service;
 	}
-	public async Task<IActionResult> CouponIndex()
+    public async Task<IActionResult> CouponIndex()
 	{
 		List<CouponDto> list = new();
 		ResponseDto responseDto = await service.GetAllCouponsAsync();
@@ -23,8 +25,7 @@ public class CouponController : Controller
 			TempData["error"] = responseDto?.Message;
 		return View(list);
 	}
-
-	public IActionResult CouponCreate()
+    public IActionResult CouponCreate()
 	{
 		return View();
 	}

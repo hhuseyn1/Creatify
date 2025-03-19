@@ -79,7 +79,7 @@
   },
   {
     "ContainingType": "Services.Coupon.API.Controllers.CouponAPIController",
-    "Method": "EditCouponbyId",
+    "Method": "EditCoupon",
     "RelativePath": "api/coupon/EditCoupon",
     "HttpMethod": "PUT",
     "IsController": true,

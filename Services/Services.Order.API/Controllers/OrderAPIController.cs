@@ -6,7 +6,6 @@ using Services.Order.API.Data;
 using Services.Order.API.Models;
 using Services.Order.API.Models.Dto;
 using Services.Order.API.RabbitMQSender;
-using Services.Order.API.Service.IService;
 using Services.Order.API.Utility;
 using Stripe;
 using Stripe.Checkout;
@@ -14,27 +13,24 @@ using Stripe.Checkout;
 namespace Services.Order.API.Controllers;
 
 [Route("api/order")]
+[Authorize]
 [ApiController]
 public class OrderAPIController : ControllerBase
 {
     protected ResponseDto _responseDto;
     private IMapper _mapper;
     private readonly AppDbContext _context;
-    private IProductService _productService;
     private readonly IRabbitMQOrderMessageSender _messageBus;
     private readonly IConfiguration _configuration;
-    public OrderAPIController(IMapper mapper, AppDbContext context, IProductService productService, IRabbitMQOrderMessageSender messageBus, IConfiguration configuration)
+    public OrderAPIController(IMapper mapper, AppDbContext context, IRabbitMQOrderMessageSender messageBus, IConfiguration configuration)
     {
         this._mapper = mapper;
         this._context = context;
         this._messageBus = messageBus;
-        this._productService = productService;
         _responseDto = new ResponseDto();
         this._configuration = configuration;
     }
 
-
-    [Authorize]
     [HttpGet("GetAllOrdersbyUserId/{userId}")]
     public ResponseDto? GetAllOrdersbyUserId(Guid? userId)
     {
@@ -59,7 +55,6 @@ public class OrderAPIController : ControllerBase
         return _responseDto;
     }
 
-    [Authorize]
     [HttpGet("GetOrdersbyId/{id}")]
     public ResponseDto? GetOrdersbyId(Guid id)
     {
@@ -77,7 +72,6 @@ public class OrderAPIController : ControllerBase
     }
 
 
-    [Authorize]
     [HttpPost("CreateOrder")]
     public async Task<ResponseDto> CreateOrder([FromBody] CartDto cartDto)
     {
@@ -102,7 +96,6 @@ public class OrderAPIController : ControllerBase
         return _responseDto;
     }
 
-    [Authorize]
     [HttpPost("CreateStripeSession")]
     public async Task<ResponseDto> CreateStripeSession([FromBody] StripeRequestDto requestDto)
     {
@@ -165,7 +158,6 @@ public class OrderAPIController : ControllerBase
         return _responseDto;
     }
 
-    [Authorize]
     [HttpPost("ValidateStripeSession")]
     public async Task<ResponseDto> ValidateStripeSession([FromBody] Guid orderHeaderId)
     {
@@ -205,7 +197,6 @@ public class OrderAPIController : ControllerBase
     }
 
 
-    [Authorize]
     [HttpPut("UpdateOrderStatusbyId/{orderId}")]
     public async Task<ResponseDto> UpdateOrderStatusbyId(Guid orderId, [FromBody] string newStatus)
     {

@@ -1,5 +1,6 @@
 ﻿using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -24,12 +25,11 @@ public class ProductController : Controller
             TempData["error"] = responseDto?.Message;
         return View(list);
     }
-
+    [Authorize]
     public async Task<IActionResult> ProductCreate()
     {
         return View();
     }
-
 
     [HttpPost]
     public async Task<IActionResult> ProductCreate(ProductDto ProductDto)

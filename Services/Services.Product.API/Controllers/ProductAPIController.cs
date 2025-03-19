@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Services.Product.API.Data;
 using Services.Product.API.Models.Dto;
 
-
 namespace Services.Product.API.Controllers;
 
 [Route("api/product")]
@@ -55,7 +54,6 @@ public class ProductAPIController : ControllerBase
         }
         return _response;
     }
-
 
     [HttpPost]
     [Route("CreateProduct")]
@@ -177,5 +175,4 @@ public class ProductAPIController : ControllerBase
         }
         return _response;
     }
-
 }

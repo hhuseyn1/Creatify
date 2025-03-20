@@ -171,11 +171,11 @@
           "dependencies": {
             "Azure.Identity": {
               "target": "Package",
-              "version": "[1.10.3, )"
+              "version": "[1.13.2, )"
             },
             "Azure.Messaging.ServiceBus": {
               "target": "Package",
-              "version": "[7.18.1, )"
+              "version": "[7.18.4, )"
             },
             "Azure.Security.KeyVault.Secrets": {
               "target": "Package",

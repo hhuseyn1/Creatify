@@ -7,3 +7,4 @@
 /.vs
 
 appsettings*.json
+ocelot.production.json

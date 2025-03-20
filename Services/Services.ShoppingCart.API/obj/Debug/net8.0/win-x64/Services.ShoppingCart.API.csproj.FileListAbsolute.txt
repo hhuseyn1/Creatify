@@ -426,3 +426,4 @@ D:\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Debug\net8.0\win-x64
 D:\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Debug\net8.0\win-x64\Services.ShoppingCart.API.pdb
 D:\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Debug\net8.0\win-x64\Services.ShoppingCart.API.genruntimeconfig.cache
 D:\Projects\Creatify\Services\Services.ShoppingCart.API\obj\Debug\net8.0\win-x64\ref\Services.ShoppingCart.API.dll
+D:\Projects\Creatify\Services\Services.ShoppingCart.API\bin\Debug\net8.0\win-x64\Azure.Security.KeyVault.Secrets.dll

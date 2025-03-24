@@ -57,7 +57,11 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.7.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -69,15 +73,15 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.7.3, )"
+              "version": "[8.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[6.7.3, )"
+              "version": "[8.0.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[7.1.2, )"
+              "version": "[8.7.0, )"
             }
           },
           "imports": [
@@ -250,6 +254,10 @@
           }
         },
         "warningProperties": {
+          "noWarn": [
+            "NU1605",
+            "NU1701"
+          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -275,7 +283,7 @@
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -303,25 +311,29 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.7.0, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.8.1, )"
             },
-            "Swashbuckle": {
-              "target": "Package",
-              "version": "[5.6.0, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.7.3, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[6.7.3, )"
+              "version": "[8.0.0, )"
             },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
-              "version": "[6.7.3, )"
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.7.0, )"
             }
           },
           "imports": [

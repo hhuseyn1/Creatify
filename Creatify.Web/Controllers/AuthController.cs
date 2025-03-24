@@ -4,7 +4,6 @@ using Creatify.Web.Utility;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using Services.Auth.API.Models.Dto;
 using System.IdentityModel.Tokens.Jwt;
@@ -54,51 +53,27 @@ public class AuthController : Controller
 	[HttpGet]
 	public IActionResult Register()
 	{
-		var roleList = new List<SelectListItem>()
-		{
-			new SelectListItem{Text = StaticDetails.RoleAdmin, Value = StaticDetails.RoleAdmin },
-			new SelectListItem{Text = StaticDetails.RoleCustomer, Value = StaticDetails.RoleCustomer }
-		};
-
-		ViewBag.RoleList = roleList;
 		return View();
 	}
 
-	[HttpPost]
-	public async Task<IActionResult> Register(RegisterDto registerDto)
-	{
-		ResponseDto responseDto = await _authService.RegisterAsync(registerDto);
-		ResponseDto assignRole;
+    [HttpPost]
+    public async Task<IActionResult> Register(RegisterDto registerDto)
+    {
+        ResponseDto responseDto = await _authService.RegisterAsync(registerDto);
 
-		if (responseDto != null && responseDto.isSuccess)
-		{
-			if (string.IsNullOrEmpty(registerDto.Role))
-				registerDto.Role = StaticDetails.RoleCustomer;
+        if (responseDto != null && responseDto.isSuccess)
+        {
+            TempData["Success"] = "Registration Successfully";
+            return RedirectToAction(nameof(Login));
+        }
+        else
+        {
+            TempData["Error"] = responseDto?.Message ?? "An error occurred.";
+        }
+        return View(registerDto);
+    }
 
-			assignRole = await _authService.AssignRoleAsync(registerDto);
-			if (assignRole != null && assignRole.isSuccess)
-			{
-				TempData["Success"] = "Registration Successfully";
-				return RedirectToAction(nameof(Login));
-
-			}
-		}
-		else
-		{
-			TempData["Error"] = responseDto.Message;
-		}
-
-		var roleList = new List<SelectListItem>()
-		{
-			new SelectListItem{Text = StaticDetails.RoleAdmin, Value = StaticDetails.RoleAdmin },
-			new SelectListItem{Text = StaticDetails.RoleCustomer, Value = StaticDetails.RoleCustomer }
-		};
-
-		ViewBag.RoleList = roleList;
-		return View(registerDto);
-	}
-
-	[HttpGet]
+    [HttpGet]
 	public async Task<IActionResult> Logout()
 	{
 		await HttpContext.SignOutAsync();

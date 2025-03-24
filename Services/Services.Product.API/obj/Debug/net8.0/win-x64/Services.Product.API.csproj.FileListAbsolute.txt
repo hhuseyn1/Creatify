@@ -272,8 +272,8 @@ C:\Users\husey\OneDrive\Masaüstü\Projects\Creatify\Services\Services.Product.A
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\appsettings.Development.json
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\appsettings.json
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\appsettings.Production.json
-D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.staticwebassets.endpoints.json
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.staticwebassets.runtime.json
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.staticwebassets.endpoints.json
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.exe
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.deps.json
 D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Services.Product.API.runtimeconfig.json

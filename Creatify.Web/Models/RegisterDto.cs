@@ -12,5 +12,5 @@ public class RegisterDto
 	public string PhoneNumber { get; set; }
 	[Required]
 	public string Password { get; set; }
-	public string? Role { get; set; }
+    public string? Role { get; set; }
 }

@@ -300,6 +300,7 @@ D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.Core.Amqp.dll
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.Identity.dll
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.Messaging.ServiceBus.dll
+D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.Security.KeyVault.Secrets.dll
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Humanizer.dll
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Microsoft.AspNetCore.OpenApi.dll
@@ -429,4 +430,3 @@ D:\Projects\Creatify\Services\Services.Order.API\obj\Debug\net8.0\win-x64\refint
 D:\Projects\Creatify\Services\Services.Order.API\obj\Debug\net8.0\win-x64\Services.Order.API.pdb
 D:\Projects\Creatify\Services\Services.Order.API\obj\Debug\net8.0\win-x64\Services.Order.API.genruntimeconfig.cache
 D:\Projects\Creatify\Services\Services.Order.API\obj\Debug\net8.0\win-x64\ref\Services.Order.API.dll
-D:\Projects\Creatify\Services\Services.Order.API\bin\Debug\net8.0\win-x64\Azure.Security.KeyVault.Secrets.dll

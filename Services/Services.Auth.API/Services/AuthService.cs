@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Creatify.Web.Utility;
+using Microsoft.AspNetCore.Identity;
 using Services.Auth.API.Data;
 using Services.Auth.API.Models;
 using Services.Auth.API.Models.Dto;
@@ -68,41 +69,38 @@ public class AuthService : IAuthService
 		return loginResponseDto;
 	}
 
-	public async Task<string> Register(RegisterDto registerDto)
-	{
-		AppUser appUser = new()
-		{
-			UserName = registerDto.Email,
-			Email = registerDto.Email,
-			NormalizedEmail = registerDto.Email.ToUpper(),
-			PhoneNumber = registerDto.PhoneNumber,
-			Name = registerDto.Name
-		};
+    public async Task<string> Register(RegisterDto registerDto)
+    {
+        AppUser appUser = new()
+        {
+            UserName = registerDto.Email,
+            Email = registerDto.Email,
+            NormalizedEmail = registerDto.Email.ToUpper(),
+            PhoneNumber = registerDto.PhoneNumber,
+            Name = registerDto.Name
+        };
 
-		try
-		{
-			var result = await userManager.CreateAsync(appUser, registerDto.Password);
-			if (result.Succeeded)
-			{
-				var user = appDbContext.AppUsers.First(u => u.UserName == registerDto.Email);
-				Creatify.Web.Models.UserDto userDto = new()
-				{
-					Id = Guid.Parse(user.Id),
-					Email = user.Email,
-					Name = user.Name,
-					PhoneNumber = user.PhoneNumber
-				};
-				return "";
-			}
-			else
-			{
-				return result.Errors.FirstOrDefault().Description;
-			}
-		}
-		catch (Exception ex)
-		{
+        try
+        {
+            var result = await userManager.CreateAsync(appUser, registerDto.Password);
+            if (result.Succeeded)
+            {
+                if (!await roleManager.RoleExistsAsync(StaticDetails.RoleCustomer))
+                    await roleManager.CreateAsync(new IdentityRole(StaticDetails.RoleCustomer));
 
-		}
-		return "Error encountered";
-	}
+                await userManager.AddToRoleAsync(appUser, StaticDetails.RoleCustomer);
+
+                return "";
+            }
+            else
+            {
+                return result.Errors.FirstOrDefault().Description;
+            }
+        }
+        catch (Exception)
+        {
+            return "Error encountered";
+        }
+    }
+
 }

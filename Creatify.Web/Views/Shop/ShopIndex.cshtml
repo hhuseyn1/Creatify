@@ -1,0 +1,45 @@
+﻿@model List<ShopDto>
+
+<h2>Shop List</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Shop</a>
+</p>
+
+@if (Model.Count > 0)
+{
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>OwnerEmail</th>
+                <th>ContactEmail</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shop in Model)
+            {
+                <tr>
+                    <td>@shop.Name</td>
+                    <td>@shop.OwnerEmail</td>
+                    <td>@shop.ContactEmail</td>
+                    <td>@shop.PhoneNumber</td>
+                    <td>@shop.Location</td>
+                    <td>@shop.Description</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@shop.Id" class="btn btn-success">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@shop.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Shops found.</p>
+}

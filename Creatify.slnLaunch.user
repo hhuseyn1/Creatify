@@ -37,6 +37,10 @@
       {
         "Path": "Services\\Services.Email.API\\Services.Email.API.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "Services\\Services.Shop.API\\Services.Shop.API.csproj",
+        "Action": "Start"
       }
     ]
   }

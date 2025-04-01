@@ -1,0 +1,125 @@
+﻿@model ShopDto
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<form asp-action="ShopEdit" enctype="multipart/form-data">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Edit Shop</h1>
+
+        <hr />
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="col-2">
+                <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="OwnerEmail" class="control-label pt-2" style="font-size:20px;">Owner Email</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="OwnerEmail" class="form-control" />
+                <span asp-validation-for="OwnerEmail" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="ContactEmail" class="control-label pt-2" style="font-size:20px;">Contact Email</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="ContactEmail" class="form-control" />
+                <span asp-validation-for="ContactEmail" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="PhoneNumber" class="control-label pt-2" style="font-size:20px;">Phone Number</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Shop Location</label>
+            </div>
+            <div class="col-10 pb-3">
+                <div id="map" style="height: 400px;"></div>
+                <input asp-for="Location" id="Location" class="form-control mt-2" readonly />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Description" class="control-label pt-2" style="font-size:20px;"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Current Banner</label>
+            </div>
+            <div class="col-10 pb-3">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl" width="300" class="mb-2" />
+                }
+            </div>
+
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size:20px;">Change Banner Image</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Image" accept=".jpg, .png" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="ShopIndex" class="btn-primary btn form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Edit" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let map = L.map('map').setView([40.4093, 49.8671], 12);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let marker;
+
+        map.on('click', function (e) {
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker(e.latlng).addTo(map);
+            document.getElementById('Location').value = e.latlng.lat + ',' + e.latlng.lng;
+        });
+
+        let locationValue = '@Model.Location';
+
+        if (locationValue && locationValue.includes(",")) {
+            let loc = locationValue.split(',');
+            if (loc.length === 2) {
+                let lat = parseFloat(loc[0]);
+                let lng = parseFloat(loc[1]);
+                marker = L.marker([lat, lng]).addTo(map);
+                map.setView([lat, lng], 12);
+            }
+        }
+    </script>
+}

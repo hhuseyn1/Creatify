@@ -28,22 +28,20 @@ public class ShopController : Controller
         }
         else
         {
-            TempData["error"] = response.Message;
+            TempData["error"] = response?.Message;
         }
-
         return View(shopList);
     }
 
     [HttpGet]
     [Authorize(Roles = "ADMIN")]
-    public IActionResult Create()
+    public IActionResult ShopCreate()
     {
         return View();
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(ShopDto model)
+    public async Task<IActionResult> ShopCreate(ShopDto model)
     {
         if (!ModelState.IsValid) return View(model);
 
@@ -54,14 +52,13 @@ public class ShopController : Controller
             return RedirectToAction(nameof(ShopIndex));
         }
         else
-        {
-            TempData["error"] = response.Message;
-            return View(model);
-        }
+            TempData["error"] = response?.Message;
+        return View(model);
     }
 
     [HttpGet]
-    public async Task<IActionResult> Edit(Guid id)
+    [Authorize(Roles = "ADMIN")]
+    public async Task<IActionResult> ShopEdit(Guid id)
     {
         var response = await _shopService.GetShopByIdAsync(id);
         if (response.isSuccess && response.Result != null)
@@ -69,13 +66,12 @@ public class ShopController : Controller
             var shop = JsonConvert.DeserializeObject<ShopDto>(response.Result.ToString());
             return View(shop);
         }
-        TempData["error"] = response.Message ?? "Error fetching Shop details.";
+        TempData["error"] = response?.Message;
         return RedirectToAction(nameof(ShopIndex));
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(ShopDto model)
+    public async Task<IActionResult> ShopEdit(ShopDto model)
     {
         if (!ModelState.IsValid) return View(model);
 
@@ -87,13 +83,13 @@ public class ShopController : Controller
         }
         else
         {
-            TempData["Error"] = response.Message;
-            return View(model);
+            TempData["Error"] = response?.Message;
         }
+        return View(model);
     }
 
     [HttpGet]
-    public async Task<IActionResult> Delete(Guid id)
+    public async Task<IActionResult> ShopDelete(Guid id)
     {
         var response = await _shopService.GetShopByIdAsync(id);
         if (response.isSuccess && response.Result != null)
@@ -101,13 +97,12 @@ public class ShopController : Controller
             var shop = JsonConvert.DeserializeObject<ShopDto>(response.Result.ToString());
             return View(shop);
         }
-        TempData["error"] = response.Message ?? "Error fetching Shop details.";
+        TempData["error"] = response?.Message;
         return RedirectToAction(nameof(ShopIndex));
     }
 
     [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Delete(ShopDto model)
+    public async Task<IActionResult> ShopDelete(ShopDto model)
     {
         var response = await _shopService.DeleteShopByIdAsync(model.Id);
         if (response.isSuccess)
@@ -116,7 +111,7 @@ public class ShopController : Controller
         }
         else
         {
-            TempData["error"] = response.Message;
+            TempData["error"] = response?.Message;
         }
 
         return RedirectToAction(nameof(ShopIndex));

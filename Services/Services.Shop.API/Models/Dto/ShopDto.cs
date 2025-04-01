@@ -20,4 +20,5 @@ public class ShopDto
     public string? ImageUrl { get; set; }
 
     public string? ImageLocalPath { get; set; }
+    public IFormFile? Image { get; set; }
 }

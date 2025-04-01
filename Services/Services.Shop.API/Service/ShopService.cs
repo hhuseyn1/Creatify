@@ -19,71 +19,53 @@ public class ShopService : IShopService
 
     public async Task<ResponseDto> GetAllShopsAsync()
     {
-        var response = new ResponseDto();
         try
         {
-            var shops = await _db.Shops.ToListAsync();
-            response.Result = _mapper.Map<List<ShopDto>>(shops);
+            var shops = await _db.Shops.AsNoTracking().ToListAsync();
+            return new ResponseDto
+            {
+                Result = _mapper.Map<List<ShopDto>>(shops),
+                isSuccess = true
+            };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
     }
 
     public async Task<ResponseDto> GetShopByIdAsync(Guid id)
     {
-        var response = new ResponseDto();
         try
         {
-            var shop = await _db.Shops.FindAsync(id);
-            if (shop == null)
-            {
-                response.isSuccess = false;
-                response.Message = "Shop not found.";
-                return response;
-            }
-
-            response.Result = _mapper.Map<ShopDto>(shop);
+            var shop = await _db.Shops.AsNoTracking().FirstOrDefaultAsync(s => s.Id == id);
+            return shop == null
+                ? new ResponseDto { isSuccess = false, Message = "Shop not found." }
+                : new ResponseDto { Result = _mapper.Map<ShopDto>(shop), isSuccess = true };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
     }
 
     public async Task<ResponseDto> GetShopByNameAsync(string name)
     {
-        var response = new ResponseDto();
         try
         {
-            var shop = await _db.Shops
-                .FirstOrDefaultAsync(s => s.Name == name);
-
-            if (shop == null)
-            {
-                response.isSuccess = false;
-                response.Message = "Shop not found by name.";
-                return response;
-            }
-
-            response.Result = _mapper.Map<ShopDto>(shop);
+            var shop = await _db.Shops.AsNoTracking().FirstOrDefaultAsync(s => s.Name == name);
+            return shop == null
+                ? new ResponseDto { isSuccess = false, Message = "Shop not found by name." }
+                : new ResponseDto { Result = _mapper.Map<ShopDto>(shop), isSuccess = true };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
     }
 
     public async Task<ResponseDto> CreateShopAsync(ShopDto shopDto)
     {
-        var response = new ResponseDto();
         try
         {
             var shop = _mapper.Map<Shop.API.Models.Shop>(shopDto);
@@ -92,73 +74,71 @@ public class ShopService : IShopService
             await _db.Shops.AddAsync(shop);
             await _db.SaveChangesAsync();
 
-            response.Result = _mapper.Map<ShopDto>(shop);
+            return new ResponseDto
+            {
+                Result = _mapper.Map<ShopDto>(shop),
+                isSuccess = true
+            };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
     }
 
     public async Task<ResponseDto> UpdateShopAsync(ShopDto shopDto)
     {
-        var response = new ResponseDto();
         try
         {
-            var shopFromDb = await _db.Shops.FindAsync(shopDto.Id);
-            if (shopFromDb == null)
+            var existingShop = await _db.Shops.FindAsync(shopDto.Id);
+            if (existingShop == null)
             {
-                response.isSuccess = false;
-                response.Message = "Shop not found.";
-                return response;
+                return new ResponseDto { isSuccess = false, Message = "Shop not found." };
             }
 
-            shopFromDb.Name = shopDto.Name;
-            shopFromDb.OwnerEmail = shopDto.OwnerEmail;
-            shopFromDb.ContactEmail = shopDto.ContactEmail;
-            shopFromDb.PhoneNumber = shopDto.PhoneNumber;
-            shopFromDb.Location = shopDto.Location;
-            shopFromDb.Description = shopDto.Description;
-            shopFromDb.ImageUrl = shopDto.ImageUrl;
-            shopFromDb.ImageLocalPath = shopDto.ImageLocalPath;
-
-            _db.Shops.Update(shopFromDb);
+            _mapper.Map(shopDto, existingShop);
+            _db.Shops.Update(existingShop);
             await _db.SaveChangesAsync();
 
-            response.Result = _mapper.Map<ShopDto>(shopFromDb);
+            return new ResponseDto
+            {
+                Result = _mapper.Map<ShopDto>(existingShop),
+                isSuccess = true
+            };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
     }
 
     public async Task<ResponseDto> DeleteShopByIdAsync(Guid id)
     {
-        var response = new ResponseDto();
         try
         {
             var shop = await _db.Shops.FindAsync(id);
             if (shop == null)
             {
-                response.isSuccess = false;
-                response.Message = "Shop not found.";
-                return response;
+                return new ResponseDto { isSuccess = false, Message = "Shop not found." };
             }
 
             _db.Shops.Remove(shop);
             await _db.SaveChangesAsync();
-            response.Result = true;
+
+            return new ResponseDto { Result = true, isSuccess = true };
         }
         catch (Exception ex)
         {
-            response.isSuccess = false;
-            response.Message = ex.Message;
+            return HandleException(ex);
         }
-        return response;
+    }
+
+    private ResponseDto HandleException(Exception ex)
+    {
+        return new ResponseDto
+        {
+            isSuccess = false,
+            Message = ex.Message
+        };
     }
 }

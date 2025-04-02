@@ -10,14 +10,14 @@ namespace Services.Auth.API.Services;
 
 public class AuthService : IAuthService
 {
-	private readonly AppDbContext appDbContext;
+	private readonly AppDbContext _context;
 	private readonly UserManager<AppUser> userManager;
 	private readonly RoleManager<IdentityRole> roleManager;
 	private readonly IJwtTokenGenerator jwtGenerator;
 
-	public AuthService(AppDbContext appDbContext, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IJwtTokenGenerator jwtGenerator)
+	public AuthService(AppDbContext context, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IJwtTokenGenerator jwtGenerator)
 	{
-		this.appDbContext = appDbContext;
+		this._context = context;
 		this.userManager = userManager;
 		this.roleManager = roleManager;
 		this.jwtGenerator = jwtGenerator;
@@ -25,12 +25,12 @@ public class AuthService : IAuthService
 
 	public async Task<bool> AssignRole(string email, string roleName)
 	{
-		var user = appDbContext.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
+		var user = _context.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
 		if (user is not null)
 		{
-			if (!roleManager.RoleExistsAsync(roleName).GetAwaiter().GetResult())
+			if (!await roleManager.RoleExistsAsync(roleName))
 			{
-				roleManager.CreateAsync(new IdentityRole(roleName)).GetAwaiter().GetResult();
+				await roleManager.CreateAsync(new IdentityRole(roleName));
 			}
 			await userManager.AddToRoleAsync(user, roleName);
 			return true;
@@ -40,11 +40,11 @@ public class AuthService : IAuthService
 
 	public async Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto)
 	{
-		var user = appDbContext.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.UserName.ToLower());
+		var user = _context.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.UserName.ToLower());
 
 		bool isValid = await userManager.CheckPasswordAsync(user, loginDto.Password);
 
-		if (user is null || isValid is false)
+		if (user is null || !isValid)
 		{
 			return new Creatify.Web.Models.LoginResponseDto() { Token = "", User = null };
 		}

@@ -1,6 +1,5 @@
 ﻿using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
-using Creatify.Web.Utility;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -45,7 +44,7 @@ public class AuthController : Controller
 		}
 		else
 		{
-			TempData["Error"] = responseDto.Message;
+			TempData["error"] = responseDto.Message;
 			return View(loginDto);
 		}
 	}
@@ -63,12 +62,12 @@ public class AuthController : Controller
 
         if (responseDto != null && responseDto.isSuccess)
         {
-            TempData["Success"] = "Registration Successfully";
+            TempData["success"] = "Registration Successfully";
             return RedirectToAction(nameof(Login));
         }
         else
         {
-            TempData["Error"] = responseDto?.Message ?? "An error occurred.";
+            TempData["error"] = responseDto?.Message;
         }
         return View(registerDto);
     }

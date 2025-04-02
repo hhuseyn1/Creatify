@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Services.Auth.API.Models.Dto;
 using Services.Auth.API.RabbitMQSender;
 using Services.Auth.API.Services.IAuth;
@@ -50,7 +51,8 @@ public class AuthAPIController : ControllerBase
 	}
 
 	[HttpPost("AssignRole")]
-	public async Task<IActionResult> AssignRole([FromBody] RegisterDto registerDto)
+	[Authorize(Roles = "Admin")]
+    public async Task<IActionResult> AssignRole([FromBody] RegisterDto registerDto)
 	{
 		var assignRole = await _authService.AssignRole(registerDto.Email, registerDto.Role.ToUpper());
 		if (!assignRole)

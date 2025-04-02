@@ -972,3 +972,5 @@ D:\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\win-x64\refint\
 D:\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\win-x64\Services.Auth.API.pdb
 D:\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\win-x64\Services.Auth.API.genruntimeconfig.cache
 D:\Projects\Creatify\Services\Services.Auth.API\obj\Debug\net8.0\win-x64\ref\Services.Auth.API.dll
+D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\FluentValidation.AspNetCore.dll
+D:\Projects\Creatify\Services\Services.Auth.API\bin\Debug\net8.0\win-x64\FluentValidation.DependencyInjectionExtensions.dll

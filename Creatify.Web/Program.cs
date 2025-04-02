@@ -1,6 +1,9 @@
 using Creatify.Web.Service;
 using Creatify.Web.Service.IService;
 using Creatify.Web.Utility;
+using Creatify.Web.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -38,6 +41,16 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Auth/login";
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
+
+builder.Services.AddValidatorsFromAssemblyContaining<CartHeaderDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<LoginDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<ShopDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterDtoValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
 
 var app = builder.Build();
 

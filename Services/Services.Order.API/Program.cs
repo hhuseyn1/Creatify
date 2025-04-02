@@ -16,6 +16,20 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 });
 
+var myAllowSpecificOrigins = "GatewayAPICorsOrigin";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost:7777")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
+                      });
+});
+
 IMapper mapper = MappingConfig.RegisterMappings().CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -71,7 +85,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseCors(myAllowSpecificOrigins);
 ApplyMigration();
 
 app.Run();

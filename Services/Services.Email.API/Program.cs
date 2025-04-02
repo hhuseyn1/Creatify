@@ -11,6 +11,20 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 });
 
+var myAllowSpecificOrigins = "GatewayAPICorsOrigin";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost:7777")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
+                      });
+});
+
 var optionBuilder = new DbContextOptionsBuilder<AppDbContext>();
 optionBuilder.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 builder.Services.AddSingleton(new EmailService(optionBuilder.Options));
@@ -38,6 +52,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(myAllowSpecificOrigins);
 ApplyMigration();
 app.UseAzureServiceBusConsumer();
 app.Run();

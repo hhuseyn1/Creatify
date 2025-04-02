@@ -26,7 +26,7 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 });
 
-var myAllowSpecificOrigins = "AuthAPICorsOrigin";
+var myAllowSpecificOrigins = "GatewayAPICorsOrigin";
 
 builder.Services.AddCors(options =>
 {

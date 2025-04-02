@@ -143,3 +143,4 @@ D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\refint\Services
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\Services.Shop.API.pdb
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\Services.Shop.API.genruntimeconfig.cache
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\ref\Services.Shop.API.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\FluentValidation.dll

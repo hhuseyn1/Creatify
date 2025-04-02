@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g44WwMFpTMQ=",
+  "dgSpecHash": "4SxXSTPK5Rk=",
   "success": true,
   "projectFilePath": "D:\\Projects\\Creatify\\Services\\Services.ShoppingCart.API\\Services.ShoppingCart.API.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\husey\\.nuget\\packages\\azure.identity\\1.13.2\\azure.identity.1.13.2.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\azure.messaging.servicebus\\7.18.4\\azure.messaging.servicebus.7.18.4.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\azure.security.keyvault.secrets\\4.7.0\\azure.security.keyvault.secrets.4.7.0.nupkg.sha512",
+    "C:\\Users\\husey\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.1\\microsoft.aspnetcore.authentication.jwtbearer.8.0.1.nupkg.sha512",
     "C:\\Users\\husey\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.1\\microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",

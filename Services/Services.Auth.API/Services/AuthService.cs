@@ -40,7 +40,7 @@ public class AuthService : IAuthService
 
 	public async Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto)
 	{
-		var user = _context.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.UserName.ToLower());
+		var user = _context.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.Email.ToLower());
 
 		bool isValid = await userManager.CheckPasswordAsync(user, loginDto.Password);
 

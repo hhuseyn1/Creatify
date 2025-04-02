@@ -42,10 +42,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
 
-builder.Services.AddValidatorsFromAssemblyContaining<CartHeaderDtoValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<LoginDtoValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<ShopDtoValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<RegisterDtoValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>();
 
 builder.Services.AddFluentValidationAutoValidation();

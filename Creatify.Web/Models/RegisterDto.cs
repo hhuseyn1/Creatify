@@ -1,4 +1,4 @@
-﻿namespace Services.Auth.API.Models.Dto;
+﻿namespace Creatify.Web.Models;
 
 public class RegisterDto
 {

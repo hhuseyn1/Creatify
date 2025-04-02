@@ -7,6 +7,9 @@ using Services.Order.API.Data;
 using Services.Order.API.Extensions;
 using Services.Order.API.Utility;
 using Services.Order.API.RabbitMQSender;
+using Services.Order.API.Validators;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,6 +69,12 @@ builder.Services.AddSwaggerGen(option =>
 builder.AddOrderServices();
 
 builder.Services.AddAuthorization();
+
+builder.Services.AddValidatorsFromAssemblyContaining<ProductDtoValidator>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+
 
 var app = builder.Build();
 

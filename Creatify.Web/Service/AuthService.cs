@@ -1,7 +1,6 @@
 ﻿using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
 using Creatify.Web.Utility;
-using Services.Auth.API.Models.Dto;
 
 namespace Creatify.Web.Service;
 

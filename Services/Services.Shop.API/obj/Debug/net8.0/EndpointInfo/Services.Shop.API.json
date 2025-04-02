@@ -71,11 +71,6 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "required": [
-                  "Description",
-                  "Name",
-                  "OwnerEmail"
-                ],
                 "type": "object",
                 "properties": {
                   "Id": {
@@ -98,8 +93,6 @@
                     "type": "string"
                   },
                   "Description": {
-                    "maxLength": 1000,
-                    "minLength": 0,
                     "type": "string"
                   },
                   "ImageUrl": {
@@ -165,11 +158,6 @@
           "content": {
             "multipart/form-data": {
               "schema": {
-                "required": [
-                  "Description",
-                  "Name",
-                  "OwnerEmail"
-                ],
                 "type": "object",
                 "properties": {
                   "Id": {
@@ -192,8 +180,6 @@
                     "type": "string"
                   },
                   "Description": {
-                    "maxLength": 1000,
-                    "minLength": 0,
                     "type": "string"
                   },
                   "ImageUrl": {

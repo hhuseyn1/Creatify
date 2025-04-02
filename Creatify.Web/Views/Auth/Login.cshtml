@@ -1,5 +1,4 @@
-﻿@using Services.Auth.API.Models.Dto
-@model LoginDto
+﻿@model LoginDto
 
 <form method="post">
     <div class="container border p-4">
@@ -8,8 +7,8 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3 pb-2">
-                <input asp-for="UserName" class="form-control" placeholder="Username..." />
-                <span asp-validation-for="UserName" class="text-danger" />
+                <input asp-for="Email" class="form-control" placeholder="Email..." />
+                <span asp-validation-for="Email" class="text-danger" />
             </div>
             <div class="col-12 col-md-6 offset-md-3 pb-2">
                 <div class="input-group">

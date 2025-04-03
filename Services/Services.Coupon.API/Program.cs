@@ -2,11 +2,30 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using Services.Coupon.API;
 using Services.Coupon.API.Data;
 using Services.Coupon.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "CouponAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "coupon-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -77,6 +96,7 @@ app.UseSwaggerUI(c =>
 Stripe.StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecreyKey").Get<string>();
 
 app.UseHttpsRedirection();
+app.UseGlobalException();
 
 app.UseAuthentication();
 app.UseAuthorization();

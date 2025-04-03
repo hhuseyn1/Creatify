@@ -8,6 +8,9 @@ using Services.Auth.API.RabbitMQSender;
 using Services.Auth.API.Services;
 using Services.Auth.API.Services.IAuth;
 using Services.Auth.API.Services.IService;
+using Serilog;
+using Services.Auth.API.Extensions;
+using Serilog.Sinks.Elasticsearch;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,23 @@ builder.Configuration
 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
 .AddJsonFile("appsettings.AuthAPI.json", optional: true, reloadOnChange: true)
 .AddJsonFile($"appsettings.AuthAPI.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "AuthAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "auth-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 
 // Add services to the container.
@@ -69,6 +89,7 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseHttpsRedirection();
+app.UseGlobalException();
 
 app.UseAuthentication();
 app.UseAuthorization();

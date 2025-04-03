@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Creatify.GatewaySolution")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0581e361d1d1d08716a6bba1ce813fc1ec25f26")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55a39d246daee3cec05aec40e0973e045f5dbaba")]
 [assembly: System.Reflection.AssemblyProductAttribute("Creatify.GatewaySolution")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Creatify.GatewaySolution")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

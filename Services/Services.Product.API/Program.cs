@@ -1,7 +1,9 @@
- using AutoMapper;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog.Sinks.Elasticsearch;
+using Serilog;
 using Services.Product.API;
 using Services.Product.API.Data;
 using Services.Product.API.Extensions;
@@ -9,6 +11,23 @@ using Services.Product.API.Service;
 using Services.Product.API.Service.IService;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "ProductAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "product-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -78,6 +97,7 @@ app.UseSwaggerUI(c =>
 });
 
 app.UseHttpsRedirection();
+app.UseGlobalException();
 
 app.UseAuthentication();
 app.UseAuthorization();

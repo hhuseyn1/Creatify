@@ -1,8 +1,9 @@
 using AutoMapper;
-using Creatify.MessageBus;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using Services.ShoppingCart.API;
 using Services.ShoppingCart.API.Data;
 using Services.ShoppingCart.API.Extensions;
@@ -13,6 +14,22 @@ using Services.ShoppingCart.API.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "ShoppingCartAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "shoppingcart-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 builder.Services.AddDbContext<AppDbContext>(option =>
 {
@@ -89,6 +106,7 @@ app.UseSwaggerUI(c =>
 
 
 app.UseHttpsRedirection();
+app.UseGlobalException();
 
 app.UseAuthentication();
 app.UseAuthorization();

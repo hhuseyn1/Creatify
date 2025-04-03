@@ -1,10 +1,30 @@
 using Microsoft.EntityFrameworkCore;
+using Serilog.Sinks.Elasticsearch;
+using Serilog;
 using Services.Reward.API.Data;
 using Services.Reward.API.Extension;
 using Services.Reward.API.Messaging;
 using Services.Reward.API.Services;
+using Services.Reward.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "RewardAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "reward-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Add services to the container.
 
@@ -50,6 +70,7 @@ app.UseSwaggerUI(c =>
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseGlobalException();
 
 app.MapControllers();
 

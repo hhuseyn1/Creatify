@@ -8,3 +8,7 @@
 
 appsettings*.json
 ocelot.production.json
+Logs/
+
+bin/
+obj/

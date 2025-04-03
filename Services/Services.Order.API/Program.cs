@@ -10,8 +10,27 @@ using Services.Order.API.RabbitMQSender;
 using Services.Order.API.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithThreadId()
+    .Enrich.WithProperty("ServiceName", "OrderAPI")
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.json", rollingInterval: RollingInterval.Day)
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+    {
+        AutoRegisterTemplate = true,
+        IndexFormat = "order-api-logs-{0:yyyy.MM.dd}"
+    })
+    .MinimumLevel.Information()
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(option =>
@@ -89,6 +108,7 @@ Stripe.StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:Sec
 
 
 app.UseHttpsRedirection();
+app.UseGlobalException();
 
 app.UseAuthentication();
 app.UseAuthorization();

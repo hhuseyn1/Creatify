@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "+FFAZ+JDSIxXiVUnyU0lDcJ5jOm5aoltCnNT0apA5qA=",
-  "Source": "Creatify.GatewaySolution",
-  "BasePath": "_content/Creatify.GatewaySolution",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"+FFAZ+JDSIxXiVUnyU0lDcJ5jOm5aoltCnNT0apA5qA=","Source":"Creatify.GatewaySolution","BasePath":"_content/Creatify.GatewaySolution","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

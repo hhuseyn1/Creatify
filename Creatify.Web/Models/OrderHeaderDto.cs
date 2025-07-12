@@ -1,4 +1,4 @@
-﻿namespace Creatify.Web.Models.Dto;
+﻿namespace Creatify.Web.Models;
 
 public class OrderHeaderDto
 {

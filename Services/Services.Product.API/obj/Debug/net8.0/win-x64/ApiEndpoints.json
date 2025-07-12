@@ -28,6 +28,11 @@
         "IsRequired": false
       },
       {
+        "Name": "CategoryId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
         "Name": "CategoryName",
         "Type": "System.String",
         "IsRequired": false
@@ -117,6 +122,11 @@
       {
         "Name": "Description",
         "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "CategoryId",
+        "Type": "System.Guid",
         "IsRequired": false
       },
       {

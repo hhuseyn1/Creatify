@@ -20,12 +20,13 @@ public class ShopDtoValidator : AbstractValidator<ShopDto>
             .EmailAddress().WithMessage("Owner email must be a valid email address.");
 
         RuleFor(x => x.ContactEmail)
+            .NotEmpty().WithMessage("Contact email is required.")
             .EmailAddress().WithMessage("Contact email must be a valid email address.")
             .When(x => !string.IsNullOrEmpty(x.ContactEmail));
 
         RuleFor(x => x.PhoneNumber)
-            .Matches(@"^\+994\d{9}$")
-            .WithMessage("Phone number must be a valid Azerbaijani phone number (+994XXXXXXXXX).")
+            .NotEmpty().WithMessage("Phone number must be a valid format.")
+            .Matches(@"^\d{7,15}$").WithMessage("Phone number must be a valid format.")
             .When(x => !string.IsNullOrEmpty(x.PhoneNumber));
 
         RuleFor(x => x.Description)

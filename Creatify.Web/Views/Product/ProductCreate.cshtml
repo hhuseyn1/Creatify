@@ -1,61 +1,109 @@
 ﻿@model Creatify.Web.Models.ProductDto
 
 <form asp-action="ProductCreate" enctype="multipart/form-data">
-    <br />
     <div class="container border p-3">
         <h1 class="text-primary">Create Product</h1>
-
         <hr />
         <div class="row">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="col-2">
-                <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
+                <label asp-for="Name" class="control-label pt-2"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+
             <div class="col-2">
-                <label asp-for="CategoryName" class="control-label pt-2" style="font-size:20px;"></label>
+                <label asp-for="MainCategoryId" class="control-label pt-2">Main Category</label>
             </div>
             <div class="col-10 pb-3">
-                <input asp-for="CategoryName" class="form-control" />
-                <span asp-validation-for="CategoryName" class="text-danger"></span>
+                <select asp-for="MainCategoryId" class="form-select" id="mainCategorySelect" asp-items="ViewBag.MainCategories">
+                    <option value="">-- Select Main Category --</option>
+                </select>
+                <span asp-validation-for="MainCategoryId" class="text-danger"></span>
             </div>
+
             <div class="col-2">
-                <label asp-for="Description" class="control-label pt-2" style="font-size:20px;"></label>
+                <label asp-for="SubCategoryId" class="control-label pt-2">Subcategory</label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="SubCategoryId" class="form-select" id="subCategorySelect">
+                    <option value="">-- Select Subcategory --</option>
+                </select>
+                <span asp-validation-for="SubCategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Description" class="control-label pt-2"></label>
             </div>
             <div class="col-10 pb-3">
                 <textarea asp-for="Description" class="form-control" rows="5"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
             <div class="col-2">
-                <label asp-for="ImageUrl" class="control-label pt-2" style="font-size:20px;"></label>
+                <label asp-for="Image" class="control-label pt-2"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="Image" class="form-control" />
-                <input asp-for="ImageUrl" hidden class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
+
             <div class="col-2">
-                <label asp-for="Price" class="control-label pt-2" style="font-size:20px;"></label>
+                <label asp-for="Price" class="control-label pt-2"></label>
             </div>
             <div class="col-10 pb-3">
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+
             <div class="col-5 offset-2">
-                <a asp-action="ProductIndex" class="btn-primary btn form-control ">Back to List</a>
+                <a asp-action="ProductIndex" class="btn btn-secondary form-control">Back to List</a>
             </div>
             <div class="col-5">
                 <input type="submit" value="Create" class="btn btn-success form-control" />
             </div>
-        </div>
-        <div>
         </div>
     </div>
 </form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById("mainCategorySelect").addEventListener("change", function () {
+            const mainCategoryId = this.value; // string
+            console.log("Selected mainCategoryId:", mainCategoryId);
+
+            const subCategorySelect = document.getElementById("subCategorySelect");
+            subCategorySelect.innerHTML = '<option value=\"\">-- Loading... --</option>';
+
+            if (!mainCategoryId) {
+                subCategorySelect.innerHTML = '<option value=\"\">-- Select Subcategory --</option>';
+                return;
+            }
+
+            const fullUrl = `/Category/GetSubCategories/${mainCategoryId}`;
+            console.log("Fetch URL:", fullUrl);
+
+            fetch(fullUrl)
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Subcategory result:", data);
+                    subCategorySelect.innerHTML = '<option value=\"\">-- Select Subcategory --</option>';
+
+                    if (data.result && Array.isArray(data.result)) {
+                        data.result.forEach(c => {
+                            subCategorySelect.innerHTML += `<option value=\"${c.id}\">${c.name}</option>`;
+                        });
+                        console.log("Full result:", data.result);
+                    }
+                })
+                .catch(err => {
+                    console.error("Fetch error:", err);
+                    subCategorySelect.innerHTML = '<option value=\"\">-- Failed to load --</option>';
+                });
+        });
+    </script>
 }

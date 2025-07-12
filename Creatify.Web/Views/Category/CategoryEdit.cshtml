@@ -1,0 +1,27 @@
+﻿@model CategoryDto
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<h2>Edit Category</h2>
+
+<form asp-action="CategoryEdit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Category Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ParentCategoryId" class="form-label">Parent Category (optional)</label>
+        <select asp-for="ParentCategoryId" class="form-select"
+                asp-items="ViewBag.Categories">
+            <option value="">-- Main Category --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-sucess">Update</button>
+    <a asp-action="CategoryIndex" class="btn btn-secondary">Back to List</a>
+</form>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HHVUGpbUR6I=",
+  "dgSpecHash": "ZWQCLMuuNTo=",
   "success": true,
   "projectFilePath": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
   "expectedPackageFiles": [
@@ -110,8 +110,10 @@
     {
       "code": "NU1603",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Services.Shop.API depends on Serilog.Sinks.Elasticsearch (>= 9.0.0-dev-01182) but Serilog.Sinks.Elasticsearch 9.0.0-dev-01182 was not found. Serilog.Sinks.Elasticsearch 9.0.0-rc1 was resolved instead.",
+      "projectPath": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
       "libraryId": "Serilog.Sinks.Elasticsearch",
       "targetGraphs": [
         "net8.0"

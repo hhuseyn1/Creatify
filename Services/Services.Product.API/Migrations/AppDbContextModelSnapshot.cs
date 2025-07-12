@@ -17,20 +17,36 @@ namespace Services.Product.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Services.Product.API.Models.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ParentCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category");
+                });
 
             modelBuilder.Entity("Services.Product.API.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CategoryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -42,6 +58,9 @@ namespace Services.Product.API.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("MainCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,56 +68,49 @@ namespace Services.Product.API.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<Guid>("SubCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.HasIndex("MainCategoryId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("4a81d069-b0a6-4fef-afd0-4838e201c359"),
-                            CategoryName = "Appetizer",
-                            Description = "Quisque vel lacus ac magna, vehicula sagittis ut non lacus.<br/> Vehicula sagittis ut non lacus.",
-                            ImageUrl = "https://placeholder.co/603x403",
-                            Name = "Samosa",
-                            Price = 15.0
-                        },
-                        new
-                        {
-                            Id = new Guid("8d0ea0f5-92dd-4c88-aae8-d44ae20232c2"),
-                            CategoryName = "Appetizer",
-                            Description = "Vivamus hendrerit arcu sed erat molestie vehicula.<br/> Sed vehicula erat at augue interdum posuere.",
-                            ImageUrl = "https://placeholder.co/603x404",
-                            Name = "Spring Roll",
-                            Price = 10.0
-                        },
-                        new
-                        {
-                            Id = new Guid("1bedf3f7-3440-41d3-9c48-ef0bf075e806"),
-                            CategoryName = "Main Course",
-                            Description = "Maecenas vel nisi tincidunt, ullamcorper nibh a, faucibus mauris.<br/> Aenean sit amet lorem nec lorem.",
-                            ImageUrl = "https://placeholder.co/603x405",
-                            Name = "Chicken Tikka",
-                            Price = 20.0
-                        },
-                        new
-                        {
-                            Id = new Guid("1f1d4e45-8e2c-4e2b-8461-702a03452fde"),
-                            CategoryName = "Main Course",
-                            Description = "Nulla facilisi. Morbi posuere, felis quis accumsan.<br/> In volutpat augue vitae vehicula.",
-                            ImageUrl = "https://placeholder.co/603x406",
-                            Name = "Paneer Butter Masala",
-                            Price = 25.0
-                        },
-                        new
-                        {
-                            Id = new Guid("842439c1-dc75-451d-a8b2-cce94139f2af"),
-                            CategoryName = "Dessert",
-                            Description = "Proin auctor dolor eget libero laoreet bibendum.<br/> Phasellus ac lacus hendrerit, volutpat arcu a, vehicula nunc.",
-                            ImageUrl = "https://placeholder.co/603x407",
-                            Name = "Gulab Jamun",
-                            Price = 12.0
-                        });
+                    b.HasIndex("SubCategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Services.Product.API.Models.Category", b =>
+                {
+                    b.HasOne("Services.Product.API.Models.Category", "ParentCategory")
+                        .WithMany("Subcategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("ParentCategory");
+                });
+
+            modelBuilder.Entity("Services.Product.API.Models.Product", b =>
+                {
+                    b.HasOne("Services.Product.API.Models.Category", "MainCategory")
+                        .WithMany()
+                        .HasForeignKey("MainCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Services.Product.API.Models.Category", "SubCategory")
+                        .WithMany()
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("MainCategory");
+
+                    b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("Services.Product.API.Models.Category", b =>
+                {
+                    b.Navigation("Subcategories");
                 });
 #pragma warning restore 612, 618
         }

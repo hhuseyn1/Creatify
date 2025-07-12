@@ -31,8 +31,7 @@ public class AuthService : IAuthService
 			Url = StaticDetails.AuthAPIBase + "/api/auth/login"
 		}, withBaerer: false);
 	}
-
-	public async Task<ResponseDto?> RegisterAsync(RegisterDto registerDto)
+    public async Task<ResponseDto?> RegisterAsync(RegisterDto registerDto)
 	{
 		return await _baseService.SendAsync(new RequestDto()
 		{

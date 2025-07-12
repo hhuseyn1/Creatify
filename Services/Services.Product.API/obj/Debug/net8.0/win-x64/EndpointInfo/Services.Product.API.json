@@ -100,6 +100,10 @@
                   "Description": {
                     "type": "string"
                   },
+                  "CategoryId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
                   "CategoryName": {
                     "type": "string"
                   },
@@ -130,6 +134,9 @@
                   "style": "form"
                 },
                 "Description": {
+                  "style": "form"
+                },
+                "CategoryId": {
                   "style": "form"
                 },
                 "CategoryName": {
@@ -200,6 +207,10 @@
                   "Description": {
                     "type": "string"
                   },
+                  "CategoryId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
                   "CategoryName": {
                     "type": "string"
                   },
@@ -230,6 +241,9 @@
                   "style": "form"
                 },
                 "Description": {
+                  "style": "form"
+                },
+                "CategoryId": {
                   "style": "form"
                 },
                 "CategoryName": {

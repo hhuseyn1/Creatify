@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Creatify.GatewaySolution.props" />
-</Project>

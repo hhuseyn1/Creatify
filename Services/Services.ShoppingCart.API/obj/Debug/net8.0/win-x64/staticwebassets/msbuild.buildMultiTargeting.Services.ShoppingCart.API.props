@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Services.ShoppingCart.API.props" />
-</Project>

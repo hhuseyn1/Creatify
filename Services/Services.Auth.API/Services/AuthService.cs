@@ -10,64 +10,64 @@ namespace Services.Auth.API.Services;
 
 public class AuthService : IAuthService
 {
-	private readonly AppDbContext _context;
-	private readonly UserManager<AppUser> userManager;
-	private readonly RoleManager<IdentityRole> roleManager;
-	private readonly IJwtTokenGenerator jwtGenerator;
+    private readonly AppDbContext _context;
+    private readonly UserManager<AppUser> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly IJwtTokenGenerator _jwtGenerator;
 
-	public AuthService(AppDbContext context, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IJwtTokenGenerator jwtGenerator)
-	{
-		this._context = context;
-		this.userManager = userManager;
-		this.roleManager = roleManager;
-		this.jwtGenerator = jwtGenerator;
-	}
+    public AuthService(AppDbContext context, UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager, IJwtTokenGenerator jwtGenerator)
+    {
+        this._context = context;
+        this._userManager = userManager;
+        this._roleManager = roleManager;
+        this._jwtGenerator = jwtGenerator;
+    }
 
-	public async Task<bool> AssignRole(string email, string roleName)
-	{
-		var user = _context.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
-		if (user is not null)
-		{
-			if (!await roleManager.RoleExistsAsync(roleName))
-			{
-				await roleManager.CreateAsync(new IdentityRole(roleName));
-			}
-			await userManager.AddToRoleAsync(user, roleName);
-			return true;
-		}
-		return false;
-	}
+    public async Task<bool> AssignRole(string email, string roleName)
+    {
+        var user = _context.AppUsers.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
+        if (user is not null)
+        {
+            if (!await _roleManager.RoleExistsAsync(roleName))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(roleName));
+            }
+            await _userManager.AddToRoleAsync(user, roleName);
+            return true;
+        }
+        return false;
+    }
 
-	public async Task<Creatify.Web.Models.LoginResponseDto> Login(LoginDto loginDto)
-	{
-		var user = _context.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.Email.ToLower());
+    public async Task<LoginResponseDto> Login(LoginDto loginDto)
+    {
+        var user = _context.Users.FirstOrDefault(u => u.UserName.ToLower() == loginDto.Email.ToLower());
 
-		bool isValid = await userManager.CheckPasswordAsync(user, loginDto.Password);
+        bool isValid = await _userManager.CheckPasswordAsync(user, loginDto.Password);
 
-		if (user is null || !isValid)
-		{
-			return new Creatify.Web.Models.LoginResponseDto() { Token = "", User = null };
-		}
+        if (user is null || !isValid)
+        {
+            return new LoginResponseDto() { Token = "", User = null };
+        }
 
-		var roles = await userManager.GetRolesAsync(user);
-		var token = jwtGenerator.GenerateToken(user, roles);
+        var roles = await _userManager.GetRolesAsync(user);
+        var token = _jwtGenerator.GenerateToken(user, roles);
 
-		Creatify.Web.Models.UserDto userDto = new()
-		{
-			Email = user.Email,
-			Name = user.Name,
-			PhoneNumber = user.PhoneNumber,
-			Id = Guid.Parse(user.Id)
-		};
+        UserDto userDto = new()
+        {
+            Email = user.Email,
+            Name = user.Name,
+            PhoneNumber = user.PhoneNumber,
+            Id = Guid.Parse(user.Id)
+        };
 
-		Creatify.Web.Models.LoginResponseDto loginResponseDto = new()
-		{
-			Token = token,
-			User = userDto
-		};
+        LoginResponseDto loginResponseDto = new()
+        {
+            Token = token,
+            User = userDto
+        };
 
-		return loginResponseDto;
-	}
+        return loginResponseDto;
+    }
 
     public async Task<string> Register(RegisterDto registerDto)
     {
@@ -82,13 +82,13 @@ public class AuthService : IAuthService
 
         try
         {
-            var result = await userManager.CreateAsync(appUser, registerDto.Password);
+            var result = await _userManager.CreateAsync(appUser, registerDto.Password);
             if (result.Succeeded)
             {
-                if (!await roleManager.RoleExistsAsync(StaticDetails.RoleCustomer))
-                    await roleManager.CreateAsync(new IdentityRole(StaticDetails.RoleCustomer));
+                if (!await _roleManager.RoleExistsAsync(StaticDetails.RoleCustomer))
+                    await _roleManager.CreateAsync(new IdentityRole(StaticDetails.RoleCustomer));
 
-                await userManager.AddToRoleAsync(appUser, StaticDetails.RoleCustomer);
+                await _userManager.AddToRoleAsync(appUser, StaticDetails.RoleCustomer);
 
                 return "";
             }
@@ -102,5 +102,4 @@ public class AuthService : IAuthService
             return "Error encountered";
         }
     }
-
 }

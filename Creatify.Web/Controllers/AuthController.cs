@@ -48,7 +48,7 @@ public class AuthController : Controller
 		}
 	}
 
-	[HttpGet]
+    [HttpGet]
 	public IActionResult Register()
 	{
 		return View();

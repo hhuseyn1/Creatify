@@ -6,7 +6,6 @@
     <br />
     <div class="container border p-3">
         <h1 class="text-primary">Create Shop</h1>
-
         <hr />
         <div class="row">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -18,7 +17,6 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-
             <div class="col-2">
                 <label asp-for="OwnerEmail" class="control-label pt-2" style="font-size:20px;">Owner Email</label>
             </div>
@@ -39,7 +37,12 @@
                 <label asp-for="PhoneNumber" class="control-label pt-2" style="font-size:20px;">Phone Number</label>
             </div>
             <div class="col-10 pb-3">
-                <input asp-for="PhoneNumber" class="form-control" />
+                <div class="d-flex align-items-center">
+                    <select id="countryCode" asp-for="CountryCode" name="CountryCode" class="form-select me-2" style="max-width: 300px;">
+                        <option value="">Loading...</option>
+                    </select>
+                    <input asp-for="PhoneNumber" class="form-control" style="max-width: 300px;"/>
+                </div>
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
 
@@ -82,22 +85,47 @@
     <partial name="_ValidationScriptsPartial" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        let map = L.map('map').setView([40.4093, 49.8671], 12);
-
+        var map = L.map('map').setView([40.4093, 49.8671], 12);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
-
-        let marker;
-
+        var marker;
         map.on('click', function (e) {
             if (marker) {
                 map.removeLayer(marker);
             }
-
             marker = L.marker(e.latlng).addTo(map);
-
             document.getElementById('Location').value = e.latlng.lat + ',' + e.latlng.lng;
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("https://restcountries.com/v3.1/all")
+                .then(response => response.json())
+                .then(data => {
+                    const select = document.getElementById("countryCode");
+                    select.innerHTML = "";
+                    data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+                    var count = 0;
+                    data.forEach(country => {
+                        if (country.idd && country.idd.root) {
+                            const code = country.idd.root + ((country.idd.suffixes && country.idd.suffixes.length) ? country.idd.suffixes[0] : "");
+                            if (code && code.length > 1) {
+                                const option = document.createElement("option");
+                                option.value = code;
+                                option.text = `${country.name.common} (${code})`;
+                                select.appendChild(option);
+                                count++;
+                            }
+                        }
+                    });
+                    if (count === 0) {
+                        select.innerHTML = '<option value="">Not found</option>';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("countryCode").innerHTML =
+                        '<option value="">Can not load</option>';
+                });
         });
     </script>
 }

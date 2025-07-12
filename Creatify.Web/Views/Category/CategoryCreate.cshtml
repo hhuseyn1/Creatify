@@ -1,0 +1,26 @@
+﻿@using Creatify.Web.Models
+@model CategoryDto
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<h2>Create New Category</h2>
+
+<form asp-action="CategoryCreate" method="post">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Category Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ParentCategoryId" class="form-label">Parent Category (optional)</label>
+        <select asp-for="ParentCategoryId" class="form-select"
+                asp-items="ViewBag.Categories">
+            <option value="">-- Main Category --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+    <a asp-action="CategoryIndex" class="btn btn-secondary">Back to List</a>
+</form>

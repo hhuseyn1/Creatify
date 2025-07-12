@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "5N1Tgjfyk4LAzv3oNvC5wVQhIDQXAt5kDyNFVUhrIYY=",
-  "Source": "Services.Coupon.API",
-  "BasePath": "_content/Services.Coupon.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"5N1Tgjfyk4LAzv3oNvC5wVQhIDQXAt5kDyNFVUhrIYY=","Source":"Services.Coupon.API","BasePath":"_content/Services.Coupon.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

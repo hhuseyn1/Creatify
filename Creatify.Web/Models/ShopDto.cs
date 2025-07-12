@@ -1,13 +1,11 @@
-﻿using Creatify.Web.Utility;
-using System.ComponentModel.DataAnnotations;
-
-namespace Creatify.Web.Models;
+﻿namespace Creatify.Web.Models;
 public class ShopDto
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
     public string OwnerEmail { get; set; }
     public string ContactEmail { get; set; }
+    public string CountryCode { get; set; }
     public string PhoneNumber { get; set; }
     public string? Location { get; set; }
     public string Description { get; set; }

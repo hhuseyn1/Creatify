@@ -2,71 +2,99 @@
 
 <form asp-action="ProductEdit" enctype="multipart/form-data">
     <input asp-for="Id" hidden />
-    <br />
     <div class="container border p-3">
         <h1 class="text-primary">Edit Product</h1>
-
         <hr />
         <div class="row">
-            <div class="col-10">
-                <div class="row">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="col-2">
-                        <label asp-for="Name" class="control-label pt-2" style="font-size:20px;"></label>
-                    </div>
-                    <div class="col-10 pb-3">
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
-                    <div class="col-2">
-                        <label asp-for="CategoryName" class="control-label pt-2" style="font-size:20px;"></label>
-                    </div>
-                    <div class="col-10 pb-3">
-                        <input asp-for="CategoryName" class="form-control" />
-                        <span asp-validation-for="CategoryName" class="text-danger"></span>
-                    </div>
-                    <div class="col-2">
-                        <label asp-for="Description" class="control-label pt-2" style="font-size:20px;"></label>
-                    </div>
-                    <div class="col-10 pb-3">
-                        <textarea asp-for="Description" class="form-control" rows="5"></textarea>
-                        <span asp-validation-for="Description" class="text-danger"></span>
-                    </div>
-                    <div class="col-2">
-                        <label asp-for="ImageUrl" class="control-label pt-2" style="font-size:20px;"></label>
-                    </div>
-                    <div class="col-10 pb-3">
-                        <input asp-for="Image" class="form-control" />
-                        <input asp-for="ImageUrl" hidden class="form-control" />
-                        <input asp-for="ImageLocalPath" hidden class="form-control" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
-                    </div>
-                    <div class="col-2">
-                        <label asp-for="Price" class="control-label pt-2" style="font-size:20px;"></label>
-                    </div>
-                    <div class="col-10 pb-3">
-                        <input asp-for="Price" class="form-control" />
-                        <span asp-validation-for="Price" class="text-danger"></span>
-                    </div>
-                    <div class="col-5 offset-2">
-                        <a asp-action="ProductIndex" class="btn-primary btn form-control ">Back to List</a>
-                    </div>
-                    <div class="col-5">
-                        <input type="submit" value="Update" class="btn btn-success form-control" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                    </div>
-
-                </div>
-            </div>
             <div class="col-2">
-                <img src="@Model.ImageUrl" class="w-100" alt=""/>
+                <label asp-for="Name" class="control-label pt-2"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="MainCategoryId" class="control-label pt-2">Main Category</label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="MainCategoryId" class="form-select" id="mainCategorySelect" asp-items="ViewBag.MainCategories">
+                    <option value="">-- Select Main Category --</option>
+                </select>
+                <span asp-validation-for="MainCategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="SubCategoryId" class="control-label pt-2">Subcategory</label>
+            </div>
+            <div class="col-10 pb-3">
+                <select asp-for="SubCategoryId" class="form-select" id="subCategorySelect" asp-items="ViewBag.SubCategories">
+                    <option value="">-- Select Subcategory --</option>
+                </select>
+                <span asp-validation-for="SubCategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Description" class="control-label pt-2"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Image" class="control-label pt-2"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <div class="col-2">
+                <label asp-for="Price" class="control-label pt-2"></label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="ProductIndex" class="btn btn-secondary form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Update" class="btn btn-success form-control" />
             </div>
         </div>
-        
-
     </div>
 </form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById(\"mainCategorySelect\").addEventListener(\"change\", function () {
+            var mainCategoryId = this.value;
+            var subCategorySelect = document.getElementById(\"subCategorySelect\");
+            subCategorySelect.innerHTML = '<option value=\"\">-- Loading... --</option>';
+
+            if (mainCategoryId) {
+                fetch(`/Category/GetSubCategories/${mainCategoryId}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        subCategorySelect.innerHTML = '<option value=\"\">-- Select Subcategory --</option>';
+                        if (data.result && Array.isArray(data.result)) {
+                            data.result.forEach(c => {
+                                subCategorySelect.innerHTML += `<option value=\"${c.id}\">${c.name}</option>`;
+                            });
+                        }
+                    })
+                    .catch(err => {
+                        subCategorySelect.innerHTML = '<option value=\"\">-- Failed to load --</option>';
+                    });
+            } else {
+                subCategorySelect.innerHTML = '<option value=\"\">-- Select Subcategory --</option>';
+            }
+        });
+    </script>
 }

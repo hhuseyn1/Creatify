@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "Wi2oAL9Lh2AjNnPHSDBzmxywCcC+UkLpBfJaP4kHOe0=",
-  "Source": "Services.Order.API",
-  "BasePath": "_content/Services.Order.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"Wi2oAL9Lh2AjNnPHSDBzmxywCcC+UkLpBfJaP4kHOe0=","Source":"Services.Order.API","BasePath":"_content/Services.Order.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

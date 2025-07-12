@@ -1,5 +1,4 @@
 ﻿using Creatify.Web.Models;
-using Creatify.Web.Models.Dto;
 using Creatify.Web.Service.IService;
 using Creatify.Web.Utility;
 using Microsoft.AspNetCore.Authorization;

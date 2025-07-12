@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "dGlylzvTDfoayV+uNoOBnJ8avmsXhjBLn1Is63KbqvE=",
-  "Source": "Services.Reward.API",
-  "BasePath": "_content/Services.Reward.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"dGlylzvTDfoayV+uNoOBnJ8avmsXhjBLn1Is63KbqvE=","Source":"Services.Reward.API","BasePath":"_content/Services.Reward.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

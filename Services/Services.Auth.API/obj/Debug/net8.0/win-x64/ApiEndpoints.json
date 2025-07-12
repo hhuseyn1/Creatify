@@ -33,6 +33,16 @@
         "IsRequired": false
       },
       {
+        "Name": "MainCategoryId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "SubCategoryId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
         "Name": "ImageUrl",
         "Type": "System.String",
         "IsRequired": false
@@ -156,6 +166,22 @@
       {
         "Name": "fileConfiguration",
         "Type": "Ocelot.Configuration.File.FileConfiguration",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Creatify.Web.Controllers.CategoryController",
+    "Method": "GetSubCategories",
+    "RelativePath": "GetSubCategories/{parentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "parentId",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

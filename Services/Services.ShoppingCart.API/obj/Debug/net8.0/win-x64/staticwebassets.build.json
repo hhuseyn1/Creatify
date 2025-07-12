@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "o1ooV+g6OI4ZKkk5CvU9Hxle9Kbi9ZfO8AwTiL2QqdM=",
-  "Source": "Services.ShoppingCart.API",
-  "BasePath": "_content/Services.ShoppingCart.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"o1ooV+g6OI4ZKkk5CvU9Hxle9Kbi9ZfO8AwTiL2QqdM=","Source":"Services.ShoppingCart.API","BasePath":"_content/Services.ShoppingCart.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

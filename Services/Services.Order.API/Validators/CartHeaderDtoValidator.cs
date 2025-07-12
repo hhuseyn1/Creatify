@@ -27,8 +27,8 @@ public class CartHeaderDtoValidator : AbstractValidator<CartHeaderDto>
             .MaximumLength(50).WithMessage("Fullname must not exceed 50 characters.");
 
         RuleFor(x => x.Phone)
-            .NotEmpty().WithMessage("Phone is required.")
-            .Matches(@"^\+994\d{9}$").WithMessage("Phone must be a valid Azerbaijani number (+994XXXXXXXXX).");
+             .NotEmpty().WithMessage("Phone number is required.")
+             .Matches(@"^\d{7,15}$").WithMessage("Phone number must be a valid format.");
 
         RuleFor(x => x.Email)
             .NotEmpty().WithMessage("Email is required.")

@@ -31,4 +31,8 @@
     <Folder Include="wwwroot\ProductImages\" />
   </ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\Creatify.Shared\Creatify.Shared.csproj" />
+	</ItemGroup>
+
 </Project>

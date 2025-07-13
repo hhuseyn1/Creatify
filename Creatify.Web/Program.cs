@@ -1,3 +1,4 @@
+using Creatify.Shared;
 using Creatify.Web.Service;
 using Creatify.Web.Service.IService;
 using Creatify.Web.Utility;
@@ -27,7 +28,10 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 

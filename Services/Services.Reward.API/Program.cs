@@ -6,6 +6,7 @@ using Services.Reward.API.Extension;
 using Services.Reward.API.Messaging;
 using Services.Reward.API.Services;
 using Services.Reward.API.Extensions;
+using Creatify.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,7 +54,10 @@ builder.Services.AddSingleton(new RewardService(optionBuilder.Options));
 
 builder.Services.AddSingleton<IAzureServiceBusConsumer,AzureServiceBusConsumer>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

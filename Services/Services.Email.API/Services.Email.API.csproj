@@ -39,4 +39,8 @@
 		<Folder Include="Controllers\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Shared\Creatify.Shared\Creatify.Shared.csproj" />
+	</ItemGroup>
+
 </Project>

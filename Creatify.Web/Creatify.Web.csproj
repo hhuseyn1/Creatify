@@ -28,6 +28,10 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\Shared\Creatify.Shared\Creatify.Shared.csproj" />
+	</ItemGroup>
+
 
 
 </Project>

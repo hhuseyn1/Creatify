@@ -9,6 +9,7 @@ using Services.Shop.API.Data;
 using Services.Shop.API.Extensions;
 using Services.Shop.API.Service;
 using Services.Shop.API.Service.IService;
+using Creatify.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,7 +56,10 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IShopService, ShopService>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>();
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>

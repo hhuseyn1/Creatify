@@ -43,6 +43,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Integration\Creatify.MessageBus\Creatify.MessageBus.csproj" />
 		<ProjectReference Include="..\..\Creatify.Web\Creatify.Web.csproj" />
+		<ProjectReference Include="..\..\Shared\Creatify.Shared\Creatify.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

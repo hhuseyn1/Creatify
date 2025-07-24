@@ -1,0 +1,91 @@
+﻿@model UserDto
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3">Profil Ayarları</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <form asp-action="Profile" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PhoneNumber" class="form-label">Telephone</label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Gender" class="form-label">Gender</label>
+            <select asp-for="Gender" class="form-select">
+                <option value="">Seçin...</option>
+                @foreach (var g in Enum.GetValues<Gender>())
+                {
+                    <option value="@g">@g</option>
+                }
+            </select>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="DateOfBirth" class="form-label">Date Of Birth</label>
+            <input asp-for="DateOfBirth" type="date" class="form-control" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="Height" class="form-label">Height</label>
+                <input asp-for="Height" class="form-control" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Weight" class="form-label">Weight</label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary ms-2" onclick="window.history.back()">Cancel</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        (function () {
+            'use strict';
+            let forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+}

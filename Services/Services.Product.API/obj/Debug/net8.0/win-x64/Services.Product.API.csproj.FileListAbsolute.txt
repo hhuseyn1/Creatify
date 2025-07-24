@@ -431,3 +431,14 @@ D:\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\win-x64\rpsw
 D:\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\win-x64\rjimswa.dswa.cache.json
 D:\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\win-x64\rjsmrazor.dswa.cache.json
 D:\Projects\Creatify\Services\Services.Product.API\obj\Debug\net8.0\win-x64\rjsmcshtml.dswa.cache.json
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Logs\log-20250712.json
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Logs\log-20250713.json
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.ObjectPool.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Microsoft.Extensions.Options.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Creatify.Shared.dll
+D:\Projects\Creatify\Services\Services.Product.API\bin\Debug\net8.0\win-x64\Creatify.Shared.pdb

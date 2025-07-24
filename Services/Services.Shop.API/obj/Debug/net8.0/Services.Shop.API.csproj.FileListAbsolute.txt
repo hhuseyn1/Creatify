@@ -167,3 +167,14 @@ D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\rpswa.dswa.cach
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 D:\Projects\Creatify\Services\Services.Shop.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Logs\log-20250712.json
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Logs\log-20250713.json
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Creatify.Shared.dll
+D:\Projects\Creatify\Services\Services.Shop.API\bin\Debug\net8.0\Creatify.Shared.pdb

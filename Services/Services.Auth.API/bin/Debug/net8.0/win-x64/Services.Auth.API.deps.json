@@ -2853,6 +2853,7 @@
       },
       "Creatify.Web/1.0.0": {
         "dependencies": {
+          "Creatify.Shared": "1.0.0",
           "FluentValidation": "11.11.0",
           "FluentValidation.AspNetCore": "11.3.0",
           "IdentityModel": "7.0.0",

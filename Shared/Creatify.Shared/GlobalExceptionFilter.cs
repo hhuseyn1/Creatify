@@ -16,7 +16,7 @@ public class GlobalExceptionFilter : IExceptionFilter
 
     public void OnException(ExceptionContext context)
     {
-        _logger.LogError(context.Exception, "Unhandled exception caught by GlobalExceptionFilter");
+        _logger.LogError($"Unhandled exception caught by GlobalExceptionFilter - {context.Exception.Message}");
 
         var problemDetails = new ProblemDetails
         {

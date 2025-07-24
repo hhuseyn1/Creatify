@@ -6,6 +6,7 @@ using Creatify.Web.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
 
@@ -32,6 +33,11 @@ builder.Services.AddControllersWithViews(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();
 });
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 

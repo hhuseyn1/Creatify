@@ -1,12 +1,13 @@
+using Creatify.Shared;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Serilog.Sinks.Elasticsearch;
 using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using Services.Reward.API.Data;
 using Services.Reward.API.Extension;
+using Services.Reward.API.Extensions;
 using Services.Reward.API.Messaging;
 using Services.Reward.API.Services;
-using Services.Reward.API.Extensions;
-using Creatify.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +59,11 @@ builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();
 });
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

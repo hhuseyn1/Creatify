@@ -1,18 +1,19 @@
 using AutoMapper;
+using Creatify.Shared;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using Services.Order.API;
 using Services.Order.API.Data;
 using Services.Order.API.Extensions;
-using Services.Order.API.Utility;
 using Services.Order.API.RabbitMQSender;
+using Services.Order.API.Utility;
 using Services.Order.API.Validators;
-using FluentValidation;
-using FluentValidation.AspNetCore;
-using Serilog;
-using Serilog.Sinks.Elasticsearch;
-using Creatify.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,12 @@ builder.Host.UseSerilog();
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>();
-}); 
+});
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+
 builder.Services.AddDbContext<AppDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("default"));

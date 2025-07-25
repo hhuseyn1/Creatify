@@ -1,4 +1,4 @@
-﻿using Services.Auth.API.Models;
+﻿using Creatify.Shared.Models;
 
 namespace Services.Auth.API.Services.IService;
 

@@ -1244,23 +1244,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\husey\\.nuget\\packages\\": {},
+    "C:\\Users\\huseyn.hamidov\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
+      "projectUniqueName": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
       "projectName": "Creatify.MessageBus",
-      "projectPath": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
-      "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Creatify\\Integration\\Creatify.MessageBus\\obj\\",
+      "projectPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Integration\\Creatify.MessageBus\\Creatify.MessageBus.csproj",
+      "packagesPath": "C:\\Users\\huseyn.hamidov\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Integration\\Creatify.MessageBus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\husey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huseyn.hamidov\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1269,7 +1269,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

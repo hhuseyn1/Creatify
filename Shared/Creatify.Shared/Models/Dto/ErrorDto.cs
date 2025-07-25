@@ -1,4 +1,4 @@
-﻿namespace Creatify.Shared.Models;
+﻿namespace Creatify.Shared.Models.Dto;
 
 public class ErrorDto
 {

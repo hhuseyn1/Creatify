@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Creatify.Shared.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

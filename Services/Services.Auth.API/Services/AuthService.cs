@@ -1,4 +1,5 @@
-﻿using Creatify.Web.Utility;
+﻿using Creatify.Shared.Models;
+using Creatify.Web.Utility;
 using Microsoft.AspNetCore.Identity;
 using Services.Auth.API.Data;
 using Services.Auth.API.Models;

@@ -1,5 +1,5 @@
-﻿using Newtonsoft.Json;
-using Services.Order.API.Models;
+﻿using Creatify.Shared.Models.Dto;
+using Newtonsoft.Json;
 using Services.Order.API.Models.Dto;
 using Services.Order.API.Service.IService;
 

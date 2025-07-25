@@ -1,4 +1,5 @@
-﻿using Creatify.Web.Models;
+﻿using Creatify.Shared.Models.Dto;
+using Creatify.Web.Models;
 namespace Creatify.Web.Service.IService;
 
 public interface IOrderService

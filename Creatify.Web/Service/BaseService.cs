@@ -1,4 +1,5 @@
-﻿using Creatify.Web.Models;
+﻿using Creatify.Shared.Models.Dto;
+using Creatify.Web.Models;
 using Creatify.Web.Service.IService;
 using Newtonsoft.Json;
 using System.Net;

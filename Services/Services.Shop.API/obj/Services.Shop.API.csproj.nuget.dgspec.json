@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj": {}
+    "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj": {
+    "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
+        "projectUniqueName": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
         "projectName": "Services.Shop.API",
-        "projectPath": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
-        "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Creatify\\Services\\Services.Shop.API\\obj\\",
+        "projectPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Services\\Services.Shop.API\\Services.Shop.API.csproj",
+        "packagesPath": "C:\\Users\\huseyn.hamidov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Services\\Services.Shop.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\husey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\huseyn.hamidov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj": {
-                "projectPath": "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj"
+              "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj": {
+                "projectPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj"
               }
             }
           }
@@ -141,20 +140,20 @@
         }
       }
     },
-    "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj": {
+    "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj",
         "projectName": "Creatify.Shared",
-        "projectPath": "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj",
-        "packagesPath": "C:\\Users\\husey\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Creatify\\Shared\\Creatify.Shared\\obj\\",
+        "projectPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\Creatify.Shared.csproj",
+        "packagesPath": "C:\\Users\\huseyn.hamidov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\huseyn.hamidov\\Source\\Repos\\Creatify\\Shared\\Creatify.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\husey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\huseyn.hamidov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -163,7 +162,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -195,6 +193,10 @@
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
               "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.8, )"
             },
             "Serilog": {
               "target": "Package",

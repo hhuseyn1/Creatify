@@ -1,4 +1,4 @@
-﻿namespace Services.Shop.API.Models.Dto;
+﻿namespace Creatify.Shared.Models.Dto;
 
 public class ResponseDto
 {

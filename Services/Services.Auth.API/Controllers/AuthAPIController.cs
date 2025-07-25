@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Creatify.Shared.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Auth.API.Models.Dto;
 using Services.Auth.API.RabbitMQSender;
@@ -13,7 +14,7 @@ public class AuthAPIController : ControllerBase
     private readonly IAuthService _authService;
     private readonly IRabbitMQAuthMessageSender _messageBus;
     private readonly IConfiguration _configuration;
-    protected Models.Dto.ResponseDto _responseDto;
+    protected ResponseDto _responseDto;
     public AuthAPIController(IAuthService authService, IRabbitMQAuthMessageSender messageBus, IConfiguration configuration)
     {
         _authService = authService;

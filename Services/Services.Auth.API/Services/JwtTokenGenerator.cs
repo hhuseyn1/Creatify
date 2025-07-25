@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Creatify.Shared.Models;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Services.Auth.API.Models;
 using Services.Auth.API.Services.IService;

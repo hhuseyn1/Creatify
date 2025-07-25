@@ -2,6 +2,7 @@
 
 public class StaticDetails
 {
+	public static string UserAPIBase { get; set; }
 	public static string ShopAPIBase { get; set; }
 	public static string CouponAPIBase { get; set; }
 	public static string ProductAPIBase { get; set; }
